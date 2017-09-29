@@ -314,7 +314,7 @@ We have a problem... During the copy we copied the pointer.  The pointer holds t
 
 This is called a **shallow copy**.  We don't want just the values to be copied.
 
-Imagine if we were storing a dynamically allocated array of grades.  If we did a shallow copy then anytime we added a grade for one student the other student would have that grade added as well.  They both need memory areas for their own best friends and grades.  This is what we call a **deep copy**.
+They both need memory areas for their own grades.  This is what we call a **deep copy**.
 ---
 **The Big Five**
 ***
@@ -322,9 +322,18 @@ Imagine if we were storing a dynamically allocated array of grades.  If we did a
 Since our object uses dynamic memory allocation we are going to have to rewrite (at least some of) The Big Five.  The default ones won't work for us because our object needs some custom behavior.
 
 ```C++
+// Note the const reference!!!!
+
 Student(const Student &other){
   this->gpa = other.gpa;
   this->number = other.number;
-  this->bestFriend =
+  // Let's get a new memory area for our grades.
+  this->grades = (float*) malloc(50 * sizeof(float));
+  // Now, since we are doing a copy, we must make
+  // copies of the grades too.
+  for(int i=0; i<50; i++){
+    this->grades[i] = other.grades[i];
+  }
 }
 ```
+---
