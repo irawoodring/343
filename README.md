@@ -19,7 +19,7 @@ Schedule
 | 4  | [Language Spotlight - C (Imperative Procedural)](https://gitpitch.com/irawoodring/343/master?p=c-lectures "C Lecture") | Follow tutorials | [C Project](./assignments/reverse-file-in-c.md "Project 1 in C") | |
 | 4  | [Language Spotlight - C (Imperative Procedural)](https://gitpitch.com/irawoodring/343/master?p=c-lectures "C Lecture") | |
 | 4  | [Language Spotlight - C++ (Object Oriented [or Imperative Procedural])](https://gitpitch.com/irawoodring/343/master?p=cpp-lectures "C++ Lecture")| |
-| 5  | [Language Spotlight - C++ (Object Oriented [or Imperative Procedural])](https://gitpitch.com/irawoodring/343/master?p=cpp-lectures "C++ Lecture")| [C++ Homework](./assignments/basic-cpp.md "Basic C++ Class homework")|
+| 5  | [Language Spotlight - C++ (Object Oriented [or Imperative Procedural])](https://gitpitch.com/irawoodring/343/master?p=cpp-lectures "C++ Lecture")| | [C++ Homework](./assignments/basic-cpp.md "Basic C++ Class homework")| |
 |   | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | Chapter 3 | | |
 |   | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | | | C Exercises Due (Blackboard)|
 |   | Lexical and Syntax Analysis | | | |
