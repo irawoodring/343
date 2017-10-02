@@ -279,7 +279,7 @@ A = B * ( A + C)
 ```
 
 can be represented with the tree:
----?image=./syntax-and-semantics/images/parse_tree-1.png&size=auto
+---?image=./syntax-and-semantics/images/parse_tree-1.png&size=auto 90%
 ---
 **Syntax**
 ***
