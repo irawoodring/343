@@ -310,7 +310,7 @@ A = B + C * A
 **Syntax**
 ***
 
-This grammar is ambiguous.  Any grammar that has a sentential form for which there are two or more possible parse trees as ambiguous.
+This grammar is ambiguous.  Any grammar that has a sentential form for which there are two or more possible parse trees is ambiguous.
 
 We don't want ambiguity in a grammar.
 ---
@@ -326,7 +326,7 @@ What do we do if we have an ambiguous grammar?
 **Syntax**
 ***
 
-Operator Precedence is one way of providing nongrammatical information.
+*Operator Precedence* is one way of providing non-grammatical information.
 
 We assign different levels of importance to a token so that it is evaluated first if it is found at the same level as another token.
 
@@ -362,6 +362,7 @@ A * B + C       // Parse tree hierarchy correct here
 ```
 
 Could be.
+---
 **Syntax**
 ***
 
@@ -478,6 +479,9 @@ These problems are calls *static semantics*.  They are only partially related to
 Attribute Grammars are CFGs which have attributes, attribute computation functions, and predicate functions.
 
 They may, for instance, be used to specify that a language that uses a ```BEGIN PROCEDURE_NAME``` rule is ended by an ```END``` and the same ```PROCEDURE_NAME```, or to easily address the situations mentioned in the past slides.
+---
+**Syntax - Attribute Grammars**
+***
 
 We won't be discussing these further in this class; though you should be reading the sections that include them.  For now, they are included in this section to help you understand more fully what can and cannot be described with BNF forms.
 ---
@@ -514,6 +518,9 @@ Operational Semantics attempts to describe the meaning of a statement or program
 For instance, you can run the program and see what happens.
 
 Problem is, too many changes (and changes too small) usually in machine state.
+---
+**Semantics - The Meaning of Programs**
+***
 
 So, we typically don't use this method.  We instead try to develop intermediate languages and interpreters to help provide semantics.
 ---
@@ -584,4 +591,3 @@ x = y;
 y = t;
 {x = B AND y = A}
 ```
----
