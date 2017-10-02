@@ -305,7 +305,7 @@ A = B + C * A
 ```
 ---
 ## There is more than one possibility!
----?image=./syntax-and-semantics/images/ambigious-parse-tree.png&size=auto
+---?image=./syntax-and-semantics/images/ambigious-parse-tree.png&size=auto 90%
 ---
 **Syntax**
 ***
@@ -319,7 +319,7 @@ We don't want ambiguity in a grammar.
 
 What do we do if we have an ambiguous grammar?
 
-- Provide some other nongrammatical information for the parser
+- Provide some other non-grammatical information for the parser
 
 - Rewrite the grammar
 ---
