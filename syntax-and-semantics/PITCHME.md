@@ -372,11 +372,11 @@ We could add some rules and new nonterminals:
 
   - Use new nonterminals for ```+``` and ```*```, not just ```<expr>```
 
-    - <expr> generates only ```+``` with <term> on the right side
+    - ```<expr>``` generates only ```+``` with ```<term>``` on the right side
 
-    - <term> generates only ```*``` with <factor> on the right side
+    - ```<term>``` generates only ```*``` with ```<factor>``` on the right side
 
-    - <factor> yields <expr> or <id>
+    - ```<factor>``` yields ```<expr>``` or ```<id>```
 ---
 **Syntax**
 ***
