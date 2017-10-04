@@ -367,7 +367,6 @@ Could be.
 ***
 
 We could rewrite the original grammar as well.
-
 We could add some rules and new nonterminals:
 
   - Use new nonterminals for ```+``` and ```*```, not just ```<expr>```
