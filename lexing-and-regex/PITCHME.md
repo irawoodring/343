@@ -84,7 +84,7 @@ So, if we wanted to match a variable name in a string, and our language dictates
 
 Recall that a token is one or more lexemes.
 
-For instance, we may have the following tokens defined (note that this is not a regular expression!):
+For instance, we may have the following tokens defined (note that these are not regular expressions!):
 
 - ' ', '\t', 'n'         WHITESPACE
 - \+                      ADD_OP
@@ -354,3 +354,25 @@ Implements a Caesar Cipher!
 ---
 **Lexing (Scanning)**
 ***
+
+A quick note - to compile a lex/flex file we first run the file through lex.  In the following examples our flex file is called ```my_lang.lex```.  Lex will create a file called ```lex.yy.c``` that we can then compile.
+
+```
+flex my_lang.lex
+clang lex.yy.cc -lfl
+```
+
+(Note!  These are the instructions for EOS.  If you are on an OSX machine they may be slightly different; for instance the clang flag may be "-ll").
+---
+**Lexing (Scanning)**
+***
+
+Now, let's try it - in class work.
+
+Create a lex file that scans for:
+
+Names - Must start with a capital letter and only include lowercase letters afterward.
+
+Phone Numbers - Must be of the form (xxx)xxx-xxxx, where x is a digit.
+
+Day of the Week - Must be the complete day of the week name (note! They all in in 'day'...)
