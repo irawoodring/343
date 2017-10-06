@@ -92,7 +92,7 @@ For instance, we may have the following tokens defined:
 0-9                    DIGIT
 ```
 ---
-*Lexical Analysis*
+**Lexing (Scanning)**
 ***
 
 So, if you had a sentence in the language such as
@@ -108,5 +108,141 @@ DIGIT WHITESPACE ADD_OP WHITESPACE DIGIT
 ```
 (Though we would probably ignore the WHITESPACE).
 ---
-*Lexical Analysis*
+**Lexing (Scanning)**
 ***
+
+A Sample Flex file has three sections:
+
+- **Definitions** - sources any symbols by including header files, or defining any macros.
+- **Rules** - The regular expressions and the code to run when they are encountered.
+- **Code** - C code that is copied directly into the generated file.  This may be a main function, or any other function the rules may need to call when encountered.
+
+The sections are separated with the ```%%``` characters.
+---
+```C
+%{
+    #include <stdio.h>
+%}
+
+%%
+
+[0-9]         { printf("DIGIT\n"); }
+[A-Za-z]      { printf("ALPHA_CHAR\n");}
+.|\n          ; // Ignore these chars!
+
+%%
+
+int main(int argc, char** argv){
+  yylex();
+  return 0;
+}
+```
+---
+A sample run of this code might look like the following:
+
+```
+h3ll0 w0rld.
+ALPHA_CHAR
+DIGIT
+ALPHA_CHAR
+ALPHA_CHAR
+DIGIT
+ALPHA_CHAR
+DIGIT
+ALPHA_CHAR
+ALPHA_CHAR
+ALPHA_CHAR
+```
+---
+**Lexing (Scanning)**
+***
+
+As cool as this is, it is somewhat worthless...
+
+For instance, we don't even preserve the lexemes we discovered.
+---
+Let's fix the file a bit.  Flex includes some global variables.  One is ```yytext```.  It holds the currently matched lexeme.
+
+```C
+%{
+    #include <stdio.h>
+    void printLexeme();
+%}
+
+%%
+
+[0-9]         { printf("DIGIT\t"); printLexeme();}
+[A-Za-z]      { printf("ALPHA_CHAR\t"); printLexeme();}
+.|\n         ;
+
+%%
+void printLexeme(){
+        printf("(%s)\n", yytext);
+}
+
+int main(int argc, char** argv){
+  yylex();
+  return 0;
+}
+```
+---
+Now a run might look like this:
+
+```
+h3ll0 w0rld.
+ALPHA_CHAR	(h)
+DIGIT	(3)
+ALPHA_CHAR	(l)
+ALPHA_CHAR	(l)
+DIGIT	(0)
+ALPHA_CHAR	(w)
+DIGIT	(0)
+ALPHA_CHAR	(r)
+ALPHA_CHAR	(l)
+ALPHA_CHAR	(d)
+
+```
+---
+**Lexing (Scanning)**
+***
+
+It is not really the lexer's job to do any more than just output these tokens.  However, if we wanted, we could use the lexer to make a more complete program.
+
+For instance, what if we wanted to have a program that calculated a running tally of integers:
+---
+```
+%{
+    #include <stdio.h>
+    #include <stdlib.h>
+    int total = 0;
+%}
+
+%%
+
+[0-9]+         { total += atoi(yytext); printf("= %d\n", total);}
+.|\n         ;
+
+%%
+
+int main(int argc, char** argv){
+  yylex();
+  return 0;
+}
+```
+---
+And a sample run:
+
+```
+12
+= 12
+124
+= 136
+1983
+= 2119
+20394885
+= 20397004
+a;slj;123
+= 20397127
+lajsl;fjalm,c1
+= 20397128
+```
