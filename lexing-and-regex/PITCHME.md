@@ -78,3 +78,35 @@ So, if we wanted to match a variable name in a string, and our language dictates
 ```
 \$[A-Za-z]
 ```
+---
+**Lexing (Scanning)**
+***
+
+Recall that a token is one or more lexemes.
+
+For instance, we may have the following tokens defined:
+
+```
+' ', '\t', 'n'         WHITESPACE
++                      ADD_OP
+0-9                    DIGIT
+```
+---
+*Lexical Analysis*
+***
+
+So, if you had a sentence in the language such as
+
+```
+3 + 9
+```
+
+The lexer would output
+
+```
+DIGIT WHITESPACE ADD_OP WHITESPACE DIGIT
+```
+(Though we would probably ignore the WHITESPACE).
+---
+*Lexical Analysis*
+***
