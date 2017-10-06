@@ -86,9 +86,9 @@ Recall that a token is one or more lexemes.
 
 For instance, we may have the following tokens defined (note that this is not a regular expression!):
 
-' ', '\t', 'n'         WHITESPACE
-+                      ADD_OP
-0-9                    DIGIT
+- ' ', '\t', 'n'         WHITESPACE
+- \+                      ADD_OP
+- 0-9                    DIGIT
 ---
 **Lexing (Scanning)**
 ***
