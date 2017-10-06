@@ -133,7 +133,7 @@ The sections are separated with the ```%%``` characters.
 %%
 
 int main(int argc, char** argv){
-  yylex();
+  yylex();    // Start lexing!
   return 0;
 }
 ```
@@ -246,3 +246,113 @@ a;slj;123
 lajsl;fjalm,c1
 = 20397128
 ```
+---
+**Lexing (Scanning)**
+***
+
+**Important note:**  If the lexer finds more than one pattern to match it will take the one that matches the most text.  If it happens to find more than one match that are the same length it will take the one that comes first in the flex file.
+---
+**Lexing (Scanning)**
+***
+
+There are many, many examples of Lex/Flex files online.  Additionally, the manuals for Lex and Yacc can be found at http://dinosaur.compilertools.net/.
+
+Let's look at some examples now:
+---
+**Lexing (Scanning)**
+***
+
+Sample File: Roman Numerals
+From http://home.adelphi.edu/sbloch/class/271/examples/lexyacc/romans.l
+
+```
+WS	[ \t]+
+
+%%
+	int total=0;
+
+I	total += 1;
+IV	total += 4;
+V	total += 5;
+IX	total += 9;
+X	total += 10;
+XL	total += 40;
+L	total += 50;
+XC	total += 90;
+C	total += 100;
+CD	total += 400;
+D	total += 500;
+CM	total += 900;
+M	total += 1000;
+
+{WS}	|
+\n	return total;
+%%
+int main (void) {
+   int first, second;
+
+   first = yylex ();
+   second = yylex ();
+
+   printf ("%d + %d = %d\n", first, second, first+second);
+   return 0;
+   }
+```
+---
+**Lexing (Scanning)**
+***
+
+Sample File: See if you can tell me what it does!
+```
+int num_lines = 0, num_chars = 0;
+
+%%
+\n      ++num_lines; ++num_chars;
+.       ++num_chars;
+
+%%
+main()
+{
+yylex();
+printf( "# of lines = %d, # of chars = %d\n",
+        num_lines, num_chars );
+}
+```
+---
+**Lexing (Scanning)**
+***
+
+It implements the functionality of the ```wc``` command (it counts the number of characters, lines, and words in a file!).
+
+(https://www.cs.princeton.edu/~appel/modern/c/software/flex/flex.html)
+---
+**Lexing (Scanning)**
+***
+
+Sample File: See if you can tell me what it does!
+
+```
+%%
+[a-z]	{ char ch = yytext[0];
+          ch += 3;
+          if (ch > 'z') ch -= ('z'+1-'a');
+          printf ("%c", ch);
+        }
+
+[A-Z]	{ char ch = yytext[0];
+          ch += 3;
+          if (ch > 'Z') ch -= ('Z'+1-'A');
+          printf ("%c", ch);
+        }
+%%
+```
+---
+**Lexing (Scanning)**
+***
+
+Implements a Caesar Cipher!
+
+(From: http://home.adelphi.edu/sbloch/class/271/examples/lexyacc/caesar1.l)
+---
+**Lexing (Scanning)**
+***
