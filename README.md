@@ -20,9 +20,10 @@ Schedule
 | 4  | [Language Spotlight - C (Imperative Procedural)](https://gitpitch.com/irawoodring/343/master?p=c-lectures "C Lecture") | |
 | 4  | [Language Spotlight - C++ (Object Oriented [or Imperative Procedural])](https://gitpitch.com/irawoodring/343/master?p=cpp-lectures "C++ Lecture")| |
 | 5  | [Language Spotlight - C++ (Object Oriented [or Imperative Procedural])](https://gitpitch.com/irawoodring/343/master?p=cpp-lectures "C++ Lecture")| | [C++ Homework](./assignments/basic-cpp.md "Basic C++ Class homework")| |
-|   | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | Chapter 3 | | |
-|   | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | | | |
+| 5  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | Chapter 3 | | |
+| 5  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | | | |
 |   | [Lexing (Scanning) and Regex](https://gitpitch.com/irawoodring/343/master?p=lexing-and-regex "Lex/Flex tutorial and info on Regex") | | | |
+|   | In class Flex work | | | |
 |   | Lexical and Syntax Analysis | | | |
 |   | Lexical and Syntax Analysis | | | |
 |   | Regular Expressions | | RegEx Assignment | |
