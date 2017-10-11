@@ -24,7 +24,7 @@ Schedule
 | 5  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | | | |
 |   | [Lexing (Scanning) and Regex](https://gitpitch.com/irawoodring/343/master?p=lexing-and-regex "Lex/Flex tutorial and info on Regex") | | | |
 |   | In class Flex work | | | |
-|   | Lexical and Syntax Analysis | | | |
+|   | Lexical and Syntax Analysis https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexing/Parsing notes.")| | | |
 |   | Lexical and Syntax Analysis | | | |
 |   | Regular Expressions | | RegEx Assignment | |
 |   | Lex and Yacc | | | |
