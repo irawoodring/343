@@ -25,6 +25,7 @@ Schedule
 |   | [Lexing (Scanning) and Regex](https://gitpitch.com/irawoodring/343/master?p=lexing-and-regex "Lex/Flex tutorial and info on Regex") | | | |
 |   | In class Flex work | | | |
 |   | [Lexical and Syntax Analysis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexing/Parsing notes.")| | | |
+|   | [Parsing with Bison](https://gitpitch.com/irawoodring/343/master?p=parsing-with-bison "Parsing with Bison")| | | |
 |   | Lexical and Syntax Analysis | | | |
 |   | Regular Expressions | | RegEx Assignment | |
 |   | Lex and Yacc | | | |
