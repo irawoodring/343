@@ -26,7 +26,7 @@ Schedule
 |   | In class Flex work | | | |
 |   | [Lexical and Syntax Analysis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexing/Parsing notes.")| | | |
 |   | [Parsing with Bison](https://gitpitch.com/irawoodring/343/master?p=parsing-with-bison "Parsing with Bison")| | | |
-|   | Object Oriented Programming | | | [Project 2](https://github.com/irawoodring/343-language-creation-flex-and-bison) Due 10/30 |
+|   | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO") | | | [Project 2](https://github.com/irawoodring/343-language-creation-flex-and-bison) Due 10/30 |
 |   | Object Oriented Programming | | | |
 |   | Language Spotlight - Python (Object Oriented)| | | |
 |   | Language Spotlight - Python (Object Oriented)| | Python/Ruby Project | |
