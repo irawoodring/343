@@ -26,11 +26,7 @@ Schedule
 |   | In class Flex work | | | |
 |   | [Lexical and Syntax Analysis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexing/Parsing notes.")| | | |
 |   | [Parsing with Bison](https://gitpitch.com/irawoodring/343/master?p=parsing-with-bison "Parsing with Bison")| | | |
-|   | Lexical and Syntax Analysis | | | |
-|   | Regular Expressions | | RegEx Assignment | |
-|   | Lex and Yacc | | | |
-|   | Lex and Yacc | | Lex and Yacc | RegEx Assignment Due (Blackboard) |
-|   | Object Oriented Programming | | | |
+|   | Object Oriented Programming | | | [Project 2](https://github.com/irawoodring/343-language-creation-flex-and-bison) Due 10/30 |
 |   | Object Oriented Programming | | | |
 |   | Language Spotlight - Python (Object Oriented)| | | |
 |   | Language Spotlight - Python (Object Oriented)| | Python/Ruby Project | |
