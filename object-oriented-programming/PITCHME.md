@@ -101,3 +101,473 @@ For a language to be able to provide ADTs it must
 - provide a syntactic unit to enclose the declaration of the type and prototypes of the subprograms that implement the operations.
 - a means to make subprograms visible to clients so they can ask the ADT to manipulate data on its behalf.
 - must provide external visibility for the name, but hide the representation
+---
+**Abstract Data Types (ADTs)**
+***
+
+In addition to the syntactic unit issues, language designers must decide if an ADT can be parameterized. Parameterizing an ADT means specializing it so that can hold specific data types.
+
+We have seen parameterized types in Java; for instance when defining an ArrayList<>.  ArrayLists<> require us to denote the type of ArrayList we wish to use by filling in the "<>" section of the declaration.  This is important for generic programming.
+---
+**Abstract Data Types (ADTs)**
+***
+
+In C++ for instance:
+
+```C++
+template <typename T>
+class Stack {
+
+  public:
+    void push(T const & e);
+    void pop();
+    T top() const;
+
+  private:
+    std::vector<T> elements;
+};
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+We would then be able to create an object of this type by parameterizing our declaration:
+
+```C++
+Stack<int> intStack;
+Stack<float> floatStack;
+Stack<Concert> concertStack;
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+Other issues are the types of access control provided and how those access controls are specified, and whether the ADT must be specified with its interface and implementation together or separately.
+---
+**Abstract Data Types (ADTs)**
+***
+
+Let's view some examples!
+
+We'll start with Ada:
+---
+**Abstract Data Types (ADTs)**
+***
+
+Ada uses **packages** for encapsulation.  Packages have two parts:
+
+- **package specification:** which provides the interface
+- **body package:** which provides the implementation
+
+Both of these parts are also called packages.
+
+Packages are generalized encapsulations; they can define multiple types.
+---
+**Abstract Data Types (ADTs)**
+***
+
+Both the specification and the body package share the same name, but the reserved keyword ```body``` in the package header notes it is the body package.
+
+The two parts can be compiled separately (as long as the specification is compiled first).
+---
+**Abstract Data Types (ADTs)**
+***
+
+The programmer of a type can decide if the representation is hidden or not.
+
+>If it is not hidden, is this an ADT?
+
+---
+NO!
+
+If we can manipulate the underlying data, it is not an ADT.
+---
+**Abstract Data Types (ADTs)**
+***
+
+In ADA there are two ways of hiding information.  The first is to use the keyword ```private```, the other is to define the ADT as a pointer in the package specification and that pointer points to a structure defined in the body package.
+
+Since the implementation or body of the package is hidden from clients, the clients can't see how it is implemented.
+---
+Ada Package Specification
+
+```Ada
+package Stack_Pack is
+-- The visible entities, or public interface
+  type Stack_Type is limited private;
+  Max_Size : constant := 100;
+  function Empty(Stk : in Stack_Type) return Boolean;
+  procedure Push(Stk : in out Stack_Type;
+    Element : in Integer);
+  procedure Pop(Stk : in out Stack_Type);
+  function Top(Stk : in Stack_Type) return Integer;
+
+  -- The part that is hidden from clients
+  private
+  type List_Type is array (1..Max_Size) of Integer;
+  type Stack_Type is
+    record
+    List : List_Type;
+    Topsub : Integer range 0..Max_Size := 0; end record;
+end Stack_Pack;
+```
+---
+Ada Body specification
+
+```Ada
+with Ada.Text_IO; use Ada.Text_IO;
+package body Stack_Pack is
+
+function Empty(Stk: in Stack_Type) return Boolean is begin
+  return Stk.Topsub = 0;
+  end Empty;
+
+procedure Push(Stk : in out Stack_Type; Element : in Integer) is
+  begin
+  if Stk.Topsub >= Max_Size then
+      Put_Line("ERROR - Stack overflow");
+    else
+      Stk.Topsub := Stk.Topsub + 1;
+      Stk.List(Topsub) := Element;
+    end if;
+end Push;
+
+procedure Pop(Stk : in out Stack_Type) is
+  begin
+  if Empty(Stk)
+    then Put_Line("ERROR - Stack underflow");
+    else Stk.Topsub := Stk.Topsub - 1;
+    end if;
+  end Pop;
+
+function Top(Stk : in Stack_Type) return Integer is
+  begin
+  if Empty(Stk)
+    then Put_Line("ERROR - Stack is empty"); else return Stk.List(Stk.Topsub);
+  end if;
+end Top;
+
+end Stack_Pack;
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+You may have noticed the keywords ```with``` and ```use``` in the packages.
+
+```with``` makes names defined in external packages visible (includes or imports them).
+
+```use``` makes it so we don't need to qualify the symbols explicitly (just like the ```using``` keyword in C++).
+---
+**Abstract Data Types (ADTs)**
+***
+
+Here is client code that makes use of the Stack.
+
+```Ada
+with Stack_Pack;
+use Stack_Pack;
+procedure Use_Stacks is
+  Topone : Integer;
+  Stack : Stack_Type;   -- Creates an Object of type Stack_Type
+  begin
+  Push(Stack, 42);
+  Push(Stack, 17);
+  Topone := Top(Stack);
+  Pop(Stack);
+  ...
+end Use_Stacks;
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+C++ also allows ADTs, through use of the class construct.  This differs from Ada; because Ada uses the more generalized encapsulation technique, if a program makes use of a package it has access to all of the public symbols defined in that package.
+
+C++ use of the class construct means that when we are a client to an ADT we only have access to the ADT information.  We don't have names for any other types defined in the same file as the class.
+---
+**Abstract Data Types (ADTs)**
+***
+
+C++ classes define data called **members** and functions called **member functions**.  These members are of the type **instance** or **class**.
+
+Class members are associated with the class (think ```static```).
+
+Instance members share class member functions but have their own member data.
+---
+**Abstract Data Types (ADTs)**
+***
+
+Member functions in C++ can be defined in the class implementation file or just the header file.
+
+If a function is defined (not just declared) in the header it is implicitly inlined.
+
+An inline function is a function that the compiler replaces the function call with the function body.  In some situations this can save time (consider if the function is small, it might be quicker than creating a new stack frame).
+---
+**Abstract Data Types (ADTs)**
+***
+
+C++ classes have ```private``` and ```public``` sections to provide information hiding (also ```protected``` which is discussed later).
+---
+C++ Interface file
+
+```C++
+#ifndef IntCell_H
+#define IntCell_H
+
+/**
+ * A class for simulating an integer memory cell.
+ */
+class IntCell
+{
+  public:
+    explicit IntCell( int initialValue = 0 );
+    int read( ) const;
+    void write( int x );
+
+  private:
+    int storedValue;
+};
+
+#endif
+```
+---
+C++ Implementation file (notice the namespace operator):
+
+```C++
+#include "IntCell.h"
+
+/**
+ * Construct the IntCell with initialValue
+ */
+IntCell::IntCell( int initialValue ) : storedValue{ initialValue }
+{
+}
+
+/**
+ * Return the stored value.
+ */
+int IntCell::read( ) const
+{
+    return storedValue;
+}
+
+/**
+ * Store x.
+ */
+void IntCell::write( int x )
+{
+    storedValue = x;
+}
+```
+---
+C++ All in header example:
+
+```C++
+#include <iostream>
+using namespace std;
+
+/**
+ * A class for simulating an integer memory cell.
+ */
+class IntCell
+{
+  public:
+    /**
+     * Construct the IntCell.
+     * Initial value is 0.
+     */
+    IntCell( )
+      { storedValue = 0; }
+
+    /**
+     * Construct the IntCell.
+     * Initial value is initialValue.
+     */
+    IntCell( int initialValue )
+      { storedValue = initialValue; }
+
+    /**
+     * Return the stored value.
+     */
+    int read( )
+      { return storedValue; }
+
+    /**
+     * Change the stored value to x.
+     */
+    void write( int x )
+      { storedValue = x; }
+
+  private:
+    int storedValue;
+};
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+We would then use the class as such:
+
+```C++
+Intcell iCell;
+iCell.write(42);
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+Objective-C is another language that supports ADTs.  In Objective-C we have classes as well.  They are defined in ```@interface``` and ```@implementation``` containers.
+
+```
+@interface class-name : parent-class {
+  instance variable declarations
+}
+  method prototypes
+@end
+```
+
+```
+@implementation class-name
+  method definitions
+@end
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+Objective-C uses a syntax much like Smalltalk for method prototypes:
+
+```
+(+ | -)(return-type) method-name [: (formal parameters) ];
+```
+
+Here, the ```+``` sign indicates that a symbol is a class type.
+
+The brackets around the formal parameters section implies they are optional.
+
+Much like many other languages, instances share methods but have their own data.
+---
+**Abstract Data Types (ADTs)**
+***
+
+Sample functions may then look similar to the following:
+
+```
+// Method name is method1:
+-(void) method1: (int) x;
+// Method name is method2:second:
+-(int) method2: (int) x second: (float) y;
+// Method name is method2:
+-(int) method2: (int) x: (float) y;
+```
+
+We call these with the syntax ```[object-name method-name];```.  In the case of our examples, if we had an object called ```myObj``` we would call them as such:
+
+```
+[myObj method1: 42];
+[myObj method2: 42 second: 3.14];
+[myObj method2: 42: 3.14];
+---
+**Abstract Data Types (ADTs)**
+***
+
+A few notes; in Objective-C constructors are called **initializers**.  They only provide initial values, and can have any name so they must be explicitly called.  Their type is a pointer to the class name, provided by returning **self**.
+
+We create a new object with the alloc statement, and typically call the constructor explicitly in the same statement:
+
+```
+MyObject *myObj = [[MyObject alloc] init];
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+Objective-C uses the ```#import``` syntax to bring outside names into scope.
+---
+**Abstract Data Types (ADTs)**
+***
+
+Much like other languages, Objective-C use the public and private syntax, but they do so with the ```@public``` and ```@private``` keywords.
+
+Convention for the language is that a getter has the same name as the variable, and the setter has the variable name preceeded by ```set```.  For instance, if we have a variable ```sum```:
+
+```
+-(int) sum {
+  return sum;
+}
+
+-(void) setSum: (int) s {
+  sum = s;
+}
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+For default getters and setters we can list the variable as a ```@property``` in the interface section and have the getters and setters created by using the directive ```@synthesize``` in the implementation:
+
+```
+// Interface section
+@property int sum;
+
+...
+
+// Implementation section
+@synthesize sum;
+```
+---
+```
+// stack.m - interface and implementation of a simple stack #import <Foundation/Foundation.h>
+// Interface section
+@interface Stack: NSObject { int stackArray [100];
+	int stackPtr;
+	int maxLen;
+	int topSub; }
+	-(void) push: (int) number; -(void) pop;
+	-(int) top;
+	-(int) empty;
+	@end
+	// Implementation section
+	@implementation Stack
+	-(Stack *) initWith {
+		maxLen = 100;
+		topSub = -1;
+		stackPtr = stackArray; return self;
+	}
+-(void) push: (int) number { if (topSub == maxLen)
+	NSLog(@"Error in push--stack is full");
+	else
+		stackPtr[++topSub] = number;
+}
+-(void) pop {
+	if (topSub == -1)
+		NSLog(@"Error in pop--stack is empty");
+	else
+		topSub--; }
+		-(int) top {
+			if (topSub >= 0)
+				return stackPtr[topSub]); else
+					NSLog(@"Error in top--stack is empty");
+		}
+-(int) empty {
+	return topSub == -1);
+}
+int main (int argc, char *argv[]) {
+	int temp;
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]
+		init];
+	Stack *myStack = [[Stack alloc]initWith]; [myStack push: 5];
+	[myStack push: 3];
+	temp = [myStack top];
+	NSLog(@"Top element is:%i", temp); [myStack pop];
+	temp = [myStack top];
+	NSLog(@"Top element is:%i", temp);
+	temp = [myStack top];
+	[myStack pop];
+	[myStack release];
+	[pool drain];
+	return 0;
+} @end
+
+```
