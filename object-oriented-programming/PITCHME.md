@@ -571,3 +571,145 @@ int main (int argc, char *argv[]) {
 } @end
 
 ```
+---
+**Abstract Data Types (ADTs)**
+***
+
+Java supports ADTs using the class construct.  In Java all objects are declared on the heap and accessed (implicitly) through references.  As noted in lecture, the syntactic unit for a Java class is a single file.
+---
+```Java
+class StackClass {
+        private int [] stackRef; private int maxLen,
+                topIndex;
+        public StackClass() { // A constructor
+                stackRef = new int [100]; maxLen = 99;
+                topIndex = -1;
+        }
+        public void push(int number) {
+                if (topIndex == maxLen)
+                        System.out.println("Error in push—stack is full");
+                else stackRef[++topIndex] = number;
+        }
+
+        public void pop() {
+                if (empty())
+                        System.out.println("Error in pop—stack is empty");
+                else --topIndex;
+        }
+        public int top() {
+                if (empty()) {
+                        System.out.println("Error in top—stack is empty");
+                        return 9999; }
+                else
+                        return (stackRef[topIndex]);
+        }
+        public boolean empty() {return (topIndex == -1);}
+}
+```
+---
+Client:
+```Java
+public class TstStack {
+  public static void main(String[] args) {
+    StackClass myStack = new StackClass(); myStack.push(42);
+    myStack.push(29);
+    System.out.println("29 is: " + myStack.top()); myStack.pop();
+    System.out.println("42 is: " + myStack.top());
+    myStack.pop();
+    myStack.pop();  // Produces an error message
+  }
+}
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+C# is similar to both Java and C++, but adds new features.
+
+Like Java, C# keeps objects on the heap, and provides both classes and structs.  The difference in both is that the default access modifier for a class is private, whereas for a struct it is public.  Additionally, structs do not support inheritance, and are value types instead of reference types (put on the stack!).
+---
+**Abstract Data Types (ADTs)**
+***
+
+C# provides properties (similar to Objective-C) that allow getters and setters to be generated.
+
+C# also has no requirement that a class must reside in a single file; you can create a ```partial``` class.
+
+As with C++, you may provide more than one class definition per file (though this is not good practice).
+---
+```C#
+class TimePeriod
+{
+    private double seconds;
+
+    public double Hours
+    {
+        get { return seconds / 3600; }
+        set { seconds = value * 3600; }
+    }
+}
+
+
+class Program
+{
+    static void Main()
+    {
+        TimePeriod t = new TimePeriod();
+
+        // Assigning the Hours property causes the 'set' accessor to be called.
+        t.Hours = 24;
+
+        // Evaluating the Hours property causes the 'get' accessor to be called.
+        System.Console.WriteLine("Time in hours: " + t.Hours);
+    }
+}
+// Output: Time in hours: 24
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+Ruby also provides ADTs, defined between a ```class``` keyword and the ```end``` keyword.
+
+Instance variables are prefaced with the ```@``` sign, and instance methods begin with ```def``` and end with ```end```.
+
+Class variables are denoted with ```@@```.  There are multiple ways to create a class method, such as
+---
+```Ruby
+class Blah
+  def self.myMethod
+    ...
+  end
+end
+
+class Blah
+  class << self
+    def myMethod
+      ...
+    end
+  end
+end
+
+class Blah; end
+def Blah.myMethod
+  ...
+end
+```
+---
+**Abstract Data Types (ADTs)**
+***
+
+Constructors are named ```initialize``` in Ruby and cannot be overloaded.
+
+Class members may be added to the class at any time, and class methods may be removed.
+
+These abilities greatly harm the readability of the language.
+---
+**Abstract Data Types (ADTs)**
+***
+
+Access controls are also dynamic, meaning that violations cannot be caught before runtime.
+
+The default access is public for methods, but Ruby provides for protected and private as well.
+
+For instance data access is private, and this cannot be changed.  We access instance data through the use of accessor methods called attributes.
