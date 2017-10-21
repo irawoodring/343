@@ -22,13 +22,13 @@ Schedule
 | 5  | [Language Spotlight - C++ (Object Oriented [or Imperative Procedural])](https://gitpitch.com/irawoodring/343/master?p=cpp-lectures "C++ Lecture")| | [C++ Homework](./assignments/basic-cpp.md "Basic C++ Class homework")| |
 | 5  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | Chapter 3 | | |
 | 5  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | | | |
-|   | [Lexing (Scanning) and Regex](https://gitpitch.com/irawoodring/343/master?p=lexing-and-regex "Lex/Flex tutorial and info on Regex") | | | |
-|   | In class Flex work | | | |
-|   | [Lexical and Syntax Analysis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexing/Parsing notes.")| | | |
-|   | [Parsing with Bison](https://gitpitch.com/irawoodring/343/master?p=parsing-with-bison "Parsing with Bison")| | | |
-|   | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO") | | [Project 2](https://github.com/irawoodring/343-language-creation-flex-and-bison) Due 10/30 | |
-|   | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO")  | | | |
-|   | Midterm | | | |
+| 6  | [Lexing (Scanning) and Regex](https://gitpitch.com/irawoodring/343/master?p=lexing-and-regex "Lex/Flex tutorial and info on Regex") | | | |
+| 6  | In class Flex work | | | |
+| 6 | [Lexical and Syntax Analysis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexing/Parsing notes.")| | | |
+| 7  | [Parsing with Bison](https://gitpitch.com/irawoodring/343/master?p=parsing-with-bison "Parsing with Bison")| | | |
+| 7  | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO") | | [Project 2](https://github.com/irawoodring/343-language-creation-flex-and-bison) Due 10/30 | |
+| 7  | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO")  | | | |
+| 8 | Midterm | | | |
 |   | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | | |
 |   | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | | |
 |   | Language Spotlight - Ruby (Object Oriented)| | Python/Ruby Project | |
