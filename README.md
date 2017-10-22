@@ -29,28 +29,27 @@ Schedule
 | 7  | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO") | | [Project 2](https://github.com/irawoodring/343-language-creation-flex-and-bison) Due 10/30 | |
 | 7  | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO")  | | | |
 | 8 | Midterm | | | |
-|   | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | | |
-|   | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | | |
-|   | Language Spotlight - Ruby (Object Oriented)| | Python/Ruby Project | |
-|   | Names, Bindings, Scope | | | |
-|   | Names, Bindings, Scope | | | |
-|   | Midterm exam | | | |
-|   | Data Types | | | |
-|   | Data Types | | | |
-|   | Expression and Assignment Statements | | | |
-|   | Expression and Assignment Statements | | | |
-|   | Statement Level Control Structures | | | |
-|   | Subprograms | | | |
-|   | Implementing Subprograms | | | |
-|   | Abstract Data Types and Encapsulation | | | |
-|   | Abstract Data Types and Encapsulation | | | |
-|   | Functional Programming | | | |
-|   | Functional Programming / Lisp | | | |
-|   | Lisp | | Lisp Assignment | |
-|   | Thanksgiving Recess | | | |
-|   | Thanksgiving Recess | | | |
-|   | Logic Programming | | | |
-|   | Logic Programming | | | |
-|   | Language Presentations | | | |
-|   | Language Presentations | | | |
-|   12/xx | Final Exam | | | |
+| 8  | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | | |
+| 8  | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | | |
+| 9  | Language Spotlight - Ruby (Object Oriented)| | Python/Ruby Project | |
+| 9  | Names, Bindings, Scope | | | |
+| 9  | Names, Bindings, Scope | | | |
+| 10 | Data Types | | | |
+| 10 | Data Types | | | |
+| 10 | Expression and Assignment Statements | | | |
+| 11 | Expression and Assignment Statements | | | |
+| 11 | Statement Level Control Structures | | | |
+| 11 | Subprograms | | | |
+| 12 | Implementing Subprograms | | | |
+| 12 | Abstract Data Types and Encapsulation | | | |
+| 12 | Abstract Data Types and Encapsulation | | | |
+| 13 | Functional Programming | | | |
+| 13 | Functional Programming / Lisp | | | |
+| 13 | Lisp | | Lisp Assignment | |
+| 14 | Thanksgiving Recess | | | |
+| 14 | Thanksgiving Recess | | | |
+| 14 | Logic Programming | | | |
+| 15 | Logic Programming | | | |
+| 15 | Language Presentations | | | |
+| 15 | Language Presentations | | | |
+| 12/xx | Final Exam | | | |
