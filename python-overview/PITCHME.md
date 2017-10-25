@@ -126,3 +126,97 @@ Some built-in functions that Python provides for lists are
 ---
 **Python**
 ***
+
+The built-in functionality of lists allows them to easily be used as stacks and queues.
+
+Remember, a stack is a LIFO data structure, while a queue is a FIFO.
+---
+**Python**
+***
+
+Stack operations:
+
+```Python
+stack = []
+stack.append[42]
+stack.append[492727]
+stack.pop()
+```
+---
+**Python**
+***
+
+Queue Operations:
+
+```Python
+queue = []
+queue.append(42)
+queue.append(492727)
+q.pop(0)
+```
+
+Or, with an additional import statement:
+---
+```Python
+from collections import deque
+queue = deque([42, 492727])
+queue.append(1701)
+queue.popleft()
+```
+---
+**Python**
+***
+
+Python provides an interesting way to create lists as well, called **List Comprehensions**.  We can create these by applying a function to a list.
+
+If we were normally going to create a list in a for loop like this:
+
+```Python
+nums = []
+for i in range(100):
+  nums.append(i*2)
+```
+
+We could instead use this (more concise) code:
+
+```Python
+nums = [x*2 for x in range(100)]
+```
+---
+**Python**
+***
+
+Additionally, Python would also let us take a functional programming approach, and map a function:
+
+```Python
+nums = list(map(lambda x: x*2, range(10)))
+```
+
+Functional programming relies upon mapping functions to an input instead of the for-each syntax we are more accustomed to in imperative programming.
+---
+**Python**
+***
+
+Tuples are another sequence type in Python, but whereas list elements can change, tuple elements are immutable.
+
+We create tuples with parentheses, separating each element in the tuple by a comma:
+
+```Python
+''' Technically the ( and ) are optional here... '''
+tup = (42, 492727, 1701)
+tup = ([42, 492727], 1702)
+tup = (["Meaning", 42], 492727)
+```
+---
+**Python**
+***
+
+We access data inside a tuple with our indexing operators, "[", and "]".
+
+```Python
+>>> tup
+(['Meaning', 42], 492727)
+>>> tup[0]
+['Meaning', 42]
+>>>
+```
