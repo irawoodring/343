@@ -237,7 +237,7 @@ TypeError: 'tuple' object does not support item assignment
 **Python**
 ***
 
-Python provides support for Sets as well.  Sets are unordered collections that have no duplicate elements.  We define sets with curly braces:
+Python provides support for Sets as well (these are not sequence types!).  Sets are unordered collections that have no duplicate elements.  We define sets with curly braces:
 
 ```Python
 >>> students = {'henrietta', 'isaac', 'ira', 'castiel'}
@@ -250,7 +250,7 @@ False
 **Python**
 ***
 
-Dictionaries are also supported:
+Dictionaries (mapping types) are also supported:
 
 ```Python
 >>> students = {'henrietta':1928, 'isaac': 1958, 'ira':9, 'castiel':3}
@@ -282,7 +282,7 @@ While looping through dictionaries, it is often useful to have access to both th
 **Python**
 ***
 
-The *Text Sequence* type is how Python provides functionality for strings.  These sequences are ```str``` objects comprised of Unicode alues.
+The *Text Sequence* type is how Python provides functionality for strings.  These sequences are ```str``` objects comprised of Unicode values.
 
 ```str```s are immutable!
 
