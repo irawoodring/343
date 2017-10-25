@@ -281,3 +281,106 @@ While looping through dictionaries, it is often useful to have access to both th
 ---
 **Python**
 ***
+
+The *Text Sequence* type is how Python provides functionality for strings.  These sequences are ```str``` objects comprised of Unicode alues.
+
+```str```s are immutable!
+
+```Python
+>>> name="ira"
+>>> name
+'ira'
+>>> name[0] = 'a'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>>
+```
+---
+**Python**
+***
+
+```str```s can be created with single, double, or triple quotes:
+
+```Python
+name = 'ira'
+name = "ira"
+name = '''ira'''
+name = """ira"""
+```
+
+Triple quotes allows us to span multiple lines; all text (including whitespace) will be included in the ```str``` object.
+---
+**Python**
+***
+
+```str```s are immutable, but Python provides easy operators to construct new objects:
+
+```Python
+name = "ira"
+l_name = "woodring"
+n = name + l_name
+```
+---
+**Python**
+***
+
+Be careful though!  Some of the provided functions may not do what you think they would do.  Take str.join() for instance.  We might expect it to combine multiple strings - and it does.  At least, in a way:
+
+```Python
+>>> name
+'ira'
+>>> l_name="woodring"
+>>> str.join(name, l_name)
+'wiraoiraoiradirariraiiranirag'
+```
+---
+**Python**
+***
+
+Many functions for working on text sequences are provided by Python.  Such as
+
+```Python
+str.capitalize()
+str.count()
+str.expandtabs()
+str.find()
+str.isalpha()
+str.isdecimal()
+str.islower()
+str.replace()
+```
+
+And many more.
+---
+**Python**
+***
+
+Binary Sequence Types are supplied for dealing with binary data.  These types are
+
+- **bytes** - immutable sequences of single bytes.
+
+- **bytearray** - mutable sequences of bytes.
+
+- **memoryview** - allows us to see the internal memory of another object.  This is used with the Python C-API, which allows us to write C or C++ code that we can run with Python.
+---
+**Python**
+***
+
+We will focus mostly on the bytearrays, since they are mutable:
+
+```Python
+>>> b
+bytearray(b'\xa1\xb2\xc3\xd4\xe5\xf6\x00\xff')
+>>> b[0]
+161
+>>> b[0] = 163
+>>> b
+bytearray(b'\xa3\xb2\xc3\xd4\xe5\xf6\x00\xff')
+>>>
+```
+
+A plethora of functions for working on these bytearrays exist, but we will not discuss them here.
+---
+**Python**
+***
