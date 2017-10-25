@@ -119,10 +119,10 @@ The list in Python is very similar to an array (reinforced by the fact that look
 
 Some built-in functions that Python provides for lists are
 
--```list.append(x)``` - add to the end of the list
--```list.insert(i,x)``` - add the element to the list at position i.  This will move other elements in the list.
--```list.clear()``` - Removes all items from the list.
--```list.sort```, -```list.count```, and other built-ins are provided as well (demo).
+- ```list.append(x)``` - add to the end of the list
+- ```list.insert(i,x)``` - add the element to the list at position i.  This will move other elements in the list.
+- ```list.clear()``` - Removes all items from the list.
+- ```list.sort```, ```list.count```, and other built-ins are provided as well (demo).
 ---
 **Python**
 ***
