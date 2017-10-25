@@ -220,3 +220,64 @@ We access data inside a tuple with our indexing operators, "[", and "]".
 ['Meaning', 42]
 >>>
 ```
+---
+**Python**
+***
+
+Remember though!  Tuples are immutable.  This means we cannot change them once they have been created:
+
+```Python
+>>> tup[0] = 2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>>
+```
+---
+**Python**
+***
+
+Python provides support for Sets as well.  Sets are unordered collections that have no duplicate elements.  We define sets with curly braces:
+
+```Python
+>>> students = {'henrietta', 'isaac', 'ira', 'castiel'}
+>>> 'ira' in students
+True
+>>> 'mia' in students
+False
+```
+---
+**Python**
+***
+
+Dictionaries are also supported:
+
+```Python
+>>> students = {'henrietta':1928, 'isaac': 1958, 'ira':9, 'castiel':3}
+>>> students[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 0
+>>> students['ira']
+9
+>>> students.keys()
+['isaac', 'henrietta', 'castiel', 'ira']
+```
+---
+**Python**
+***
+
+While looping through dictionaries, it is often useful to have access to both the key and the value.  Python makes this easy:
+
+```Python
+>>> for s,n in students.items():
+...   print(s,n)
+...
+('isaac', 1958)
+('henrietta', 1928)
+('castiel', 3)
+('ira', 9)
+```
+---
+**Python**
+***
