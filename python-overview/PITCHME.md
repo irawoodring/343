@@ -27,7 +27,7 @@ The language is widely used - usually in the top 10 on the Tiobe index (\#5 as o
   - Google,
   - Firaxis Games (Civilization Series)
   - MANY others.
-  
+
 ---
 **Python**
 ***
@@ -60,3 +60,67 @@ Additionally, due to these design decisions Python is more orthogonal than many 
 ***
 
 Python is an interpreted language, meaning programs do not need to be compiled before run.  This provides the added benefit of being able to interactively use Python (demo).
+---
+**Python**
+***
+
+Python has several built in variable types: Numeric, Iterator, Sequence, Text Sequence, Binary Sequence, Set, Mapping, Class, and a few other types.
+---
+**Python**
+***
+
+Variables are given a type implicitly and dynamically; this means that variables are not declared with a type modifier as in some languages, and that memory for the variable is not reserved until run-time.
+---
+**Python**
+***
+
+Numeric types may be
+
+**int** - Integers (1, 2, 3, 42, 9192, etc.)
+**float** - Floating Point (3.14, 42.424242)
+**complex** - Complex (6+8j) (they have a real part i and an imaginary part j).  We don't need to put the i before the real part.
+---
+**Python**
+***
+
+Many functions are provided by Python for use on Numeric types.  Some include
+
+```Python
+abs(x)
+int(x)
+float(x)
+pow(x)
+-x
+```
+
+etc. (note some of these are not defined for complex numbers though).  We do not need to import any additional libraries to use these functions.
+---
+**Python**
+***
+
+Iterator types allow programmers to iterate over a collection.  We will talk about iterators later in the semester.
+---
+**Python**
+***
+
+Sequence types in Python come in three varieties,
+
+**list**, **tuple**, and **range**.
+---
+**Python**
+***
+
+The list in Python is very similar to an array (reinforced by the fact that lookups of the array take O(1) time! [Documentation](https://docs.python.org/3/glossary.html#term-list "Python docs")).  They are used much like arrays, but have enhanced functionality over many of their peer languages more basic arrays.
+---
+**Python**
+***
+
+Some built-in functions that Python provides for lists are
+
+```list.append(x)``` - add to the end of the list
+```list.insert(i,x)``` - add the element to the list at position i.  This will move other elements in the list.
+```list.clear()``` - Removes all items from the list.
+```list.sort```, ```list.count```, and other built-ins are provided as well.
+---
+**Python**
+***
