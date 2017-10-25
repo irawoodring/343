@@ -77,7 +77,9 @@ Variables are given a type implicitly and dynamically; this means that variables
 Numeric types may be
 
 **int** - Integers (1, 2, 3, 42, 9192, etc.)
+
 **float** - Floating Point (3.14, 42.424242)
+
 **complex** - Complex (6+8j) (they have a real part i and an imaginary part j).  We don't need to put the i before the real part.
 ---
 **Python**
@@ -110,17 +112,17 @@ Sequence types in Python come in three varieties,
 **Python**
 ***
 
-The list in Python is very similar to an array (reinforced by the fact that lookups of the array take O(1) time! [Documentation](https://docs.python.org/3/glossary.html#term-list "Python docs")).  They are used much like arrays, but have enhanced functionality over many of their peer languages more basic arrays.
+The list in Python is very similar to an array (reinforced by the fact that lookups on the list take O(1) time! [Documentation](https://docs.python.org/3/glossary.html#term-list "Python docs")).  They are used much like arrays, but have enhanced functionality over many of their peer languages more basic arrays.
 ---
 **Python**
 ***
 
 Some built-in functions that Python provides for lists are
 
-```list.append(x)``` - add to the end of the list
-```list.insert(i,x)``` - add the element to the list at position i.  This will move other elements in the list.
-```list.clear()``` - Removes all items from the list.
-```list.sort```, ```list.count```, and other built-ins are provided as well.
+-```list.append(x)``` - add to the end of the list
+-```list.insert(i,x)``` - add the element to the list at position i.  This will move other elements in the list.
+-```list.clear()``` - Removes all items from the list.
+-```list.sort```, -```list.count```, and other built-ins are provided as well (demo).
 ---
 **Python**
 ***
