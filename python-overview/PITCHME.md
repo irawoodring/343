@@ -384,3 +384,90 @@ A plethora of functions for working on these bytearrays exist, but we will not d
 ---
 **Python**
 ***
+
+In our projects for this class we are going to focus on Object Oriented Python.  The syntactic unit for defining an object in Python is the class.
+
+```Python
+class Starship:
+  """A class to store Starship information."""
+  num_ships = 0
+  def __init__(self):
+    """Class initializer code."""
+    self.number_crew = 0
+    self.shield_level = 100
+    self.name = ""
+    self.crew = []
+    Starship.num_ships = Starship.num_ships + 1
+  def set_name(self, name):
+    """Sets the ship's name."""
+    self.name = name
+```
+---
+**Python**
+***
+
+In the previous example ```num_ships``` is a class (static) variable.  It is therefore shared amongst all instances of the class.
+
+Unlike in Java and C++, in Python we are able to declare our instance variables at any point in the runtime.  A good place to put our instance variables is in our ```__init__``` function; this enhances readability and reliability, as the general consensus in Python programming is to both put our instance variables here and to initialize them to a default state.
+---
+**Python**
+***
+
+You may have noticed the strings ```"""A class to store Starship information."""```, ```"""Class initializer code."""```, and ```"""Sets the ship's name."""```.  These are \_\_doc\_\_ strings.  Think of them like Javadocs.  You can examine the docstring for any class or module that provides them as such:
+
+```Python
+Starship.__doc__
+Starship.set_name.__doc
+```
+
+etc.
+---
+**Python**
+***
+
+You may be wondering how to have an overloaded constructor in Python; unlike many other languages this isn't as straightforward.  Overloaded constructors are not directly possible in Python, but there are multiple ways to have equivalent functionality.
+
+We aren't going to go over those here, but there are many articles online concerning the issue.
+---
+**Python**
+***
+
+It is important to reinforce that any object in Python can have a member added at any time:
+
+```Python
+>>> class Blah:
+...     pass
+...
+>>> b = Blah()
+>>>
+>>> def say_name(name):
+...     print name
+...
+>>> b.say_name = say_name
+>>> b.say_name('ira')
+ira
+```
+---
+**Python**
+***
+
+Python does support inheritance.  We inherit from a class as such:
+
+```Python
+>>> class Mammal(object):
+        def __init__(self):
+            self.type = "Mammal"
+
+>>> class Dolphin(Mammal):
+        def __init__(self):
+            super(Dolphin, self).__init__()
+
+>>> Dolphin()
+<__main__.Dolphin object at 0x10e212bd0>
+>>> d = Dolphin()
+>>> d.type
+'Mammal'
+```
+---
+**Python**
+***
