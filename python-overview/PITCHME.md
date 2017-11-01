@@ -385,6 +385,21 @@ A plethora of functions for working on these bytearrays exist, but we will not d
 **Python**
 ***
 
+Functions in Python are created with the ```def``` keyword.  As with all of Python's scope blocks, we must end the declaration with a ":" and indent subsequent lines:
+
+```Python
+def my_func():
+  print "Hello World!"
+```
+---
+**Python**
+***
+
+Python allows multiple methods of passing parameters.
+---
+**Python**
+***
+
 In our projects for this class we are going to focus on Object Oriented Python.  The syntactic unit for defining an object in Python is the class.
 
 ```Python
