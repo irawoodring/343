@@ -2,7 +2,7 @@
 
 It seemed like a normal Halloween Eve.  You bought a lot of candy, ate a lot of candy, and went to bed early.  You had a lot trick-or-treating to do the next day.
 
-Unfortunately, when you woke up you discovered that the world was not how you left it.  Batches of bad candy had transformed your friends and neighbors into all sorts of crazy monsters.  Somehow, you missed the tainted candy; it is therefore up to you to save your neighborhood and turn everyone back to normal.
+Unfortunately, when you woke up you discovered that the world was not how you left it.  Batches of bad candy had transformed your friends and neighbors into all sorts of crazy monsters.  Somehow you missed the tainted candy; it is therefore up to you to save your neighborhood and turn everyone back to normal.
 
 Before you can do that though, you need to work out your plan of attack.  To do that, you will create a computer program to model your neighborhood.  After playing it a few times you should have a good idea of how to save everyone.  You've been studying object-oriented programming; this seems like a great time to test out what you've learned.
 
@@ -39,9 +39,9 @@ A monster is either a Person, a Zombie, a Vampire, a Ghoul, or a Werewolf.  All 
 All weapons have a name and an attack modifier.  The attack modifier multiplies the player's attack by a floating point value between 1 and 5.
 
   - HersheyKisses are the basic weapon.  No one ever runs out of HersheyKisses.  Unfortunately they have an attack modifier of 1.
-  - SourStraws provide an attack modifier between 1 - 1.75.
-  - ChocolateBars modify the players attack by between 2 - 2.4.
-  - NerdBombs are the best weapon in the game, modifying a player's attack by between 3.5 and 5.
+  - SourStraws provide an attack modifier between 1 - 1.75.  They can be used twice.
+  - ChocolateBars modify the players attack by between 2 - 2.4.  They are usable 4 times.
+  - NerdBombs are the best weapon in the game, modifying a player's attack by between 3.5 and 5.  Unfortunately, they are single use.
 
 Weapons attack all monsters in a house at once.
 
