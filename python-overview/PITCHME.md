@@ -513,6 +513,7 @@ import sys as s
 from sys import argv
 # Import this code from a namespace and bind it to a new name
 from sys import argv as a
+```
 ---
 **Python**
 ***
