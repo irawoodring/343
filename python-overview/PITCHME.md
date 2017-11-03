@@ -466,6 +466,20 @@ ira
 **Python**
 ***
 
+In Python programmers are simply expected not to write to another class's variables.  It is a cultural sort of thing; there is nothing preventing you from doing so.
+
+This means that Python doesn't *really* have private variables.  This fits with Python's philosophy of their being a "right way" to program.  It is then up to the programmer to do the right thing.
+---
+**Python**
+***
+
+You can *sort of* have private variables in Python by using Python's variable mangling abilities.  Variable mangling occurs when we prefix a variable we wish to be private with the ```__``` characters.  This causes Python to internally rename the variable (you can read up on how this happens but we will not discuss it in class).
+
+In general you should prefix "private" variables with these characters
+---
+**Python**
+***
+
 Python does support inheritance.  We inherit from a class as such:
 
 ```Python
@@ -486,3 +500,60 @@ Python does support inheritance.  We inherit from a class as such:
 ---
 **Python**
 ***
+
+Python provides facilities for bringing other symbols into the namespace with the ```import``` statement.  These can take multiple forms:
+
+```
+# Import this library into the current namespace
+import sys
+# Import this library into a namespace called s
+import sys as s
+
+# Import this code from a namespace
+from sys import argv
+# Import this code from a namespace and bind it to a new name
+from sys import argv as a
+---
+**Python**
+***
+
+Creating your own libraries in Python is quite simple.  You merely create a directory with the name of your package, and include a file called __init__.py.  This file is often empty (but doesn't have to be).
+
+```Python
+mkdir my_lib
+cd my_lib
+touch __init__.py
+
+$ python
+Python 2.7.10 (default, Feb  7 2017, 00:08:15)
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import my_lib
+>>>
+```
+---
+**Python**
+***
+
+Currently our package is empty.  We could change that by adding the file ```stuff.py``` into the directory ```my_lib```.
+
+```Python
+def sayHi(num):
+  for i in range(num):
+    print "Hi."
+```
+---
+**Python**
+***
+
+We can now use this code by importing it as such:
+
+```Python
+>>> from my_lib import stuff
+>>> stuff.sayHi(5)
+Hi.
+Hi.
+Hi.
+Hi.
+Hi.
+```

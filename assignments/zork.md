@@ -57,9 +57,11 @@ The game holds an instance of a Neighborhood and a Player.  The player must navi
 
 - Read up on the Observer pattern.  We will talk about this in class.
 
-- Plan out your program *before* you begin programming.  This will save you a GREAT deal of time in the long run.
+- Plan out your program *before* you begin programming.  This will save you a GREAT deal of time in the long run.  UML diagrams or other drawings can make your life vastly easier in the long run...
 
 - Use either Ruby or Python, but BE CAREFUL.  You MUST adhere to Object-Oriented programming techniques (polymorphism and encapsulation!).
+
+- There is a lot of room for interpretation in a project like this.  I'm not requiring certain function names; you should be able to figure out what is and isn't needed.
 
 ## Grading
 
