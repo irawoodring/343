@@ -558,3 +558,88 @@ Hi.
 Hi.
 Hi.
 ```
+---
+**Python**
+***
+
+An understanding of **the Observer Pattern** is necessary for completing the project.  Note that this **does not** pertain just to Python, this is simply a programming paradigm and can be used with many languages.  It is included in the Python section for lack of a better option.
+---
+**Python**
+***
+
+This pattern is implemented by having an object keep a list of other objects that should be notified upon state changes.  The other objects are called observers to the object.
+---
+**Python**
+***
+
+To implement this pattern in Python it is useful to create some library code we can reuse later:
+---
+An abstract Observer class:
+
+```observer.py```
+
+```Python
+from abc import ABCMeta, abstractmethod
+
+class Observer(object):
+        __metaclass__ = ABCMeta
+
+        @abstractmethod
+        def update(self):
+                pass
+```
+---
+**Note!**
+
+This particular interface doesn't pass anything to the observers.  We may want to pass different types of messages though; this class would then need to be extended.
+---
+Observable class (with no parameters passed to observers):
+
+```Python
+class Observable(object):
+
+        def __init__(self):    
+                self.observers = []
+
+        def add_observer(self, observer):
+                if not observer in self.observers:
+                        self.observers.append(observer)
+
+        def remove_observe(self, observer):
+                if observer in self.observers:
+                        self.observers.remove(observer)
+
+        def remove_all_observers(self):
+                self.observers = []
+
+        def update(self):
+                for observer in self.observers:
+                        observer.update()
+```
+---
+And a demo:
+
+```Python
+from observer_pattern.observer import Observer
+from observer_pattern.observable import Observable
+
+class House(Observer):
+    def update(self):
+        print "Monster updated!"
+
+class Monster(Observable):
+    pass
+
+if __name__ == "__main__":
+    h = House()
+    vampire = Monster()
+    mummy = Monster()
+
+    vampire.add_observer(h)
+    mummy.add_observer(h)
+
+    vampire.update()
+    mummy.update()
+```
+---
+Credit:  My code is a modification of code from a blog post on the Observer pattern in Python, found [here](http://www.giantflyingsaucer.com/blog/?p=5117 "Observer pattern in Python").

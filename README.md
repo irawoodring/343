@@ -30,8 +30,9 @@ Schedule
 | 7  | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO")  | | | |
 | 8 | Midterm | | | |
 | 8  | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | | |
+| 8  | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | [Python/Ruby Project](./assignments/zork.md "RPG in OO Python")| |
 | 8  | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | | |
-| 9  | Language Spotlight - Ruby (Object Oriented)| | Python/Ruby Project | |
+| 9  | Language Spotlight - Ruby (Object Oriented)| | | |
 | 9  | Names, Bindings, Scope | | | |
 | 9  | Names, Bindings, Scope | | | |
 | 10 | Data Types | | | |
