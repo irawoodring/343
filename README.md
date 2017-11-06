@@ -31,7 +31,6 @@ Schedule
 | 8 | Midterm | | | |
 | 8  | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | | |
 | 8  | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | [Python/Ruby Project](./assignments/zork.md "RPG in OO Python")| |
-| 8  | [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview")| | | |
 | 9  | Language Spotlight - Ruby (Object Oriented)| | | |
 | 9  | Names, Bindings, Scope | | | |
 | 9  | Names, Bindings, Scope | | | |
