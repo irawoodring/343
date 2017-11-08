@@ -163,3 +163,50 @@ We call the value the **r-value** as it is usually on the right side of an assig
 ***
 
 Although it seems fairly straightforward, determining the value for an r-value can be complicated due to scoping rules.
+---
+An understanding of scope and lifetime requires us to first talk about binding.
+
+As the book does, we will pause talking about variable attributes here and focus on binding.
+---
+**Binding**
+***
+
+A binding occurs when we associate an attribute and an entity.
+
+This does not refer strictly to a variable; we can associate a function with an attribute as well.
+---
+**Binding**
+***
+
+Binding can occur at
+
+- **language design time** (think of an operator)
+- **language implementation time** (imagine a data type in C; it must be implemented on multiple hardwares so will have different ranges)
+- **compile time** (imagine associating a variable with a type)
+- **load time** (an address is given to a variable when the program is loaded into memory)
+- **link time** (associating a function with an address in library)
+- **run time** (giving a variable a value)
+---
+**Binding**
+***
+
+A static binding occurs before runtime and does not change while the program is running.
+
+A binding that occurs during runtime and can change while the program is running is dynamic.
+---
+**Binding**
+***
+
+Type bindings may be implicit or explicit.  Explicit type bindings may harm writability but aid readability.
+
+Implicit type bindings do the opposite.  In addition, they can harm reliability as they remove the ability of a compiler to detect errors before runtime.
+---
+**Binding**
+***
+
+Please note that implicit/explicit bindings are a separate topic from static/dynamic bindings, though I've found that students' tend to confuse the two.  
+
+This is likely due to the fact that many dynamic languages they are used to using have implicit type systems (Python, etc.) though there are those that are static and implicit (Go).
+---
+**Binding**
+***
