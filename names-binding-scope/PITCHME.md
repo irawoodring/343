@@ -210,3 +210,61 @@ This is likely due to the fact that many dynamic languages they are used to usin
 ---
 **Binding**
 ***
+
+**Allocation** refers to the process of assigning a variable from a pool of memory.
+
+**Deallocation** is the returning of the memory to the pool.
+---
+**Binding**
+***
+
+The **lifetime** of a variable is the time during which it is bound to a particular memory location.
+---
+**Binding**
+***
+
+**Static variables** are bound to memory cells before programs are executed, and stay bound until the program ends.
+
+```C
+int main(int argc, char** argv){
+  static int num_threads;
+}
+```
+---
+**Binding**
+***
+
+Static variables are very fast, as compilers typically substitute the address for the variable, allowing for direct access (no lookup).
+
+Additionally, there is no overhead for allocating a static variable; it is given a memory location at compile time.
+---
+**Binding**
+***
+
+**Elaboration** is the process that happens at run-time of allocating and binding a variable.
+
+**Stack-dynamic** variables are variables that are statically bound but created when they are elaborated.
+---
+**Binding**
+***
+
+They are useful because they allow recursion (a subprogram must have local dynamic local storage for recursion).
+
+The disadvantage is run-time overhead, as allocating and deallocating variables can be high.
+---
+**Binding**
+***
+
+**Explicit Heap-Dynamic Variables** are allocated and deallocated at run-time by the programmer.
+
+They are useful because they can be used for dynamically sized structures, but they are difficult for programmers to use correctly.
+---
+**Binding**
+***
+
+**Implicit Heap-Dynamic Variables** are bound to heap storage only when they are assigned a value.
+
+These are very flexible, but run-time overhead is high, and they don't have the ability to be error checked by the compiler.
+---
+**Scope**
+***
