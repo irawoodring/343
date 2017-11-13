@@ -175,9 +175,6 @@ A binding occurs when we associate an attribute and an entity.
 
 This does not refer strictly to a variable; we can associate a function with an attribute as well.
 ---
-**Binding**
-***
-
 Binding can occur at
 
 - **language design time** (think of an operator)
@@ -265,9 +262,6 @@ Additionally, there is no overhead for allocating a static variable; it is given
 
 **Stack-dynamic** variables are variables that are statically bound but created when they are elaborated.
 ---
-**Binding**
-***
-
 An example of these is local variables in C.  Each function will have local variables; the space for them is not created until the function's memory is created.  When the program executes (elaborates) the code for the variable, it is created.
 
 They are useful because they allow recursion (a subprogram must have local dynamic local storage for recursion).
@@ -405,8 +399,8 @@ function get_threads() {
   print "Num threads = $num_threads.";
 }
 ```
-
-Or
+---
+Or:
 
 ```PHP
 $num_threads = 200;
@@ -501,7 +495,7 @@ function big()
 }
 ```
 
-Imagine that this is written in a language that resolves scope dynamically.  If later in the program we call big.sub1(), then big.sub2(), the value of y in sub2() will be 7.  If though, we merely called big.sub2(), the value for y would be 3.  The variables are resolved based upon the calling sequence of the program.
+Imagine that this is written in a language that resolves scope dynamically.  If later in the program we call big.sub1(), then big.sub2(), the value of y in sub2() will be 7.  If though, we merely called big.sub2(), the value for y would be 3.
 ---
 **Scope**
 ***
