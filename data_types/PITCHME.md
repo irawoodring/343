@@ -35,7 +35,7 @@ An example of coercion is when we assign an **int** to a **float** in C.  The sy
 **Type Checking**
 ***
 
-**Static type checking** happens at compile time; it aids in greatly in readability and reliability, as type errors are discovered before the program runs.
+**Static type checking** happens at compile time; it aids greatly in readability and reliability, as type errors are discovered before the program runs.
 
 **Dynamic type checking** happens at run time; this usually means enhanced flexibility for programmers, at the expense of less safe code.
 ---
@@ -44,9 +44,6 @@ An example of coercion is when we assign an **int** to a **float** in C.  The sy
 
 Note that even in statically typed languages that all type errors cannot be caught at compile time.  For instance, consider the ```union``` types in C and C++; they can hold different values at different times which means that type checking may happen at run time, or may not happen.
 ---
-**Type Checking**
-***
-
 In this code the value held in the union will be the address of v, a pointer.  We should not be able to add two pointers - the operation is not defined in C (try it, it won't compile!).  However, this code compiles ok:
 
 ```C
