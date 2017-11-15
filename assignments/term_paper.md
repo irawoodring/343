@@ -1,4 +1,4 @@
-#Programming Languages Term Paper
+# Programming Languages Term Paper
 ***
 
 We have learned this semester about the processes of creating and evaluating programming languages. As a culminating project in this endeavor, you will write a term paper on a particular language.  This paper will be 5-7 pages long (not including title pages, contents, references, appendices, etc.).  And must have a minimum of 5 sources.
