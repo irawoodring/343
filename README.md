@@ -34,7 +34,7 @@ Schedule
 | 9  | [Language Spotlight - Ruby (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=ruby-overview "Ruby Language Overview")| | | |
 | 9  | [Names, Bindings, Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, bindings, and scope") |  | | |
 | 9  | [Names, Bindings, Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, bindings, and scope") | | | |
-| 10 | [Data Types](https://gitpitch.com/irawoodring/343/master?p=date_types "Data Types") | | [Term Paper](./assignments/term_paper.md "Term paper") | Due December 7th|
+| 10 | [Data Types](https://gitpitch.com/irawoodring/343/master?p=data_types "Data Types") | | [Term Paper](./assignments/term_paper.md "Term paper") | Due December 7th|
 | 10 | Expression and Assignment Statements | | | |
 | 11 | Expression and Assignment Statements | | | |
 | 11 | Statement Level Control Structures | | | |
