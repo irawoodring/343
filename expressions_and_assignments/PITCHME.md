@@ -324,7 +324,12 @@ Java does not allow operator overloading.  Of the languages we have discussed in
 
 In C++ you can overload the following operators:
 ---
-
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:16px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top}
+</style>
 <table class="tg">
   <tr>
     <td class="tg-yw4l">+</td>
