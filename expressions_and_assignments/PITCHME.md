@@ -28,6 +28,9 @@ Additionally, the evaluation of an expression in a functional language can not h
 ***
 
 One of the original reasons computers were created was for the automatic evaluation of statements.  We wanted to be able to solve math, science, and other types of problems without the slow human element.
+---
+**Arithmetic Expressions**
+***
 
 To that extent, many expressions in Computer Science mirror expressions from Mathematics:
 
@@ -92,6 +95,7 @@ if(a.height < b.height){
 } else {
   value = y;
 }
+```
 ---
 **Operators**
 ***
@@ -201,8 +205,8 @@ b = a + fun(a)  // Here fun(a) does not change a
 
 In the previous example it didn't matter if ```a``` or ```fun(a)``` was evaluated first. Either way we'd get 30 if fun(a) returns 20 for an input of 10.
 
-However, if ```fun(a)`` has side effects we could have a problem:
-
+However, if ```fun(a)``` has side effects we could have a problem:
+---
 ```
 def fun(a):
   ...
