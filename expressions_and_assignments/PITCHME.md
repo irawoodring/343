@@ -324,5 +324,9 @@ Java does not allow operator overloading.  Of the languages we have discussed in
 
 In C++ you can overload the following operators:
 ---
-|===|===|===|===|===|===|===|===|===|
-| + | - | * | / | % | ^ | & | \| | ~ |
+| +  | -  | *   | /      | %     | ^        | &   | |   | ~  |
+|----|----|-----|--------|-------|----------|-----|-----|----|
+| !  | =  | <   | >      | +=    | -=       | *=  | /=  | %= |
+| ^= | &= | !=  | <<     | >>    | <<=      | >>= | ==  | != |
+| <= | >= | &&  | ||     | ++    | --       | ,   | ->* | -> |
+| () | [] | new | delete | new[] | delete[] |     |     |    |
