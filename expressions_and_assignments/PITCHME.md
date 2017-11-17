@@ -387,3 +387,73 @@ In C++ you can overload the following operators:
     <td class="tg-yw4l"></td>
   </tr>
 </table>
+---
+**Type Conversions**
+***
+
+There are two type conversions that can be performed, a
+
+**narrowing conversion** which cannot store all of the values of the original type, and a
+
+**widening conversion** which can store at least approximations of the original type.
+---
+**Type Conversions**
+***
+
+An example of a narrowing conversion is when we convert a float to an int:
+
+```C
+float pi = 3.14159;
+int p = (int)pi;
+```
+
+We lose information; we don't have the ability to store in an ```int``` all the possible values we could store in a ```float```.
+---
+**Type Conversions**
+***
+
+We must be careful to remember that widening conversions are not always perfectly safe (though they usually are); we can lose a bit of accuracy.  For instance:
+
+```C
+int a = 123456789;
+float b = a;
+printf("%f\n", b);
+
+...
+
+123456792.000000
+```
+---
+**Coercion**
+***
+
+Language designers need to decide if their languages will allow **mixed-mode expressions**.  These occur when we allow operators to have operands of different types.  For instance:
+
+```C
+int a = 21;
+float b = 21.0;
+float c = a + b;
+```
+
+Here some coercion must occur (in this case the int will be interpreted as a float).
+---
+**Errors**
+***
+
+Type checking exists to prevent most errors in expressions, but other kinds of errors can occur.
+
+**Overflow** and **underflow** errors occur when we cannot store the result of an expression in the allocated memory.
+
+In C for instance:
+
+```C
+int a = 2938479187407210497;  // overflow
+float c = 1e30;               // underflow
+```
+---
+**Errors**
+***
+
+Division by 0 is also an error common in expressions.  Though it is not defined mathematically it is often found in expressions.
+
+All of these errors are Run-Time errors.  We call run-time errors **Exceptions**.
