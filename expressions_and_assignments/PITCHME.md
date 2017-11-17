@@ -332,15 +332,15 @@ In C++ you can overload the following operators:
 </style>
 <table class="tg">
   <tr>
-    <th class="tg-yw4l">+</th>
-    <th class="tg-yw4l">-</th>
-    <th class="tg-yw4l">*</th>
-    <th class="tg-yw4l">/</th>
-    <th class="tg-yw4l">%</th>
-    <th class="tg-yw4l">^</th>
-    <th class="tg-yw4l">&amp;</th>
-    <th class="tg-yw4l">|</th>
-    <th class="tg-yw4l">~</th>
+    <td class="tg-yw4l">+</td>
+    <td class="tg-yw4l">-</td>
+    <td class="tg-yw4l">*</td>
+    <td class="tg-yw4l">/</td>
+    <td class="tg-yw4l">%</td>
+    <td class="tg-yw4l">^</td>
+    <td class="tg-yw4l">&amp;</td>
+    <td class="tg-yw4l">|</td>
+    <td class="tg-yw4l">~</td>
   </tr>
   <tr>
     <td class="tg-yw4l">!</td>
