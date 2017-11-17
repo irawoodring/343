@@ -457,3 +457,37 @@ float c = 1e30;               // underflow
 Division by 0 is also an error common in expressions.  Though it is not defined mathematically it is often found in expressions.
 
 All of these errors are Run-Time errors.  We call run-time errors **Exceptions**.
+---
+**Relational Expressions**
+***
+
+A **Relational Expression** is an expression that compares operands and returns a Boolean value (unless Booleans are not part of the language...).
+
+Coercion is important in regards to relational expressions.  For instance, consider the ```==``` operator in Javascript:
+
+```Javascript
+"42" == 42
+
+True
+```
+
+This yields True because coercion is allowed; the String on the left-side is interpreted as, or coerced into an int.
+---
+The ```===``` operator disallows coercion:
+
+```Javascript
+"42" === 42
+
+False
+```
+---
+**Relational Expressions**
+***
+
+Relational operators should have lower precedence levels than arithmetic expressions.  Otherwise statements like (from book):
+
+```C
+a + 1 > 2 * b
+```
+
+will not evaluate correctly.
