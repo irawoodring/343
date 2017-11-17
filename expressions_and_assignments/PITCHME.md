@@ -228,3 +228,101 @@ To address these issues, language designers must decide to either not allow func
 
 In general, imperative languages don't block functional side effects as it is hard to accomplish and it harms writability.
 ---
+**Operators**
+***
+
+**Referential Transparency** is a property of expressions that exists in a program if any two expressions with the same value in the program may be swapped for one another anywhere in the program, without changing the programs output:
+---
+```
+result1 = (fun(a) + b) / (fun(a) - c);
+temp = fun(a);
+result2 = (temp + b) / (temp - c);
+```
+
+If this code is referentially transparent then ```result1``` and ```result2``` will be the same.
+---
+**Operators**
+***
+
+Referential transparency is desirable as it makes programs more readable; this is largely due to the fact that it makes programs behave more like mathematical statements (which we are used to).
+
+Functional languages are referentially transparent, as they lack variables and state.
+---
+**Operators**
+***
+
+**Operator Overloading** allows programmers to use arithmetic operators for multiple purposes.  For instance, instead of using the ```+``` operator solely on integer addition, the programmer may be able to use it to add ```floats```, ```strings```, or even instances of custom types.
+
+Operator overloading is a bit of a mixed-bag; it aids in writability and can aid in readability, but can also harm readability, writability, and reliability.  We must be very careful how we use it.
+---
+**Operators**
+***
+
+Consider:
+
+```Python
+class Car:
+    def __init__(self):
+        self.name = ""
+        self.gas_used = 0
+    def __add__(self, other):
+        return self.gas_used + other.gas_used
+
+a = Student()
+a.gas_used = 3.7
+
+b = Student()
+b.gas_used = 4.0
+
+print a + b
+```
+---
+This may or may not make sense...
+
+- What does it mean to add two cars together?
+
+- Would you expect adding two cars to return the total gas they had used?
+
+- Is there another way we might want to combine two cars?
+
+- Might some other programmer assume we are adding other fields?
+
+- Can we guess what is happening without looking at the class code?
+---
+**Operators**
+***
+
+This makes more sense:
+
+```Java
+String one = "Hello";
+String two = " World.";
+System.out.println(one + two);
+```
+
+Most programmers would correctly guess (without looking at the String class code) that adding two Strings together is shortcut for concatenation.
+---
+**Operators**
+***
+
+Consider what it can do for writability though.  If we have a class that holds a matrix, we could write custom functionality for that class so it could add or multiply matrices.  This means that code that looks like this:
+
+```
+MatrixAdd(MatrixMult(A, B), MatrixMult(C,D))
+```
+
+Can become this:
+
+```
+A * B + C * D
+```
+---
+**Operators**
+***
+
+Java does not allow operator overloading.  Of the languages we have discussed in here, Python, Ruby, C#, and C++ do (although the particular operators each language can overload vary).
+
+In C++ you can overload the following operators:
+---
+|===|===|===|===|===|===|===|===|===|
+| + | - | * | / | % | ^ | & | \| | ~ |
