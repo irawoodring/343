@@ -324,10 +324,66 @@ Java does not allow operator overloading.  Of the languages we have discussed in
 
 In C++ you can overload the following operators:
 ---
-|    |    |    |    |    |    |    |    |    |    |    |    |    |
-|----|----|----|----|----|----|----|----|----|----|----|----|----|
-| +  | -  | *   | /      | %     | ^        | &   | \|   | \~  |
-| !  | =  | <   | >      | +=    | -=       | *=  | /=  | %= |
-| ^= | &= | !=  | <<     | >>    | <<=      | >>= | ==  | != |
-| <= | >= | &&  | \|\|     | ++    | --       | ,   | ->* | -> |
-| () | [] | new | delete | new[] | delete[] |     |     |    |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l">+</th>
+    <th class="tg-yw4l">-</th>
+    <th class="tg-yw4l">*</th>
+    <th class="tg-yw4l">/</th>
+    <th class="tg-yw4l">%</th>
+    <th class="tg-yw4l">^</th>
+    <th class="tg-yw4l">&amp;</th>
+    <th class="tg-yw4l">|</th>
+    <th class="tg-yw4l">~</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">!</td>
+    <td class="tg-yw4l">=</td>
+    <td class="tg-yw4l">&lt;</td>
+    <td class="tg-yw4l">&gt;</td>
+    <td class="tg-yw4l">+=</td>
+    <td class="tg-yw4l">-=</td>
+    <td class="tg-yw4l">*=</td>
+    <td class="tg-yw4l">/=</td>
+    <td class="tg-yw4l">%=</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">^=</td>
+    <td class="tg-yw4l">&amp;=</td>
+    <td class="tg-yw4l">!=</td>
+    <td class="tg-yw4l">&lt;&lt;</td>
+    <td class="tg-yw4l">&gt;&gt;</td>
+    <td class="tg-yw4l">&lt;&lt;=</td>
+    <td class="tg-yw4l">&gt;&gt;=</td>
+    <td class="tg-yw4l">==</td>
+    <td class="tg-yw4l">!=</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">&lt;=</td>
+    <td class="tg-yw4l">&gt;=</td>
+    <td class="tg-yw4l">&amp;&amp;</td>
+    <td class="tg-yw4l">||</td>
+    <td class="tg-yw4l">++</td>
+    <td class="tg-yw4l">--</td>
+    <td class="tg-yw4l">,</td>
+    <td class="tg-yw4l">-&gt;*</td>
+    <td class="tg-yw4l">-&gt;</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">()</td>
+    <td class="tg-yw4l">[]</td>
+    <td class="tg-yw4l">new</td>
+    <td class="tg-yw4l">delete</td>
+    <td class="tg-yw4l">new[]</td>
+    <td class="tg-yw4l">delete[]</td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+</table>
