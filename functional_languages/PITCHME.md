@@ -132,3 +132,67 @@ What we are talking about here is a different mental model of computation that c
 ---
 **Overview**
 ***
+
+While studying functional languages you will come across the concept of the **lambda expression**.
+
+(If you remember back to our study of Python you may have picked up on this!)
+
+This is based on the work of Alonzo Church, who was working on a formal model of functions called **lambda calculus**.
+---
+**Overview**
+***
+
+Lambda expressions are nameless functions.  In lambda calculus our cube function would be
+
+λ(x)x * x * x
+
+In Python we expressed it as:
+
+```Python
+g = lambda x: x*x*x
+```
+---
+**Overview**
+***
+
+To understand functional programming we must understand the concept of **higher-order** functions.  These are functions that can take other functions as parameters.
+
+This allows us to solve problems via the **composition of functions**.
+
+We've seen the composition of functions before in math, i.e. if we have f(x) and g(x) we may computer f(g(x))
+---
+**Overview**
+***
+
+As an example, let's try to write an absolute value function as the composition of two functions:
+
+```
+f(x) = x * x
+g(x) = sqrt(x)
+abs(x) = g(f(x)) = sqrt(x * x)
+```
+---
+**Overview**
+***
+
+The first functional programming language was LISP, created at MIT in 1959.  LISP has changed a great deal over the years though, adding imperative features, static typing, and other features.  It is not a very pure functional language these days, though it is quite efficient and still in use.
+---
+**Overview**
+***
+
+In the beginning LISP only had two types, **atoms** and **lists** (LISP stood for **Lis** t **P** rocessor). The following is a list:
+
+```LISP
+(APPLE ORANGE BANANA GRAPE)
+```
+
+This list is made of 4 atoms.
+---
+**Overview**
+***
+
+A more complicated list might be
+
+```LISP
+((FUJI GRANNYSMITH MACINTOSH) (MANDARIN NAVEL) BANANA (RED WHITE BLUE))
+```
