@@ -180,7 +180,7 @@ The first functional programming language was LISP, created at MIT in 1959.  LIS
 **Overview**
 ***
 
-In the beginning LISP only had two types, **atoms** and **lists** (LISP stood for **Lis** t **P** rocessor). The following is a list:
+In the beginning LISP only had two types, **atoms** and **lists** (LISP stood for **Lis**t **P**rocessor). The following is a list:
 
 ```LISP
 (APPLE ORANGE BANANA GRAPE)
