@@ -113,11 +113,15 @@ In imperative languages we would see an expression such as ```cube(x) ≡ x * x 
 ---
 We SHOULD NOT view ```x``` this way in functional languages.  In a functional language ```x``` stands for a value that is bound; whatever it stood for cannot change during evaluation (it is a constant).  We then view
 
-```cube(x) ≡ x * x * x```
+```
+cube(x) ≡ x * x * x
+```
 
 as
 
-```cube(2.0) ≡ 2.0 * 2.0 * 2.0```
+```
+cube(2.0) ≡ 2.0 * 2.0 * 2.0
+```
 
 (if the parameter passed was 2.0).
 ---
