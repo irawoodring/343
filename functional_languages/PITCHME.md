@@ -64,7 +64,7 @@ z = B[x][y]
 
 |   | y |    |    |    |    |
 |---|---|----|----|----|----|
-| x | 1 | 2  | 3  | 4  | 5  |
+| **x** | 1 | 2  | 3  | 4  | 5  |
 |   | 2 | 4  | 6  | 8  | 10 |
 |   | 3 | 6  | 9  | 12 | 15 |
 |   | 4 | 8  | 12 | 16 | 20 |
@@ -109,9 +109,6 @@ Notice that I'm not saying that ```cube(x)``` is equal to a value.  I'm using th
 
 This character should be read (in this context) as "defined as".
 ---
-**Overview**
-***
-
 In imperative languages we would see an expression such as ```cube(x) ≡ x * x * x``` and imagine ```x``` to be a variable - that is we imagine ```x``` to be a value currently stored in some memory location.
 
 We SHOULD NOT view ```x``` this way in functional languages.  In a functional language ```x``` stands for a value that is bound; whatever it stood for cannot change during evaluation (it is a constant).  We then view ```cube(x) ≡ x * x * x``` as ```cube(2.0) ≡ 2.0 * 2.0 * 2.0``` for instance (if the parameter passed was 2.0).
