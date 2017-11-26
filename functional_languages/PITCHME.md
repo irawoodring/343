@@ -176,14 +176,17 @@ abs(x) = g(f(x)) = sqrt(x * x)
 ***
 
 The first functional programming language was LISP, created at MIT in 1959.  LISP has changed a great deal over the years though, adding imperative features, static typing, and other features.  It is not a very pure functional language these days, though it is quite efficient and still in use.
+
+Today there are two main versions of LISP in use, CLISP and Scheme.  We will use MIT-Scheme in this class.
 ---
 **Overview**
 ***
 
 In the beginning LISP only had two types, **atoms** and **lists** (LISP stood for **Lis**t **P**rocessor). The following is a list:
 
-```LISP
-(APPLE ORANGE BANANA GRAPE)
+```Scheme
+(list 'apple 'orange 'banana 'grape)
+(apple orange banana grape)
 ```
 
 This list is made of 4 atoms.
@@ -193,6 +196,36 @@ This list is made of 4 atoms.
 
 A more complicated list might be
 
-```LISP
-((FUJI GRANNYSMITH MACINTOSH) (MANDARIN NAVEL) BANANA (RED WHITE BLUE))
+```Scheme
+(list (list 'fuji 'smith 'macintosh) (list 'mandarin 'navel) 'banana (list (list 'seeded 'seedless) 'white 'red' blue)))
+((fuji smith macintosh) (mandarin navel) banana ((seeded seedless) white red blue))
 ```
+
+Which is made of various combinations of lists and atoms.
+---
+**Overview**
+***
+
+Notice what we did to create these lists - we called a function named ```list```.  In LISP we call functions using **prefix notation**.  This means that the operator comes first (here the operator is the function name ```list```).
+
+```Scheme
+(list element_1 ... element_x)
+```
+
+Similarly, we could perform addition as such:
+
+```Scheme
+(+ 20 22)
+42
+```
+---
+**Overview**
+***
+
+On the EOS system you can start the ```mit-scheme``` interpreter as follows:
+
+```
+rlwrap /usr/local/mit-scheme/bin/mit-scheme
+```
+
+> ```rlwrap``` is a readline wrapper.  It allows certain programs that don't accept arrow keys for history (such as mit-scheme or sqlplus) to have those facilities.  You don't have to use ```rlwrap``` but it will make using mit-scheme much easier.
