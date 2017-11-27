@@ -5,7 +5,7 @@ Ira Woodring
 
 ***
 
-Functional Programming Languages
+Functional Programming Languages and Scheme Introduction
 (Follows the Sebesta Text Chapter 15)
 ---
 **Overview**
@@ -198,6 +198,7 @@ A more complicated list might be
 
 ```Scheme
 (list (list 'fuji 'smith 'macintosh) (list 'mandarin 'navel) 'banana (list (list 'seeded 'seedless) 'white 'red' blue)))
+
 ((fuji smith macintosh) (mandarin navel) banana ((seeded seedless) white red blue))
 ```
 
@@ -232,3 +233,326 @@ rlwrap /usr/local/mit-scheme/bin/mit-scheme
 ---
 **Overview**
 ***
+
+Once in the interpreter you will see prompts like the following:
+
+```Scheme
+1 ]=>
+```
+
+This indicates that you are in the REPL loop (**R**ead **E**valuate **P**rint **L**oop).  It will read an evaluate expressions on and on forever (or until it is closed).  Though this looks different, it is no different than being in a Python or Ruby interpreter.
+---
+**Overview**
+***
+
+Also like Python or Ruby, files can be loaded.
+
+```Scheme
+;Loading "fib.scm"... done
+;Value: fib
+
+1 ]=> (fib 7)
+
+;Value: 13
+```
+---
+**Overview**
+***
+
+Scheme has many built-in functions for dealing with number.
+
++, -, \*, /, SQRT, LOG, SIN, MAX, MIN, MODULO, and others are provided.
+
+Of note is that *some* functions allow multiple parameters.  For instance, + and \* take an arbitrary number of parameters and computer them all with the given function.  It is up to you to determine the usage of each.
+---
+**Overview**
+***
+
+It is essential that we are able to create our own functions in a Scheme program.  To do so, we can either create an anonymous or a named function.  An anonymous function is created with the LAMBDA keyword:
+
+```Scheme
+(lambda (x) (\* x x x))
+```
+
+This example is essentially useless, as we have passed no parameters and we have not bound the function to some identifier.  We could though, do this:
+---
+**Overview**
+***
+
+```Scheme
+1 ]=> ((lambda (x) (\* x x x)) 8)
+;Value: 512
+```
+
+Here we bound x with the value 8.
+---
+**Overview**
+***
+
+Note that lambda expressions can take an arbitrary number of parameters:
+
+```Scheme
+(
+        (lambda (a b c d)
+                (+ (* a b) (* c d))
+        )
+1 2 3 4)
+```
+---
+**Overview**
+***
+
+It is useful for us to define nameless functions at times, but often we want to be able to call upon a function more than once.  In this case we need to provide a binding for the function (a name) so that we can call it again later.
+
+The ```DEFINE``` keyword allows us to created bindings. We can bind more than just functions, however.  For instance, we could
+
+```Scheme
+(define pi 3.14159)
+```
+---
+**Overview**
+***
+
+Once we have created a binding we can use it:
+
+```Scheme
+(define (area radius) ( * 2 pi radius))
+```
+
+This particular binding (a function binding) makes use of the previously bound ```pi``` (as well as the bound parameter radius).
+---
+**Overview**
+***
+
+This previous code may have looked a bit confusing, so let's examine it further.
+
+A function definition has the following parts:
+
+```
+(define (function_name param1 ... paramX) (function_body))
+
+(define (area radius) (* 2 pi radius))
+```
+---
+**Overview**
+***
+
+A problem exists when it comes to the interactions of a functional program and a user, namely that of input.  Input exists to change state.  As functional languages do not hold state, the very idea of input is antithetical to functional programming.  Different languages deal with this in different ways.  LISP (and Scheme) have adopted imperative procedures over the years to accommodate.  This means they are not "pure" functional languages.
+---
+**Overview**
+***
+
+**Predicate functions** are functions that return Boolean values.  Some predicate functions provided by Scheme are
+
+=, eq?, NOT, >, <, >=, <=, EVEN?, ODD?, ZERO?
+
+Functions that return #t or #f (true or false) but contain words end with the '?' character.
+
+If a list is being examined a non-empty list returns #t and an empty list returns #f.
+---
+**Overview**
+***
+
+Control flow in Scheme is accomplished via ```IF```, ```COND```, and ```CASE``` (branching), and recursion (repetition).
+
+IF:
+
+```Scheme
+(IF predicate then_expression else_expression)
+(if (<> n 1701)
+  #f
+  #t
+)
+```
+---
+**Overview**
+***
+
+A more complicated example:
+
+```Scheme
+(define (fib n)
+  ;; Calculate the nth Fibonacci number recursively
+  (if (< n 2)
+      n
+      (+ (fib (- n 1)) (fib (- n 2)))))
+```
+---
+**Overview**
+***
+
+COND is used for multiple conditionals.  For instance:
+
+```Scheme
+(cond ((> 3 3) 'greater)
+                ((< 3 3) 'less)
+                (else 'equal))
+```
+
+Notice there are multiple predicates here.
+---
+**Overview**
+***
+
+CASE compares *keys* to *objects*:
+
+```Scheme
+(case (car '(c d))
+             ((a e i o u) 'vowel)
+             ((w y) 'semivowel)
+             (else 'consonant))
+```
+---
+**Overview**
+***
+
+When evaluating statements we need to be careful we are conveying the correct semantics.  For instance:
+
+```Scheme
+1 ]=> (list a b c d)
+
+;Unbound variable: d
+;To continue, call RESTART with an option number:
+; (RESTART 3) => Specify a value to use instead of d.
+; (RESTART 2) => Define d to a given value.
+; (RESTART 1) => Return to read-eval-print level 1.
+
+2 error>
+```
+
+What is wrong here?
+---
+**Overview**
+***
+
+We are calling a function with parameters.  The parameters must be bound before the function can be called.
+
+```a```, ```b```, ```c```, and ```d``` don't have any bindings.
+
+What we really want to do is this:
+
+```Scheme
+(list (quote a) (quote b) (quote c) (quote d))
+
+;;; OR THE SHORTCUT:
+(list 'a 'b 'c 'd)
+```
+---
+**Overview**
+***
+
+The QUOTE and ' shortcut are functions that cause the parameter not to be evaluated, but to instead be used as is.
+
+We must be very careful when we are programming that we QUOTE parameters we don't wish to be evaluated.
+---
+**Overview**
+***
+
+Since LISP was created to process lists, it makes sense that there are quite a few build-in functions for the manipulation of lists.
+
+Two of the most common are ```CAR``` and ```CDR```.
+
+```CAR``` returns the first element of a list, ```CDR``` returns all but the first.
+---
+**Overview**
+***
+
+```Scheme
+2 error> (define l (list 'apple 'banana 'grape 'orange))
+
+;Value: l
+
+2 error> (car l)
+
+;Value: apple
+
+2 error> (cdr l)
+
+;Value 19: (banana grape orange)
+```
+---
+**Overview**
+***
+
+To get the second element in a list, we could do the following:
+
+```Scheme
+(car (cdr l))
+```
+
+We could even create a function (from book):
+
+```Scheme
+(define (second a_list) (car (cdr a_list)))
+(second l)
+---
+**Overview**
+***
+
+There are shortcuts as well:
+
+```CAAR``` = (car (car E))
+```CADR``` = (car (cdr E))
+
+others exist as well.
+---
+**Overview**
+***
+
+The ```LET``` statement is used to create a local binding.  Once the ```LET``` function has created a binding in some local scope the binding cannot be rebound.
+
+From the book, an example to compute quadratic roots:
+---
+```Scheme
+(define (quadratic_roots a b c)
+  (let (
+    (root_part_over_2a
+                (/ (sqrt (- (* b b) (* 4 a c))) (* 2 a)))
+    (minus_b_over_2a (/ (- 0 b) (* 2 a)))
+  )
+  (list (+ minus_b_over_2a root_part_over_2a)
+        (- minus_b_over_2a root_part_over_2a))
+  )
+)
+```
+
+We created two bindings and provided an expression inside of which we could use the named bindings.
+---
+**Overview**
+***
+
+The thing I see students do the most often (in regards to LET statements), is put the code for the expression they wish to use the bindings for inside of the LET statement.  This is not imperative programming, we cannot do this:
+
+```Scheme
+(let ((pi (/ 22 7))))(write pi)
+```
+
+We must do this:
+```Scheme
+(let ((pi (/ 22 7)))(write pi))
+```
+(Notice the expression ```(write pi)``` is a parameter to the function)
+---
+**Overview**
+***
+
+A good understanding of recursion is essential in functional languages, as they lack iteration.  For instance, if we want print all members of a list in an imperative language, we would do something like this:
+
+```
+for(Member m:list){
+  print m;
+}
+```
+
+In a functional language though, we use recursion:
+---
+```Scheme
+(define l (list 'a 'b 'c 'd))
+
+(define (print_elements ele a_list)
+  (cond
+    ((null? ele) ele)
+    ((write (print_elements (car a_list)(cdr a_list))))
+  )
+)
+```
