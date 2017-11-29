@@ -463,15 +463,15 @@ Don't try to assign meaning to these names; they are holdovers from instructions
 ***
 
 ```Scheme
-2 error> (define l (list 'apple 'banana 'grape 'orange))
+2=> (define l (list 'apple 'banana 'grape 'orange))
 
 ;Value: l
 
-2 error> (car l)
+2=> (car l)
 
 ;Value: apple
 
-2 error> (cdr l)
+2=> (cdr l)
 
 ;Value 19: (banana grape orange)
 ```
@@ -496,8 +496,10 @@ We could even create a function (from book):
 
 There are shortcuts as well:
 
-```CAAR``` = (car (car E))
-```CADR``` = (car (cdr E))
+```
+CAAR = (car (car E))
+CADR = (car (cdr E))
+```
 
 others exist as well.
 ---
@@ -569,5 +571,165 @@ abcd
 ***
 
 You may have noticed above that the return value from the function was ```#t```.  We never explicitly stated this, so where did that come from?
-
+---
 Like Ruby, Scheme doesn't require a ```return``` statement to return a value.  The final value in an expression is what is returned.  So what happened above?  The list was recursively broken into two parts - the first element, and the rest.  The first element was printed, then we recursively printed the rest.  When there were no more parts the ```null?``` function returned ```#t```.
+---
+**Coding**
+***
+How could we change this code to print the list backward?
+
+```Scheme
+(define l (list 'a 'b 'c 'd))
+
+(define (print_elements a_list)
+  (cond
+    ((null? a_list))
+    (else (write (car a_list))(print_elements (cdr a_list)))
+  )
+)
+
+abcd
+;Value: #t
+```
+---
+```Scheme
+(define l (list 'a 'b 'c 'd))
+
+(define (print_elements a_list)
+  (cond
+    ((null? a_list))
+    (else (print_elements (cdr a_list))(write (car a_list)))
+  )
+)
+
+abcd
+;Value: #t
+```
+---
+What will this code do?
+
+```Scheme
+(define l (list 1 2 3 4))
+(define (new_func a_list)
+  (cond
+    ((null? a_list) 0)
+    (else (+ (car a_list)(new_func (cdr a_list))))
+  )
+)
+(new_func l)
+```
+---
+**Practice**
+***
+
+Logon to EOS.  Start mit-scheme.
+
+>Remember to rlwrap it!
+
+```
+rlwrap /usr/local/mit-scheme/bin/mit-scheme
+
+```
+---
+**Practice**
+***
+
+Problem 1 (the classic):
+
+Write a function called fact that takes a single parameter.  The function should return the value of the factorial of the parameter.
+
+Don't look this up.  Struggle with it for a few minutes.  Try things and see what happens.
+---
+```
+(define (fact n)
+  (cond
+    ((<= n 1) n)
+    (else (* n (fact (- n 1))))
+  )
+)
+```
+---
+**Practice**
+***
+
+Problem 2;
+
+Write a function that reverses a list.
+---
+```
+(define (r a_list)
+  (cond
+    ((null? a_list) #t)
+    (else (r (cdr a_list))(write (car a_list))#t)
+  )
+)
+```
+
+However, there does exist a ```reverse``` function.
+---
+Scheme does allow the use of strings.  Strings can be created in a variety of ways, the simplest being
+
+```
+"ira"
+```
+
+Scheme views characters in a string as ASCII values, and represents them as such:
+
+```
+#\i #\r #\a
+```
+---
+We can make a string into a list, or a list into a string via the ```list->string``` or ```string->list``` functions:
+
+```
+(define name "ira")
+(string->list name)
+;Value 40: (#\i #\r #\a)
+
+(define l (list #\i #\r #\a))
+(list->string l)
+;Value 43: "ira"
+```
+---
+**Practice**
+***
+
+Problem 3:
+
+Knowing what you now know, write a function that reverses a string.
+---
+```
+(define (flip str)
+  (list->string (reverse (string->list str))))
+```
+
+Alternatively you could have called your own reverse function.
+---
+Much like Java we can't compare strings with the ```eq?``` function.  Instead we need to use ```string=?```.
+
+```
+1 ]=> (eq? "ira" "ira")
+
+;Value: #f
+
+1 ]=> (string=? "ira" "ira")
+
+;Value: #t
+```
+---
+**Practice**
+***
+
+Problem 4:
+
+Write a function that checks if a string is a palindrome or not.
+
+It should return either ```#t``` or ```#f```.
+---
+Make use of what we already have.
+
+```Scheme
+(define (pal str)
+  (string=? str (flip str))
+)
+```
