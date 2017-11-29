@@ -271,7 +271,7 @@ Of note is that *some* functions allow multiple parameters.  For instance, + and
 It is essential that we are able to create our own functions in a Scheme program.  To do so, we can either create an anonymous or a named function.  An anonymous function is created with the LAMBDA keyword:
 
 ```Scheme
-(lambda (x) (\* x x x))
+(lambda (x) (* x x x))
 ```
 
 This example is essentially useless, as we have passed no parameters and we have not bound the function to some identifier.  We could though, do this:
@@ -280,7 +280,7 @@ This example is essentially useless, as we have passed no parameters and we have
 ***
 
 ```Scheme
-1 ]=> ((lambda (x) (\* x x x)) 8)
+1 ]=> ((lambda (x) (* x x x)) 8)
 ;Value: 512
 ```
 
@@ -348,7 +348,7 @@ A problem exists when it comes to the interactions of a functional program and a
 
 Functions that return #t or #f (true or false) but contain words end with the '?' character.
 
-If a list is being examined a non-empty list returns #t and an empty list returns #f.
+If a list is being examined, a non-empty list returns #t and an empty list returns #f.
 ---
 **Overview**
 ***
@@ -360,8 +360,8 @@ IF:
 ```Scheme
 (IF predicate then_expression else_expression)
 (if (<> n 1701)
-  #f
-  #t
+  #f  ;; What to do if the statement is true.
+  #t  ;; What to do if the statement evaluated to false.
 )
 ```
 ---
@@ -448,11 +448,16 @@ We must be very careful when we are programming that we QUOTE parameters we don'
 **Overview**
 ***
 
-Since LISP was created to process lists, it makes sense that there are quite a few build-in functions for the manipulation of lists.
+Since LISP was created to process lists, it makes sense that there are quite a few built-in functions for the manipulation of lists.
 
 Two of the most common are ```CAR``` and ```CDR```.
 
 ```CAR``` returns the first element of a list, ```CDR``` returns all but the first.
+---
+**Overview**
+***
+
+Don't try to assign meaning to these names; they are holdovers from instructions on the IBM 704 machines LISP was originally created for.  They have to do with accessing parts of memory locations.
 ---
 **Overview**
 ***
@@ -565,4 +570,4 @@ abcd
 
 You may have noticed above that the return value from the function was ```#t```.  We never explicitly stated this, so where did that come from?
 
-Like Ruby, Scheme doesn't require a ```return``` statement to return a value.  The final value in an expression is what is returned.  So what happened above?  The list was recursively broken into two parts - the first element, and the rest.  The first element was printed, then we recursively printed the rest.  When there were no more parts the ```null?``` function returned ```#t```. 
+Like Ruby, Scheme doesn't require a ```return``` statement to return a value.  The final value in an expression is what is returned.  So what happened above?  The list was recursively broken into two parts - the first element, and the rest.  The first element was printed, then we recursively printed the rest.  When there were no more parts the ```null?``` function returned ```#t```.
