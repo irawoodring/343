@@ -385,8 +385,8 @@ COND is used for multiple conditionals.  For instance:
 
 ```Scheme
 (cond ((> 3 3) 'greater)
-                ((< 3 3) 'less)
-                (else 'equal))
+      ((< 3 3) 'less)
+      (else 'equal))
 ```
 
 Notice there are multiple predicates here.
@@ -398,9 +398,9 @@ CASE compares *keys* to *objects*:
 
 ```Scheme
 (case (car '(c d))
-             ((a e i o u) 'vowel)
-             ((w y) 'semivowel)
-             (else 'consonant))
+      ((a e i o u) 'vowel)
+      ((w y) 'semivowel)
+      (else 'consonant))
 ```
 ---
 **Overview**
@@ -549,10 +549,20 @@ In a functional language though, we use recursion:
 ```Scheme
 (define l (list 'a 'b 'c 'd))
 
-(define (print_elements ele a_list)
+(define (print_elements a_list)
   (cond
-    ((null? ele) ele)
-    ((write (print_elements (car a_list)(cdr a_list))))
+    ((null? a_list))
+    (else (write (car a_list))(print_elements (cdr a_list)))
   )
 )
+
+abcd
+;Value: #t
 ```
+---
+**Overview**
+***
+
+You may have noticed above that the return value from the function was ```#t```.  We never explicitly stated this, so where did that come from?
+
+Like Ruby, Scheme doesn't require a ```return``` statement to return a value.  The final value in an expression is what is returned.  So what happened above?  The list was recursively broken into two parts - the first element, and the rest.  The first element was printed, then we recursively printed the rest.  When there were no more parts the ```null?``` function returned ```#t```. 
