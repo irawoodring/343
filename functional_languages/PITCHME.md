@@ -643,7 +643,7 @@ Don't look this up.  Struggle with it for a few minutes.  Try things and see wha
 ```
 (define (fact n)
   (cond
-    ((<= n 1) n)
+    ((<= n 1) 1)
     (else (* n (fact (- n 1))))
   )
 )
