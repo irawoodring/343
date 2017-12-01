@@ -36,7 +36,7 @@ Schedule
 | 9  | [Names, Bindings, Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, bindings, and scope") | | | |
 | 10 | [Data Types](https://gitpitch.com/irawoodring/343/master?p=data_types "Data Types") | | [Term Paper](./assignments/term_paper.md "Term paper") | Due December 7th|
 | 10 | [Expression and Assignment Statements](https://gitpitch.com/irawoodring/343/master?p=expressions_and_assignments "Expressions and Assignment Statements") | | | |
-| 11 | Expression and Assignment Statements | | | |
+| 11 | [Expression and Assignment Statements](https://gitpitch.com/irawoodring/343/master?p=expressions_and_assignments "Expressions and Assignment Statements") | | | |
 | 14 | Thanksgiving Recess | | | |
 | 14 | Thanksgiving Recess | | | |
 | 13 | [Functional Programming / Scheme](https://gitpitch.com/irawoodring/343/master?p=functional_languages "Functional Programming") | | | |
