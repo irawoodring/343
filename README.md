@@ -41,7 +41,7 @@ Schedule
 | 14 | Thanksgiving Recess | | | |
 | 13 | [Functional Programming / Scheme](https://gitpitch.com/irawoodring/343/master?p=functional_languages "Functional Programming") | | | |
 | 13 | [Functional Programming / Scheme](https://gitpitch.com/irawoodring/343/master?p=functional_languages "Functional Programming") | | | |
-| 13 | [Functional Programming / Scheme](https://gitpitch.com/irawoodring/343/master?p=functional_languages "Functional Programming") | | [Lisp Assignment](./assignments/functional_programming.md "Functional programming assignment") due 12/9 | |
+| 13 | [Functional Programming / Scheme](https://gitpitch.com/irawoodring/343/master?p=functional_languages "Functional Programming") | | [Scheme Assignment](./assignments/functional_programming.md "Functional programming assignment") due 12/9 | |
 | 14 | Logic Programming | | | |
 | 15 | Logic Programming | | | |
 | 15 | Language Presentations | | | |
