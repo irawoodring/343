@@ -35,20 +35,22 @@ Schedule
 | 9  | [Names, Bindings, Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, bindings, and scope") |  | | |
 | 9  | [Names, Bindings, Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, bindings, and scope") | | | |
 | 10 | [Data Types](https://gitpitch.com/irawoodring/343/master?p=data_types "Data Types") | | [Term Paper](./assignments/term_paper.md "Term paper") | Due December 7th|
-| 10 | Expression and Assignment Statements | | | |
+| 10 | [Expression and Assignment Statements](https://gitpitch.com/irawoodring/343/master?p=expressions_and_assignments "Expressions and Assignment Statements") | | | |
 | 11 | Expression and Assignment Statements | | | |
-| 11 | Statement Level Control Structures | | | |
-| 11 | Subprograms | | | |
-| 12 | Implementing Subprograms | | | |
-| 12 | Abstract Data Types and Encapsulation | | | |
-| 12 | Abstract Data Types and Encapsulation | | | |
-| 13 | Functional Programming | | | |
-| 13 | Functional Programming / Lisp | | | |
-| 13 | Lisp | | Lisp Assignment | |
 | 14 | Thanksgiving Recess | | | |
 | 14 | Thanksgiving Recess | | | |
+| 13 | [Functional Programming / Scheme](https://gitpitch.com/irawoodring/343/master?p=functional_languages "Functional Programming") | | | |
+| 13 | [Functional Programming / Scheme](https://gitpitch.com/irawoodring/343/master?p=functional_languages "Functional Programming") | | | |
+| 13 | [Functional Programming / Scheme](https://gitpitch.com/irawoodring/343/master?p=functional_languages "Functional Programming") | | Lisp Assignment | |
 | 14 | Logic Programming | | | |
 | 15 | Logic Programming | | | |
 | 15 | Language Presentations | | | |
 | 15 | Language Presentations | | | |
 | 12/xx | Final Exam | | | |
+
+
+
+Other topics:
+| 11 | Statement Level Control Structures | | | |
+| 11 | Subprograms | | | |
+| 12 | Implementing Subprograms | | | |
