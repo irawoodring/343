@@ -733,3 +733,19 @@ Make use of what we already have.
   (string=? str (flip str))
 )
 ```
+---
+**Practice**
+***
+
+Problem 5:
+
+Write a function that find the *i*th value in a list.
+---
+```Scheme
+(define (findi my_list i)
+  (cond
+    ((eq? i 0) (car my_list))
+    (else (findi (cdr my_list) (- i 1)))
+  )
+)
+```
