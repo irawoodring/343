@@ -327,14 +327,14 @@ count++               // NOT VALID!
 count = count + 1     // Valid.
 ```
 ---
-**Writability - Reliability**
+**Reliability**
 ***
 
 Does a language always perform to its specifications, under all conditions?
 
 Don't think reliability as in the mechanical sense.  It isn't as if the language isn't going to "start-up" one day.
 ---
-**Writability - Reliability**
+**Reliability**
 ***
 
 **Type Checking**
@@ -347,7 +347,7 @@ int pi = 3.14159
 
 Some languages will see this as a type error.  Others may not.
 ---
-**Writability - Reliability**
+**Reliability**
 ***
 
 **Exception Handling**
@@ -363,7 +363,7 @@ catch (FileNotFoundException fnfex){
 }
 ```
 ---
-**Writability - Reliability**
+**Reliability**
 ***
 
 **Aliasing**
