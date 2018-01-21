@@ -534,7 +534,7 @@ But... why do we need pointers?
 
 C can only return a data type's value.
 
-We are used to passing by reference in Java (for the most part).
+What we are more used to (coming from a Java background) is a pass-by-reference model (although Java isn't pass-by-reference).
 
 Passing by reference means that we don't pass a data structure to or from a function - we pass a reference to that structure.  This keeps things fast as the size of the data structure increases.  But C doesn't have this ability.
 ---
