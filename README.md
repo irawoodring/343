@@ -13,5 +13,5 @@ Schedule
 | 2 | MLK Day | | |
 | 2 | [Language Spotlight - C (Imperative Procedural)](https://gitpitch.com/irawoodring/343/master?p=c-lectures "C Lecture") | | |
 | 2 | [Language Spotlight - C (Imperative Procedural)](https://gitpitch.com/irawoodring/343/master?p=c-lectures "C Lecture") | Explore and understand [this code](https://github.com/irawoodring/pointer_perils "Pointers in C") | |
-| 3 | [Language Spotlight - C (Imperative Procedural)](https://gitpitch.com/irawoodring/343/master?p=c-lectures "C Lecture") | Explore and understand [this code](https://github.com/irawoodring/pointer_perils "Pointers in C") | |
+| 3 | [Language Spotlight - C (Imperative Procedural)](https://gitpitch.com/irawoodring/343/master?p=c-lectures "C Lecture") | | |
 | 3 | [History and Architecture](https://gitpitch.com/irawoodring/343/master?p=history-and-architecture) | | |
