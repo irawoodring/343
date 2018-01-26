@@ -18,8 +18,7 @@ The following criteria for your program must be met:
 - After each generation the universe will be printed and the user will be asked if they wish to save, load, continue another generation, continue some number of iterations, or quit.
 - We will ```free``` all memory we ```malloc```.
 - Files will be read and written via two functions
-  - ```C++
-  int read_file( char* filename, char **buffer );
+  - ```int read_file( char* filename, char **buffer );
   int write_file( char* filename, char *buffer, int size);
   ```
 - File saving/loading functions should be included in the files "file_utilities.h" and "file_utilities.c".
