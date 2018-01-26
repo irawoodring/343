@@ -1157,7 +1157,7 @@ if (intList[counter] > average) result++;
 
 I will leave it to you to explore PHP, Python, Ruby, and Lua from the book.
 
-There are all important (some even being in the top 10 of the TIOBE index), and are explored in Chapter 2.
+They are all important (some even being in the top 10 of the TIOBE index), and are explored in Chapter 2.
 
 Also in Chapter 2 are overviews of C# and meta-languages.
 ---
