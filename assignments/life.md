@@ -22,6 +22,8 @@ The following criteria for your program must be met:
 int read_file( char* filename, char **buffer );
 int write_file( char* filename, char *buffer, int size);
 ```
+> Note!  Both of those functions return an int.  This can be used to send back the size of the file loaded in, to check for errors, etc.
+
 - File saving/loading functions should be included in the files "file_utilities.h" and "file_utilities.c".
 
 ## Rubric
