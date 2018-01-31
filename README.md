@@ -16,3 +16,6 @@ Schedule
 | 3 | [Language Spotlight - C (Imperative Procedural)](https://gitpitch.com/irawoodring/343/master?p=c-lectures "C Lecture") | | |
 | 3 | [History and Architecture](https://gitpitch.com/irawoodring/343/master?p=history-and-architecture) | | |
 | 3 | [History and Architecture](https://gitpitch.com/irawoodring/343/master?p=history-and-architecture) | | [Game of Life](./assignments/life.md "Game of Life assignment") | Due 2/12/18 at 8:00 a.m. |
+| 4 | [History and Architecture](https://gitpitch.com/irawoodring/343/master?p=history-and-architecture)  | | |
+| 4  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | Chapter 3 | | |
+| 4  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | Chapter 3 | | |
