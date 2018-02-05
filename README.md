@@ -19,3 +19,4 @@ Schedule
 | 4 | [History and Architecture](https://gitpitch.com/irawoodring/343/master?p=history-and-architecture)  | | |
 | 4  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | Chapter 3 | | |
 | 4  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | Chapter 3 | | |
+| 4  | [Lexical and Syntax Analyisis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexical and Syntax Analysis") | Chapter 4 | | |
