@@ -18,5 +18,7 @@ Schedule
 | 3 | [History and Architecture](https://gitpitch.com/irawoodring/343/master?p=history-and-architecture) | | [Game of Life](./assignments/life.md "Game of Life assignment") | Due 2/12/18 at 8:00 a.m. |
 | 4 | [History and Architecture](https://gitpitch.com/irawoodring/343/master?p=history-and-architecture)  | | |
 | 4  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | Chapter 3 | | |
-| 4  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") | Chapter 3 | | |
-| 4  | [Lexical and Syntax Analyisis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexical and Syntax Analysis") | Chapter 4 | | |
+| 4  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") |  | | |
+| 5  | [Lexical and Syntax Analyisis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexical and Syntax Analysis") | Chapter 4 | | |
+| 5  | [Lexical and Syntax Analyisis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexical and Syntax Analysis") |  | | |
+| 5  | TBA |  | | |
