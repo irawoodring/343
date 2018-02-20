@@ -70,7 +70,7 @@ Included in this repository are a sample Flex and sample Bison file for a calcul
 
 Additionally, I have created a sample program for you.  If you run the command ```zjs < sample_program.zjs``` you should see output like the following:
 
-![Output from zjs on gv.zjs](./sample_drawing.zjs.png)
+![Output from zjs on gv.zjs](./gv.zjs.png)
 
 ## Submission
 
