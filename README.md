@@ -21,4 +21,13 @@ Schedule
 | 4  | [Syntax and Semantics](https://gitpitch.com/irawoodring/343/master?p=syntax-and-semantics "Syntax and Semantics Lecture") |  | | |
 | 5  | [Lexical and Syntax Analyisis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexical and Syntax Analysis") | Chapter 4 | | |
 | 5  | [Lexical and Syntax Analyisis](https://gitpitch.com/irawoodring/343/master?p=lexical-and-syntax-analysis "Lexical and Syntax Analysis") |  | | |
-| 5  | TBA |  | | |
+| 5  | [Lexing and Flex](https://gitpitch.com/irawoodring/343/master?p=lexing-and-regex "Flex tutorial") |  | | |
+| 6  | Flex work |  | | |
+| 6  | [Parsing and Bison](https://gitpitch.com/irawoodring/343/master?p=parsing-with-bison "Bison tutorial")|  | | |
+| 6  | Demoing Flex/Bison |  | | |
+| 7  | Bison work |  | | |
+| 7  |  |  | | |
+| 7  |  |  | | |
+| 8  |  |  | | |
+| 8  |  |  | | |
+| 8  | Midterm Exam |  | | |
