@@ -24,7 +24,7 @@ Schedule
 | 5  | [Lexing and Flex](https://gitpitch.com/irawoodring/343/master?p=lexing-and-regex "Flex tutorial") |  | | |
 | 6  | Flex work |  | | |
 | 6  | [Parsing and Bison](https://gitpitch.com/irawoodring/343/master?p=parsing-with-bison "Bison tutorial")|  | | |
-| 6  | Demoing Flex/Bison |  | | |
+| 6  | Demoing Flex/Bison |  | | [Sample Flex/Bison code](https://github.com/irawoodring/343/tree/master/parsing-with-bison/sample_code "Sample code.")|
 | 7  | Bison work |  | | |
 | 7  |  |  | | |
 | 7  |  |  | | |
