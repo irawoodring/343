@@ -26,7 +26,7 @@ Schedule
 | 6  | [Parsing and Bison](https://gitpitch.com/irawoodring/343/master?p=parsing-with-bison "Bison tutorial")|  | | |
 | 6  | Demoing Flex/Bison |  | | [Sample Flex/Bison code](https://github.com/irawoodring/343/tree/master/parsing-with-bison/sample_code "Sample code.")|
 | 7  | Bison work |  | | |
-| 7  | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO") |  | | |
+| 7  | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO") |  | [Language Creation project.](./assignments/language_creation.md "Language creation assignment") | Due 3/12 at 8:00 a.m. |
 | 7  | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO") | Chapters 11 & 12 | | |
 | 8  |  [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview") |  | | |
 | 8  |  [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview") |  | | |
