@@ -56,11 +56,11 @@ on the EOS system.  Please note that this graphics library will usually fail to 
 
 ## Rubric
 
-| Criteria | 5 Points | 3 Points | 0 Points |
+| Criteria | 10 Points | Up to 9 Points | 0 Points |
 |----------|----------|----------|----------|
 | Compilation | Compiles with no errors or warnings | Compiles but with warnings | Doesn't compile |
 | Style Guide | Perfectly adheres to style guide | Minor style guide mistakes | Fails to adhere to style guide |
-| Follows Project Specifications | No requirements omitted | 1 - 2 requirements omitted | More than 2 requirements omitted |
+| Follows Project Specifications | No requirements omitted, parses files correctly | 1 - 2 requirements omitted | More than 2 requirements omitted |
 | Error handling | Gracefully handles user errors (i.e. if they type a command incorrectly we let them know instead of crashing with no message).  Additionally, we need to make sure the numbers are in valid ranges; colors values should be in the range 0-255, points plotted should be between 0-width or height of our screen, etc. | Handles at least one type of error gracefully | Does not include error handling |
 | On time | Submitted before due date and time | Submitted up to 1 day late | Submitted more than 1 day late |
 
@@ -74,4 +74,4 @@ Additionally, I have created a sample program for you.  If you run the command `
 
 ## Submission
 
-Submit either a github link (preferred), or a zipped project directory to Blackboard.  Due date 10/30.
+Submit either a github link (preferred), or a zipped project directory to Blackboard.  Due date 3/12 at 8:00 a.m.
