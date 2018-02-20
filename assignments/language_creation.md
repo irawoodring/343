@@ -8,7 +8,7 @@ We are going to call our language Zoomjoystrong (thank you to the [Product Name 
   - A Bison file to define our grammar.  This will be called ```zoomjoystrong.y```.
   - A graphics library with functions we can call to do the drawing.  This will be provided to you in files called ```zoomjoystrong.h``` and ```zoomjoystrong.c```.
 
-Note that you don't have to create the graphcs library; it is provided in this repo.
+Note that you don't have to create the graphics library; it is provided in this repo.
 
 ## Project Specifications
 
@@ -70,7 +70,7 @@ Included in this repository are a sample Flex and sample Bison file for a calcul
 
 Additionally, I have created a sample program for you.  If you run the command ```zjs < sample_program.zjs``` you should see output like the following:
 
-![Output from zjs on gv.zjs](./gv.zjs.png)
+![Output from zjs on gv.zjs](./sample_drawing.zjs.png)
 
 ## Submission
 
