@@ -104,13 +104,13 @@ For a language to be able to provide ADTs it must
 ***
 
 In addition to the syntactic unit issues, language designers must decide if an ADT can be parameterized. Parameterizing an ADT means specializing it so that can hold specific data types.
-
+---
 We have seen parameterized types in Java; for instance when defining an ArrayList<>.  ArrayLists<> require us to denote the type of ArrayList we wish to use by filling in the "<>" section of the declaration.  This is important for generic programming.
 ---
 **Abstract Data Types (ADTs)**
 ***
 
-In C++ for instance:
+In C++ for instance (note C++ does have a std::stack.  This is NOT that structure.):
 
 ```C++
 template <typename T>
@@ -282,7 +282,7 @@ end Use_Stacks;
 
 C++ also allows ADTs, through use of the class construct.  This differs from Ada; because Ada uses the more generalized encapsulation technique, if a program makes use of a package it has access to all of the public symbols defined in that package.
 
-C++ use of the class construct means that when we are a client to an ADT we only have access to the ADT information.  We don't have names for any other types defined in the same file as the class.
+C++ use of the class construct means that when we are a client to an ADT we only have access to the ADT information.
 ---
 **Abstract Data Types (ADTs)**
 ***
@@ -466,12 +466,13 @@ We call these with the syntax ```[object-name method-name];```.  In the case of 
 [myObj method1: 42];
 [myObj method2: 42 second: 3.14];
 [myObj method2: 42: 3.14];
+```
 ---
 **Abstract Data Types (ADTs)**
 ***
 
 A few notes; in Objective-C constructors are called **initializers**.  They only provide initial values, and can have any name so they must be explicitly called.  Their type is a pointer to the class name, provided by returning **self**.
-
+---
 We create a new object with the alloc statement, and typically call the constructor explicitly in the same statement:
 
 ```
