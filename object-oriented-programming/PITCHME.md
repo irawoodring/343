@@ -47,7 +47,7 @@ We use ADTs as a means of making programs less complex.  It allows us to separat
 An important note:  **all** data types are ADTs.  We tend to forget this when we think of built-in types, but even built-in types are ADTs.
 
 Consider a floating point number.  We don't have to understand how it is stored; in fact there have been multiple different ways to store a floating point number that systems have used in the past.  All we really care about is how to use one.
-
+---
 Even the concept of the byte is an ADT; in reality it is just the turning on or off of some switch.  We don't care how that happens - just that we can use one.
 ---
 **Abstract Data Types (ADTs)**
@@ -55,7 +55,8 @@ Even the concept of the byte is an ADT; in reality it is just the turning on or 
 
 This brings up an important point: **information hiding** is the concept that we can use an ADT without knowing how it works internally.
 
-This implies
+This implies:
+---
 
 - that ADTs can be very robust.  By hiding the information of implementation we prohibit users from "damaging" our internal data.
 
