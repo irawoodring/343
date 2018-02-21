@@ -62,11 +62,8 @@ This implies:
 
 - that our code can still work the same regardless of the system on which we are running.  For instance, if we run on a system that doesn't follow the same standard for the storage of floating point numbers, we can still use floating point numbers.  How they are stored on the systems is not important to us.
 ---
-**Abstract Data Types (ADTs)**
-***
-
 We will use the term **clients** to refer to a program unit that uses a specific ADT.
-------
+---
 **Abstract Data Types (ADTs)**
 ***
 
