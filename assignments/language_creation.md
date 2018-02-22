@@ -55,8 +55,8 @@ gcc -o zjs zoomjoystrong.c lex.yy.c zoomjoystrong.tab.c -lSDL2 -lm
 on the EOS system.  Please note that this graphics library will usually fail to draw if you are logged in remotely, meaning you either need to test in the EOS or Arch labs, or install SDL2 on your systems.
 
 Needed files can be downloaded here:
-[zoomjoystring.c](./assignments/zoomjoystrong.c "zoomjoystrong.c")
-[zoomjoystring.h](./assignments/zoomjoystrong.h "zoomjoystrong.h")
+[zoomjoystring.c](./zoomjoystrong.c "zoomjoystrong.c")
+[zoomjoystring.h](./zoomjoystrong.h "zoomjoystrong.h")
 
 ## Rubric
 
