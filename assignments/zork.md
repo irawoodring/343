@@ -18,9 +18,9 @@ Homes are full of 0-10 monsters.  These do not need to be the same type of monst
 
 The neighborhood is made up of homes laid out in a grid.  When created, the neighborhood should automatically build houses and attach them to one another in a grid.  The size of the grid is set when the neighborhood is created.
 
-**Monster**
+**NPCs**
 
-A monster is either a Person, a Zombie, a Vampire, a Ghoul, or a Werewolf.  All of these are Monsters, so they share some basic properties such as health points and attack strength.  However, each has very different possible values.  The values of attack strength and health are set when the Monster is created.
+An NPC is either a Person, a Zombie, a Vampire, a Ghoul, or a Werewolf.  All of these are NPCs, so they share some basic properties such as health points and attack strength.  However, each has very different possible values.  The values of attack strength and health are set when the NPC is created.
 
   - Persons help you by giving you candy.  Each piece of candy increases your health by 1 point.  A person can give you 1 piece of candy per turn.  We could see this "helping" from the person as an attack with a negative attack value.  Persons have 100 health and are not harmed by your attacks.
 
