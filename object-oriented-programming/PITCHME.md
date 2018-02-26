@@ -625,7 +625,7 @@ public class TstStack {
 
 C# is similar to both Java and C++, but adds new features.
 
-Like Java, C# keeps objects ojn the heap, and provides both classes and structs.  The difference in both is that the default access modifier for a class is private, whereas for a struct it is public.  Additionally, structs do not support inheritance, and are value types instead of reference types (put on the stack!).
+Like Java, C# keeps objects on the heap, and provides both classes and structs.  The difference in both is that the default access modifier for a class is private, whereas for a struct it is public.  Additionally, structs do not support inheritance, and are value types instead of reference types (put on the stack!).
 ---
 **Abstract Data Types (ADTs)**
 ***

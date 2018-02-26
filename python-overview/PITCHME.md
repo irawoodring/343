@@ -12,7 +12,7 @@ A Dynamically Typed Language
 ***
 
 [Python](https://www.python.org/ "Official Python Website") was created by Guido van Rossum, a Dutch programmer.  He retains the title "Benevolent Dictator for Life" (BDFL) of the Python language.
-
+---
 Currently Python maintains two versions - a 2.7 standard and a Python 3 version.  Many programmers prefer the 2.7 version, but it is due to be phased out in 2020 (was previously 2015 but extended).
 
 The name gives a glance to *Monty Python's Flying  Circus*.
@@ -36,9 +36,6 @@ Python allows programmers to program in multiple paradigms; imperative, procedur
 
 Types in Python are dynamic, meaning variables are not bound before runtime.  This makes writability much easier for programming in Python, but affects readability and reliability (due to a lack of compile time type checking).
 ---
-**Python**
-***
-
 van Rossum continues to oversee development of Python due to his status as BDFL, but the language is influenced by these general goals:
 
   - Beautiful is better than ugly
@@ -47,6 +44,11 @@ van Rossum continues to oversee development of Python due to his status as BDFL,
   - Complex is better than complicated
   - Readability counts
 
+  ```Python
+  import this
+  ```
+
+---
 More generally, Guido believes "there should be one—and preferably only one—obvious way to do it" when it comes to programming.
 ---
 **Python**
@@ -100,19 +102,28 @@ etc. (note some of these are not defined for complex numbers though).  We do not
 **Python**
 ***
 
-Iterator types allow programmers to iterate over a collection.  We will talk about iterators later in the semester.
+Iterator types allow programmers to iterate over a collection.  We will talk about iterators later in the semester.  An iterator basically points to a current object and provides methods to point to the next (and sometimes previous) object.
+---
+In Python any object that is iterable must have the two methods
+
+```python
+__iter__()
+__next__()
+```
+
+must be defined.
 ---
 **Python**
 ***
 
 Sequence types in Python come in three varieties,
 
-**list**, **tuple**, and **range**.
+**list**, **tuple**, and **range**.  Each of these are iterable.
 ---
 **Python**
 ***
 
-The list in Python is very similar to an array (reinforced by the fact that lookups on the list take O(1) time! [Documentation](https://docs.python.org/3/glossary.html#term-list "Python docs")).  They are used much like arrays, but have enhanced functionality over many of their peer languages more basic arrays.
+The list in Python is very similar to an array (reinforced by the fact that lookups on the list take O(1) time! [Documentation](https://docs.python.org/3/glossary.html#term-list "Python docs")).  They are used much like arrays, but have enhanced functionality over many of their peer languages' more basic arrays.
 ---
 **Python**
 ***
@@ -123,6 +134,12 @@ Some built-in functions that Python provides for lists are
 - ```list.insert(i,x)``` - add the element to the list at position i.  This will move other elements in the list.
 - ```list.clear()``` - Removes all items from the list.
 - ```list.sort```, ```list.count```, and other built-ins are provided as well (demo).
+---
+For those of you interested, the sort method makes use of [Timsort](https://en.wikipedia.org/wiki/Timsort "Timsort Wikipedia page").
+
+It is a derivation of merge and insertion sort.
+---
+It is also interesting to note that you can sort a list by calling the ```sort()``` method on the object, or you can merely return a sorted representation with the ```sorted(list)``` function.
 ---
 **Python**
 ***
