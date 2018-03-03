@@ -30,4 +30,7 @@ Schedule
 | 7  | [Object Oriented Programming](https://gitpitch.com/irawoodring/343/master?p=object-oriented-programming "ADTs and OO") | Chapters 11 & 12 | | |
 | 8  |  [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview") |  | | |
 | 8  |  [Language Spotlight - Python (Object Oriented)](https://gitpitch.com/irawoodring/343/master?p=python-overview "Python Language Overview") |  | | |
-| 8  | Midterm Exam |  | | |
+| 8  | Midterm Exam |  | | [Text Based Game](./assignments/zork.md) |
+| 9  | Spring Break |  | | |
+| 9  | Spring Break |  | | |
+| 9  | Spring Break |  | | |
