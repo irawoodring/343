@@ -182,9 +182,9 @@ int main(int argc, char** argv){
 
 On a 64-bit system I get the following output:
 
-|Type|Bytes|Min Value|Max Value|
---------------------------------
-|unsigned char|1|0|255|
+| Type | Bytes | Min Value | Max Value |
+----------------------------------------
+| unsigned char | 1 | 0 | 255 |
 
 char			1		-128			127
 unsigned int		4		0			4294967295
