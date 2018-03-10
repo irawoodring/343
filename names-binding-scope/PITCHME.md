@@ -180,21 +180,90 @@ int main(int argc, char** argv){
 **Type**
 ***
 
-On a 64-bit system I get the following output:
+On a 64-bit Intel system I get the following output:
 
-| Type          | Bytes | Min Value | Max Value |
-|-----------------------------------------------|
-| unsigned char | 1     | 0         | 255       |
-| char			    | 1		  | -128			| 127       |
-| unsigned int	|	4		  | 0	|		4294967295      |
-| int			      | 4		  | -2147483648	|	2147483647 |
-| unsigned long	|	8		  | 0	|		18446744073709551615 |
-| long			    | 8		  | -9223372036854775808 |	9223372036854775807 |
-| unsigned long long| 8	|	0	|		18446744073709551615 |
-| long long		  | 8	    |	-9223372036854775808 | 9223372036854775807 |
-| float			    | 4	  	| -3.402823e+38	|	3.402823e+38 |
-| double			  | 8	  	|-1.797693e+308	|	1.797693e+308 |
-| long double		| 16	  |	-1.189731e+4932	|	1.189731e+4932 |
+```C
+Type			         Bytes	   Min Value		        Max Value
+---------------------------------------------------------------------------
+unsigned char		    1	     	0			                255
+char			          1		    -128			            127
+unsigned int		    4		    0		          	      4294967295
+int			            4		    -2147483648		        2147483647
+unsigned long		    8		    0			                18446744073709551615
+long			          8		    -9223372036854775808	9223372036854775807
+unsigned long long	8		    0	                		18446744073709551615
+long long		        8		    -9223372036854775808	9223372036854775807
+float			          4		    -3.402823e+38		      3.402823e+38
+double			        8		    -1.797693e+308		    1.797693e+308
+long double		      16		  -1.189731e+4932		    1.189731e+4932
+```
+---
+Yet, on a 32-bit ARM I get this:
+
+```C
+Type			         Bytes		 Min Value		          Max Value
+---------------------------------------------------------------------------
+unsigned char		     1		   0			                255
+char			           1		   0			                255
+unsigned int		     4		   0			                4294967295
+int			             4		   -2147483648		        2147483647
+unsigned long		     4		   0			                4294967295
+long		             4		   -2147483648	          2147483647
+unsigned long long	 8		   0			                18446744073709551615
+long long	        	 8		   -9223372036854775808	  9223372036854775807
+float			           4		   -3.402823e+38		      3.402823e+38
+double			         8		   -1.797693e+308		      1.797693e+308
+long double		       8		   -1.797693e+308		      1.797693e+308
+```
+---
+**Types**
+***
+
+A few differences exist for the two.  Many people will notice that the long double doesn't hold as high a value.  In fact, a long double on the second system is the same as a double on the first.
+
+What you may have missed though is the fact that on the ARM system a char and unsigned char produced the same values.
+---
+**Types**
+***
+
+It turns out that on ARM based systems chars default to unsigned.  This could have some fairly significant effects on our code.  For instance, it is not uncommon that programmers return -1 from a function when it is unable to complete a task.  Consider:
+---
+```C
+#include <stdio.h>
+
+char doSomething(int successful){
+        if(successful>0){
+                return 'a';
+        }
+        return -1;
+}
+
+int main(int argc, char** argv){
+        char result = doSomething(1);
+        printf("%d\n", result);
+        result = doSomething(-1);
+        printf("%d\n", result);
+}
+```
+---
+**Types**
+***
+
+Running this on the two systems we get the output
+
+```C
+97
+-1
+```
+
+On the Intel system And
+
+```C
+97
+255
+```
+
+On the ARM.
 ---
 **Value**
 ***
