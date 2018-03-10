@@ -182,7 +182,7 @@ int main(int argc, char** argv){
 
 On a 64-bit Intel system I get the following output:
 
-<pre>
+```
 Type                     Bytes       Min Value                Max Value
 ---------------------------------------------------------------------------
 unsigned char             1             0                   255
@@ -196,7 +196,7 @@ long long                 8            -9223372036854775808 9223372036854775807
 float                     4            -3.402823e+38        3.402823e+38
 double                    8            -1.797693e+308       1.797693e+308
 long double              16            -1.189731e+4932      1.189731e+4932
-</pre>
+```
 ---
 Yet, on a 32-bit ARM I get this:
 
