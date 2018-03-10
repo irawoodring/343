@@ -37,7 +37,7 @@ Some issues with names are the characters allowed to be used for the name, case 
 There are vastly different rules for naming depending on the language.  For instance:
 
 - Fortran allows only up to 31 characters
-- C has no limit, but only the first 63 are significant
+- C has no limit, but only the first 63 are significant (most compilers ignore this and have no limit these days).
 - Java, C#, and Ada have no limit and all are significant
 - C++ provides no limit, though certain implementations do.
 ---
@@ -143,14 +143,58 @@ std::cout << x << std::endl;
 
 Notice that changing y changed x as well.
 
-Aliases are a huge hit on readability, as they make programs much harder for a reader to understand.
+Aliases are a huge hit on readability, as they make programs much harder for a reader to understand.  They also make it vastly harder to debug a program, meaning they hurt writability as well.
 ---
 **Type**
 ***
 
 Types determine both the range of values a variable can hold, and the operations that may be performed.
 
-We talked about types in our ADT lectures and will not discuss it further here.
+We must be careful to fully understand the compiler(s) and machine(s) we are using when writing a program when it comes to type.  For instance:
+---
+**Type**
+***
+
+```C
+#include <stdio.h>
+#include <limits.h>
+#include <float.h>
+
+int main(int argc, char** argv){
+        printf("Type\t\t\tBytes\t\tMin Value\t\tMax Value\n");
+        printf("---------------------------------------------------------------------------\n");
+        printf("unsigned char\t\t%lu\t\t%d\t\t\t%d\n", sizeof(unsigned char), 0, UCHAR_MAX);
+        printf("char\t\t\t%lu\t\t%d\t\t\t%d\n", sizeof(char), CHAR_MIN, CHAR_MAX);
+        printf("unsigned int\t\t%lu\t\t%d\t\t\t%u\n", sizeof(unsigned int), 0, UINT_MAX);
+        printf("int\t\t\t%lu\t\t%d\t\t%d\n", sizeof(int), INT_MIN, INT_MAX);
+        printf("unsigned long\t\t%lu\t\t%d\t\t\t%lu\n", sizeof(unsigned long), 0, ULONG_MAX);
+        printf("long\t\t\t%ld\t\t%ld\t%ld\n", sizeof(long), LONG_MIN, LONG_MAX);
+        printf("unsigned long long\t%lu\t\t%d\t\t\t%llu\n", sizeof(unsigned long long), 0, ULLONG_MAX);
+        printf("long long\t\t%lu\t\t%lld\t%lld\n", sizeof(long long), LLONG_MIN, LLONG_MAX);
+        printf("float\t\t\t%lu\t\t%e\t\t%e\n", sizeof(float), -FLT_MAX, FLT_MAX);
+        printf("double\t\t\t%lu\t\t%e\t\t%e\n", sizeof(double), -DBL_MAX, DBL_MAX);
+        printf("long double\t\t%lu\t\t%Le\t\t%Le\n", sizeof(long double), -LDBL_MAX, LDBL_MAX);
+}
+```
+---
+**Type**
+***
+
+On a 64-bit system I get the following output:
+
+|Type|Bytes|Min Value|Max Value|
+=======================================
+|unsigned char|1|0|255|
+char			1		-128			127
+unsigned int		4		0			4294967295
+int			4		-2147483648		2147483647
+unsigned long		8		0			18446744073709551615
+long			8		-9223372036854775808	9223372036854775807
+unsigned long long	8		0			18446744073709551615
+long long		8		-9223372036854775808	9223372036854775807
+float			4		-3.402823e+38		3.402823e+38
+double			8		-1.797693e+308		1.797693e+308
+long double		16		-1.189731e+4932		1.189731e+4932
 ---
 **Value**
 ***
