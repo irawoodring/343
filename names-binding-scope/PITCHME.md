@@ -268,7 +268,7 @@ On the ARM.
 **Value**
 ***
 
-What we store in the memory locations the variable is comprised of are the value.
+What we store in the memory locations the variable is comprised of is the value.
 
 We call the value the **r-value** as it is usually on the right side of an assignment statement.
 ---
@@ -304,6 +304,30 @@ A static binding occurs before runtime and does not change while the program is 
 
 A binding that occurs during runtime and can change while the program is running is dynamic.
 ---
+Consider this code:
+
+```C
+#include <stdio.h>
+
+int main(int argc, char** argv){
+        static int meaning = 42;
+        int runtimeStuff = 1701;
+        printf("The meaning is %d.\n\n", meaning);
+}
+```
+---
+While the value ```42``` is not assigned statically, we can tell that the address itself is being bound at compile time by running ```objdump -t``` on the executable:
+---
+```C
+... // Lots of output...
+
+0000000000601034 l     O .data	0000000000000004              main.meaning
+
+... // Lots more output...
+```
+---
+In the midst of all the output we find the variable main.meaning is given a memory location, even before the program is run.  By contrast, notice that there is no address defined for runtimeStuff.  This will be determined when the program is run.
+---
 **Binding**
 ***
 
@@ -321,7 +345,7 @@ This is likely due to the fact that dynamic languages use implicit type systems 
 **Binding**
 ***
 
-**Allocation** refers to the process of assigning a variable from a pool of memory.
+For a binding to occur, we first need to go through the process of **Allocation**, which refers to assigning a variable an addressnfrom a pool of memory.
 
 **Deallocation** is the returning of the memory to the pool.
 ---
@@ -336,12 +360,11 @@ The **lifetime** of a variable is the time during which it is bound to a particu
 **Static variables** are bound to memory cells before programs are executed, and stay bound until the program ends.
 
 ```C
+// Note that this is different from the last example,
+// in that here we are assigning a value BEFORE runtime
+// and previously we were just creating the memory.
 // We'll call this file static.c
-static int num_threads = 42;  //Note, 2a in Hex.
 
-int main(int argc, char** argv){
-
-}
 ```
 ---
 Viewing the file we can verify this binding:
@@ -371,7 +394,11 @@ Additionally, there is no overhead for allocating a static variable; it is given
 **Binding**
 ***
 
-**Elaboration** is the process that happens at run-time of allocating and binding a variable.
+**Elaboration** is the process that happens at run-time of allocating and binding a variable.  There are a few different elaboration methods we will be talking about.
+---
+**Binding**
+***
+
 
 **Stack-dynamic** variables are variables that are statically bound but created when they are elaborated.
 ---

@@ -34,3 +34,6 @@ Schedule
 | 9  | Spring Break |  | | |
 | 9  | Spring Break |  | | |
 | 9  | Spring Break |  | | |
+| 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | | |
+| 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | | |
+| 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | | |
