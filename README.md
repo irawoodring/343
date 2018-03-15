@@ -36,4 +36,20 @@ Schedule
 | 9  | Spring Break |  | | |
 | 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | | |
 | 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | | |
-| 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | | |
+| 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | [Term Paper](./assignments/term_paper.md) | Due April 21, 2018 at 8:00 a.m. |
+| 11  | | | | |
+| 11  | | | | |
+| 11  | | | | |
+| 12  | | | | |
+| 12  | | | | |
+| 12  | | | | |
+| 13  | | | | |
+| 13  | | | | |
+| 13  | | | | |
+| 14  | | | | |
+| 14  | | | | |
+| 14  | | | | |
+| 15  | | | | |
+| 15  | | | | |
+| 15  | | | | |
+| 16  | | | | |

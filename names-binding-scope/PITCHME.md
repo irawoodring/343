@@ -345,7 +345,7 @@ This is likely due to the fact that dynamic languages use implicit type systems 
 **Binding**
 ***
 
-For a binding to occur, we first need to go through the process of **Allocation**, which refers to assigning a variable an addressnfrom a pool of memory.
+For a binding to occur, we first need to go through the process of **Allocation**, which refers to assigning a variable an address from a pool of memory.
 
 **Deallocation** is the returning of the memory to the pool.
 ---
@@ -383,6 +383,8 @@ Contents of section .data:
  601030 2a000000
 ...
 ```
+
+For those of you wondering, ```2a``` in hex is ```42``` in decimal.  
 ---
 **Binding**
 ***
@@ -403,7 +405,7 @@ Additionally, there is no overhead for allocating a static variable; it is given
 **Stack-dynamic** variables are variables that are statically bound but created when they are elaborated.
 ---
 An example of these is local variables in C.  Each function will have local variables; the space for them is not created until the function's memory is created.  When the program executes (elaborates) the code for the variable, it is created.
-
+---
 They are useful because they allow recursion (a subprogram must have local dynamic local storage for recursion).
 
 The disadvantage is run-time overhead, as allocating and deallocating variables can be high, and they are not history sensitive (meaning when you call another instance of a function the variable does not keep the value of the variable from the first call).

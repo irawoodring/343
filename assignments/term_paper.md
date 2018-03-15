@@ -69,4 +69,4 @@ The Sample Program source code should go in an appendix as well.
 ## Submission
 ***
 
-Upload either a .docx or a .pdf to Blackboard.  Due midnight December 7th.
+Upload either a .docx or a .pdf to Blackboard.  Due date on calendar.
