@@ -97,6 +97,15 @@ if(a.height < b.height){
 }
 ```
 ---
+A Computer Science oddity... Some languages have a binary operator that works much like the ternary operator.  This operator is called the Elvis Operator and works as follows:
+
+```
+value = funcOne() ?: funcTwo()
+```
+
+This sets value equal to the result from funcOne() if funcOne()'s result is a true value, or sets it equal to funcTwo()'s value otherwise.
+---?image=./expressions_and_assignments/images/elvis.png&size=50% auto
+---
 **Operators**
 ***
 
