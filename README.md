@@ -37,7 +37,7 @@ Schedule
 | 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | | |
 | 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | | |
 | 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | [Term Paper](./assignments/term_paper.md) | Due April 21, 2018 at 8:00 a.m. |
-| 11  | | | | |
+| 11  | [Assignments]](https://gitpitch.com/irawoodring/343/master?p=assignments "Names, Binding, and Scope")| | | |
 | 11  | | | | |
 | 11  | | | | |
 | 12  | | | | |
@@ -52,4 +52,4 @@ Schedule
 | 15  | | | | |
 | 15  | | | | |
 | 15  | | | | |
-| 16  | | | | |
+| 16  | Final Exam (not cumulative). | | | |

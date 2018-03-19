@@ -406,13 +406,13 @@ Additionally, there is no overhead for allocating a static variable; it is given
 ---
 An example of these is local variables in C.  Each function will have local variables; the space for them is not created until the function's memory is created.  When the program executes (elaborates) the code for the variable, it is created.
 ---
-They are useful because they allow recursion (a subprogram must have local dynamic local storage for recursion).
+They are useful because they allow recursion (a subprogram must have dynamic local storage for recursion).
 
 The disadvantage is run-time overhead, as allocating and deallocating variables can be high, and they are not history sensitive (meaning when you call another instance of a function the variable does not keep the value of the variable from the first call).
 ---
 Why can't we have recursion without these variables?
 
-Consider:
+Consider this language that only has global storage:
 
 ```C
 #include <stdio.h>
@@ -442,6 +442,11 @@ They are useful because they can be used for dynamically sized structures, but t
 ```C
 int* nums;
 nums = (int*) malloc(50 * sizeof(int));
+
+...
+
+// Must give memory back at some point.
+free(nums);
 ```
 ---
 **Binding**
