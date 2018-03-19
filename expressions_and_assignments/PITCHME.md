@@ -19,7 +19,7 @@ Issues that affect expressions (and therefore need to be addressed by language c
 ***
 
 It is important to note that functional languages are similar but not the same as imperative languages when it comes to expressions and assignments.
-
+---
 An "assignment" in a functional language is really a **declaration** that binds a value to a name (functional languages don't have variables; once a value is assigned it stays).
 
 Additionally, the evaluation of an expression in a functional language can not have side effects.
