@@ -38,18 +38,18 @@ Schedule
 | 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | | |
 | 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | [Term Paper](./assignments/term_paper.md) | Due April 21, 2018 at 8:00 a.m. |
 | 11  | [Expressions and Assignments](https://gitpitch.com/irawoodring/343/master?p=expressions_and_assignments "Expressions and Assignments")| | | |
+| 11  | [Expressions and Assignments - Case study in C++](https://gitpitch.com/irawoodring/343/master?p=operator_overloading) | | | |
 | 11  | | | | |
-| 11  | | | | |
-| 12  | | | | |
-| 12  | | | | |
-| 12  | | | | |
+| 12  | Functional Programming | | | |
+| 12  | Functional Programming | | | |
+| 12  | Functional Programming | | | |
 | 13  | | | | |
 | 13  | | | | |
 | 13  | | | | |
 | 14  | | | | |
 | 14  | | | | |
-| 14  | | | | |
-| 15  | | | | |
-| 15  | | | | |
-| 15  | | | | |
+| 14  | Logic Programming | | | |
+| 15  | Logic Programming | | | |
+| 15  | Language Presentations | | | |
+| 15  | Language Presentations | | | |
 | 16  | Final Exam (not cumulative). | | | |

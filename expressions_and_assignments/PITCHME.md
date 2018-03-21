@@ -261,7 +261,7 @@ Functional languages are referentially transparent, as they lack variables and s
 ***
 
 **Operator Overloading** allows programmers to use arithmetic operators for multiple purposes.  For instance, instead of using the ```+``` operator solely on integer addition, the programmer may be able to use it to add ```floats```, ```strings```, or even instances of custom types.
-
+---
 Operator overloading is a bit of a mixed-bag; it aids in writability and can aid in readability, but can also harm readability, writability, and reliability.  We must be very careful how we use it.
 ---
 **Operators**
