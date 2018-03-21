@@ -194,3 +194,61 @@ std::ostream & operator<< (std::ostream & os, const Superhero & obj){
         return os << obj.name << " has " << obj.eye << " eyes, " << obj.hair << " hair, and is " << obj.affiliation << ".";
 ```
 ---
+This allows us to send the object to an output stream:
+
+```C++
+std::cout << myHero << std::endl;
+```
+
+For instance.
+---
+With this code, if we print out an element we get something like this:
+
+```C++
+Ace Maxwell (Earth-616) has  eyes, Black Hair hair, and is Bad Characters.
+```
+---
+Another huge bonus from having overridden the operator< is that we can now use the built in std::sort() function!
+
+```C++
+template <class RandomAccessIterator, class Compare>
+  void sort (RandomAccessIterator first, RandomAccessIterator last);
+```
+---
+The iterators for this function dictate where we start and stop sorting in the collection.  With our vector of heroes we could then do something like this:
+
+```C++
+std::sort(heroes.begin(), heroes.end());
+```
+---
+If we print out the first 10 heroes we now get
+
+```
+Emil Blonsky (Earth-616) has Blue Eyes eyes, Blond Hair hair, and is Bad Characters.
+Absalom (Earth-616) has Blue Eyes eyes, Blond Hair hair, and is .
+Carl Creel (Earth-616) has Blue Eyes eyes, Bald hair, and is Bad Characters.
+Adam Warlock (Earth-616) has White Eyes eyes, Gold Hair hair, and is Good Characters.
+Adam Neramani (Earth-616) has Blue Eyes eyes, Blond Hair hair, and is Good Characters.
+Eric Cameron (Earth-616) has Blue Eyes eyes, Brown Hair hair, and is Bad Characters.
+Adri Nital (Earth-616) has Red Eyes eyes, Black Hair hair, and is Bad Characters.
+Adversary (Earth-616) has Blue Eyes eyes,  hair, and is Bad Characters.
+Aeroika (Earth-616) has  eyes, Gold Hair hair, and is .
+Agatha Harkness (Earth-616) has Blue Eyes eyes, White Hair hair, and is Good Characters.
+```
+---
+If we look through the supplied file we see that Emil Blonsky does have the smallest id, with 1025.  So this is accurate.
+---
+An interesting note is that if we override the operator< we can implement other relational operators in terms of it:
+
+```C++
+bool operator> (const X& lhs, const X& rhs){
+   return rhs < lhs;
+}
+bool operator<=(const X& lhs, const X& rhs){
+  return !(lhs > rhs);
+}
+bool operator>=(const X& lhs, const X& rhs){
+  return !(lhs < rhs);
+}
+```
+---

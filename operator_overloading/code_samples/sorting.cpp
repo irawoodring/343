@@ -1,13 +1,13 @@
 #include "csv.h"
 #include "Superhero.h"
 #include <iostream>
-#include <queue>
+#include <vector>
 
 int main(int argc, char** argv){
 	io::CSVReader<5, io::trim_chars<' '>, io::double_quote_escape<',','\"'> > in("marvel.csv");
 	in.read_header(io::ignore_extra_column, "page_id", "name", "ALIGN", "EYE", "HAIR");
 
-	std::priority_queue<Superhero> heroes;
+	std::vector<Superhero> heroes;
 
 	int id;
 	std::string name;
@@ -18,9 +18,11 @@ int main(int argc, char** argv){
 	while(in.read_row(id, name, alignment, eye, hair)){
 		// do stuff with the data
 		Superhero tmp(id, name, alignment, eye, hair);
-		std::cout << id << ", " << name << ", " << eye << ", " << hair << std::endl;
-		heroes.push(tmp);
+		heroes.push_back(tmp);
 	}
 
-	std::cout << "Entered " << heroes.size() << " heroes into priority queue." << std::endl;
+	std::sort(heroes.begin(), heroes.end());
+	for(int i=0; i<10; i++){
+		std::cout << heroes[i] << std::endl;
+	}
 }
