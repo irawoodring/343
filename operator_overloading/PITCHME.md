@@ -252,3 +252,48 @@ bool operator>=(const X& lhs, const X& rhs){
 }
 ```
 ---
+Another reason we may want to override an operator is if we are creating some collection and wish to allow people to access elements via an index.  For instance:
+---
+(Yes, this is almost useless :) ).
+```C++
+#ifndef                 __H__ALMOSTUSELESS__
+#define                 __H__ALMOSTUSELESS__
+
+#include <vector>
+#include <ctime>
+
+template <typename T>
+class AlmostUseless {
+        public:
+                AlmostUseless(){
+                        std::srand(std::time(nullptr));
+                }
+
+                const T & operator[](int i){
+                        return data[rand() % data.size() + 1];
+                }
+
+                void insert(const T & something){
+                        data.push_back(something);
+                }
+        private:
+                std::vector<T> data;
+};
+
+#endif
+```
+---
+```C++
+#include "AlmostUseless.h"
+#include <iostream>
+
+int main(int argc, char** argv){
+        AlmostUseless<int> nums;
+
+        for(int i=0; i<100; i++){
+                nums.insert(i);
+        }
+
+        std::cout << nums[1] << std::endl;
+}
+```
