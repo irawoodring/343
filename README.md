@@ -39,7 +39,7 @@ Schedule
 | 10  |  [Names, Bindings, and Scope](https://gitpitch.com/irawoodring/343/master?p=names-binding-scope "Names, Binding, and Scope") |  | [Term Paper](./assignments/term_paper.md) | Due April 21, 2018 at 8:00 a.m. |
 | 11  | [Expressions and Assignments](https://gitpitch.com/irawoodring/343/master?p=expressions_and_assignments "Expressions and Assignments")| | | |
 | 11  | [Expressions and Assignments - Case study in C++](https://gitpitch.com/irawoodring/343/master?p=operator_overloading) | | | |
-| 11  | [Why Functional Programming Matters](https://www.youtube.com/watch?v=XrNdvWqxBvA&t=721s) | | | |
+| 11  | [Why Functional Programming Matters](https://youtu.be/XrNdvWqxBvA) | | | |
 | 12  | Functional Programming | | | |
 | 12  | Functional Programming | | | |
 | 12  | Functional Programming | | | |
