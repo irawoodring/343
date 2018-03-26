@@ -490,6 +490,7 @@ We could even create a function (from book):
 ```Scheme
 (define (second a_list) (car (cdr a_list)))
 (second l)
+```
 ---
 **Overview**
 ***
