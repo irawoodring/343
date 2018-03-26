@@ -159,7 +159,7 @@ To understand functional programming we must understand the concept of **higher-
 
 This allows us to solve problems via the **composition of functions**.
 
-We've seen the composition of functions before in math, i.e. if we have f(x) and g(x) we may computer f(g(x))
+We've seen the composition of functions before in math, i.e. if we have f(x) and g(x) we may compute f(g(x))
 ---
 **Overview**
 ***
@@ -263,7 +263,7 @@ Scheme has many built-in functions for dealing with number.
 
 +, -, \*, /, SQRT, LOG, SIN, MAX, MIN, MODULO, and others are provided.
 
-Of note is that *some* functions allow multiple parameters.  For instance, + and \* take an arbitrary number of parameters and computer them all with the given function.  It is up to you to determine the usage of each.
+Of note is that *some* functions allow multiple parameters.  For instance, + and \* take an arbitrary number of parameters and compute them all with the given function.  It is up to you to determine the usage of each.
 ---
 **Overview**
 ***
