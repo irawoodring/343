@@ -228,6 +228,12 @@ On the EOS system you can start the ```mit-scheme``` interpreter as follows:
 ```
 rlwrap /usr/local/mit-scheme/bin/mit-scheme
 ```
+---
+You may even want to add an alias to your ~/.bashrc file:
+
+```
+alias mit-scheme="rlwrap /usr/local/mit-scheme/bin/mit-scheme"
+```
 
 > ```rlwrap``` is a readline wrapper.  It allows certain programs that don't accept arrow keys for history (such as mit-scheme or sqlplus) to have those facilities.  You don't have to use ```rlwrap``` but it will make using mit-scheme much easier.
 ---
