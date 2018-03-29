@@ -609,8 +609,23 @@ abcd
   )
 )
 
-abcd
-;Value: #t
+dcba
+;Unspecified return value
+```
+
+Why unspecified return value?
+---
+The last line that is run is not the null check anymore.  It is a write statement!  How could we fix it to return a #t or #f value?
+---
+If we needed it to return #t or #f we could do this:
+
+```Scheme
+(define (print_elements a_list)
+  (cond
+    ((null? a_list))
+    (else (print_elements (cdr a_list))(write (car a_list))#t)
+  )
+)
 ```
 ---
 What will this code do?
@@ -746,7 +761,7 @@ Make use of what we already have.
 
 Problem 5:
 
-Write a function that find the *i*th value in a list.
+Write a function that returns the *i*th value in a list.
 ---
 ```Scheme
 (define (findi my_list i)
