@@ -152,3 +152,68 @@ printf("%d + %d * %d = %d\n", a, b, c, d);
 
 We certainly don't want to write a separate function for each possible number of parameters passed in.
 ---
+We can do this with variable argument lists (defined in stdarg.h):
+
+```C
+#include <stdio.h>
+#include <stdarg.h>
+
+void print_args(const char *str, ...){
+        va_list ap;
+        va_start(ap, str);
+        while(str){
+                printf("%s\n", str);
+                str = va_arg(ap, const char *);
+        }
+        va_end(ap);
+}
+
+int main(int argc, char** argv){
+        print_args("Ira", "Jacob", "Woodring", NULL);
+}
+```
+---
+We can do the same thing in Python with \*args or \*kwargs (depending on whether we need positional or keyword arguments):
+
+```Python
+def printStuff(*args):
+  for i in args:
+    print i
+
+def printStuff2(**kwargs):
+  for key in kwargs:
+    print key,":",kwargs[key]
+```
+---
+**Overloaded subprograms** are available in some languages.  This allows us to have multiple subprograms with the same name in the same referencing environment.  We have seen these in Java and C before; for instance we might have the following functions:
+---
+```Java
+public int addMe(int x, int y);
+public float addMe(float x, float y);
+```
+
+Though both of these have different signatures, they have the same name.
+---
+**Generic subprograms** may work the same way on different types of data.  For instance, we may want to create a function that returns the maximum of two values, regardless of type.  In C++ we might do this:
+
+```C++
+template <typename T>
+T chooseMax(T a, T b){
+  if(a<b)
+    return b;
+  return a;
+}
+```
+
+As long as a and b are the same type here, and have a operator< defined this will work.
+---
+Variables that are defined inside of a subprogram are called **local variables**.  They may be static or stack dynamic (exist throughout the programs lifecycle or are bound and unbound with the lifecycle of the subprogram).
+---
+As we talked about with variables, stack dynamic are the most flexible.  They are essential for recursive subprograms.  However they are slower than static variable.
+---
+When designing a language we must decide how to pass parameters to subprograms.  There are three models:
+
+- in mode
+- out mode
+- inout mode
+---
