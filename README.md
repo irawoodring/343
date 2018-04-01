@@ -43,7 +43,7 @@ Schedule
 | 12  | [Functional Programming](https://gitpitch.com/irawoodring/343/master?p=functional_languages) | | | |
 | 12  | [Functional Programming](https://gitpitch.com/irawoodring/343/master?p=functional_languages) | | | |
 | 12  | [Functional Programming](https://gitpitch.com/irawoodring/343/master?p=functional_languages) | | | |
-| 13  | | | | |
+| 13  | [Subprograms](https://gitpitch.com/irawoodring/343/master?p=subprograms)| | | |
 | 13  | | | | |
 | 13  | | | | |
 | 14  | | | | |
