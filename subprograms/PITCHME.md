@@ -173,7 +173,7 @@ int main(int argc, char** argv){
 }
 ```
 ---
-We can do the same thing in Python with \*args or \*kwargs (depending on whether we need positional or keyword arguments):
+We can do the same thing in Python with \*args or \**kwargs (depending on whether we need positional or keyword arguments):
 
 ```Python
 def printStuff(*args):
