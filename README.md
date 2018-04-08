@@ -44,9 +44,9 @@ Schedule
 | 12  | [Functional Programming](https://gitpitch.com/irawoodring/343/master?p=functional_languages) | | | |
 | 12  | [Functional Programming](https://gitpitch.com/irawoodring/343/master?p=functional_languages) | | | |
 | 13  | [Subprograms](https://gitpitch.com/irawoodring/343/master?p=subprograms)| | | |
-| 13  | | | | |
-| 13  | | | | |
-| 14  | | | | |
+| 13  | Functional practice | | | |
+| 13  | [Haskell overview](https://www.tryhaskell.org/) | | | |
+| 14  | [Subprograms](https://gitpitch.com/irawoodring/343/master?p=subprograms) | | | |
 | 14  | | | | |
 | 14  | Logic Programming | | | |
 | 15  | Logic Programming | | | |
