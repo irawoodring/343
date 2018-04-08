@@ -369,3 +369,143 @@ def mult(a,b):
 def doStuff(a, b, fun):
   return fun(a, b)
 ```
+---
+Before Java 8 we could do the same sort of thing by using the Command Pattern.  This is a software pattern that involves putting everything we might need to perform some task later into an object.
+
+```Java
+public interface Command {
+        public int execute(int a, int b);
+}
+
+public class Add implements Command {
+        public int execute(int a, int b){
+                return a + b;
+        }
+}
+
+public class Mult implements Command {
+        public int execute(int a, int b){
+                return a * b;
+        }
+}
+
+public class DoStuff {
+        public int go(int a, int b, final Command command){
+                return command.execute(a, b);
+        }
+}
+
+public class PassFunction {
+        public static void main(String[] args){
+                int a = Integer.parseInt(args[0]);
+                int b = Integer.parseInt(args[1]);
+                int op = Integer.parseInt(args[2]);
+                DoStuff doStuff = new DoStuff();
+                if(op != 0){
+                        System.out.println(doStuff.go(a, b, new Add()));
+                } else {
+                        System.out.println(doStuff.go(a, b, new Mult()));
+                }
+        }
+}
+```
+---
+As of Java 8 we have lambda expressions, and can do something like the following:
+
+```Java
+public class Calculator {
+
+    interface IntegerMath {
+        int operation(int a, int b);   
+    }
+
+    public int operateBinary(int a, int b, IntegerMath op) {
+        return op.operation(a, b);
+    }
+
+    public static void main(String... args) {
+
+        Calculator myApp = new Calculator();
+        IntegerMath addition = (a, b) -> a + b;
+        IntegerMath subtraction = (a, b) -> a - b;
+        System.out.println("40 + 2 = " +
+            myApp.operateBinary(40, 2, addition));
+        System.out.println("20 - 10 = " +
+            myApp.operateBinary(20, 10, subtraction));    
+    }
+}
+```
+
+(Taken from https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
+---
+Most programming languages allow only a single return value, but there are those that allow more.  Lua for instance, allows multiple returns through a comma-separated list:
+
+```Lua
+return 3, sum, index
+```
+---
+Python pretends to allow multiple values.  It will allow the return of a tuple (which is just a single object), but it makes it easy to get the data out of the tuple:
+
+```Python
+def doStuff(){
+  ...
+  return (one, two, three)
+}
+
+a,b,c = doStuff()
+```
+---
+Or, if we don't care about some of the data being returned we can ignore it:
+
+```python
+def doStuff(){
+  ...
+  return (one, two, three)
+}
+
+_,b,_ = doStuff()
+```
+---
+Go allows this as well:
+
+```Go
+package main
+
+import "fmt"
+
+func vals(int, int){
+  return 3,7
+}
+
+func main() {
+  a,b := vals()
+  fmt.Println(a)
+  fmt.Println(b)
+
+  _, c := vals()
+  fmt.Println(c)
+}
+```
+
+(Taken from https://gobyexample.com/multiple-return-values)
+---
+**Closures** are subprograms *and* the referencing environment where they were defined.  We need the referencing environment so they can access variables in the scope in which they were created.
+
+Consider:
+---
+```Javascript
+function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  }
+}
+
+var add10 = makeAdder(10);
+var add5 = makeAdder(5);
+alert("10 + 20 = ", + add10(20));
+alert("5 + 20 = ", + add5(20));
+```
+
+(Taken from the book).  Here add10 retains its binding of 10 to x, and add5 retains its x binding to 5.  Those bindings must be available when the functions are called.
+---
+Closures are often used for event-handling, though there are other purposes as well.
