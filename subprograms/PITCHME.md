@@ -370,8 +370,8 @@ def doStuff(a, b, fun):
   return fun(a, b)
 ```
 ---
-Before Java 8 we could do the same sort of thing by using the Command Pattern.  This is a software pattern that involves putting everything we might need to perform some task later into an object.
-
+Before Java 8 we could do the same sort of thing by using the Command Pattern.  This is a software pattern that involves putting everything we might need to perform some task later into an object:
+---
 ```Java
 public interface Command {
         public int execute(int a, int b);
