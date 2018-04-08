@@ -74,7 +74,7 @@ def doStuff(a, c):
 
 Though Python requires the ```:``` to denote a new scope
 ---
-Interestingly, in Python the ```def``` statements are executable code.  This causes a name to be given to the function.  Since we can execute the function definition we can do some interesting things:
+Interestingly, in Python the ```def``` statements are executable code that causes a name to be given to the function.  Since we can execute the function definition we can do some interesting things:
 
 ```Python
 if i==1:
@@ -119,6 +119,8 @@ There are different ways to relate actual parameters to formal parameters.  Most
 
 However, some languages also provide for **keyword parameters**:
 ---
+In Python for instance:
+
 ```Python
 def calcVolume(height, width, depth=1):
   return height * width * depth
@@ -207,6 +209,22 @@ T chooseMax(T a, T b){
 
 As long as a and b are the same type here, and have a operator< defined this will work.
 ---
+Similarly, Java has generic capabilities as well:
+
+```Java
+public interface List<E> {
+    void add(E x);
+    Iterator<E> iterator();
+}
+
+public interface Iterator<E> {
+    E next();
+    boolean hasNext();
+}
+```
+
+(taken from https://en.wikipedia.org/wiki/Generics_in_Java)
+---
 Variables that are defined inside of a subprogram are called **local variables**.  They may be static or stack dynamic (exist throughout the programs lifecycle or are bound and unbound with the lifecycle of the subprogram).
 ---
 As we talked about with variables, stack dynamic are the most flexible.  They are essential for recursive subprograms.  However they are slower than static variable.
@@ -217,3 +235,137 @@ When designing a language we must decide how to pass parameters to subprograms. 
 - out mode
 - inout mode
 ---
+- in mode parameters receive data from actual parameters
+- out mode transmit data to the parameter
+- inout mode can do either mode
+---
+To implement these methods of parameter passing, a few different models exist.
+
+- Pass-by-value
+- Pass-by-result
+- Pass-by-value-result
+- Pass-by-reference
+- Pass-by-name
+---
+Pass-by-value uses the actual parameter to initialize a corresponding formal parameter.  The formal parameter will then be a local variable to the function.
+
+This is a way to perform in-mode passing.
+---
+Usually pass-by-value is implemented by copying but we could do it by passing an access path to the actual parameter, if the memory for it was write-protected.
+
+Pass-by-value is fast for small objects, but for large objects or large collections of objects this can be slow.  Additional overhead is needed for storage.
+---
+Pass-by-result does not pass a value to a subprogram; this is a method of performing out-mode passing.  The formal parameter to the function serves as a local variable.  When the function returns, the copy of the local variable gets copied into the actual parameter.
+---
+Pass-by-result has the same issues as pass-by-value, and can additionally fail if a parameter collision occurs.  Consider:
+
+```
+sub(var1, var2){ ... }
+
+sub(p1, p1);  // Function call
+```
+
+When the function returns one of the values, either var1 or var2 will be copied into p1.
+---
+Pass-by-value-result provides inout-mode passing.  It is a combination of pass-by-value and pass-by-result.  The actual parameters are used to initialize the formal parameters which are then local to the function.  At the return from the function that formal parameters are passed to the actual parameters.
+
+This is sometimes called Pass-by-copy.
+---
+Pass-by-reference provides in-out mode passing as well.  Instead of copying though, an access path is passed to the subprogram.
+
+This is very efficient; no copying needs to be done and no extra storage space is needed.
+---
+However, it isn't perfect.  It is slower for a subprogram to use these references since the variables aren't local.  It also can harm readability and reliability.
+
+This is due to the fact that we are creating aliases; our formal parameters become aliases for our actual parameters.
+---
+Pass-by-name is another inout mode passing technique.  This technique essentially places the actual parameter in-line of the code where the formal parameters are used.  This means that the referencing environment for the calling subprogram needs to be passed to the called subprogram as wellself.
+
+The passed-in referencing environment is called a closure.
+---
+For the languages we have discussed in this class, C uses pass-by-value (in-mode) but allows us to simulate pass-by-reference (in-out mode) with pointers.  C stole this idea from ALGOL 68 which used the same methods.
+---
+C++ has all the same methods the C has, but adds reference types as well.  Reference types provide an additional in-out mode for C++.
+---
+Java uses pass by value, but objects can only be accessed via references in Java.  This makes it seem as if Java does pass by reference.  Java does not have a facility for passing primitives by reference.
+---
+Ada and Fortran (since Fortran 95) can specify in, out, or inout mode for each formal parameter.
+---
+C\# is pass-by-value, much like Java.  C# can do pass-by-reference though, by putting the ```ref``` keyword before  a formal and actual parameter.
+
+```
+void sumer(ref int oldSum, int newOne) { ... }
+...
+sumer(ref sum, newValue);
+```
+---
+C\# also provides supprt for out-mode parameters via pass-by-reference parameters that do not need any initial values.  We create these with the ```out``` keyword.
+---
+PHP is pass-by-value, but we can perform pass-by-reference by putting an ampersand before our parameters.
+
+```PHP
+function doStuff(&$var){
+...
+}
+```
+---
+It is often helpful for us to pass subprograms to subprograms.  Perhaps we want to provide a custom sorting function.  Our book notes that we may want to write a function that performs mathematical integration.  To have it work on any function we may wish to pass in the function it is integrating as a parameter.
+---
+In C, we use function pointers to pass a subprogram to a subprogram.  For instance, in the following code we choose between either an add or mult function depending on what operation the user requests:
+---
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int add(int a, int b){
+        return a + b;
+}
+
+int mult(int a, int b){
+        return a * b;
+}
+
+int main(int argc, char** argv){
+        int a = atoi(argv[1]);
+        int b = atoi(argv[2]);
+        int c = atoi(argv[3]);
+
+        int (*fun)(int,int) = &add;
+        if(c != 0){
+                fun = &mult;
+        }
+        int result = (*fun)(a,b);
+        printf("%d\n", result);
+}
+```
+---
+Many newer languages make this far easier:
+
+Javascript for instance:
+
+```Javascript
+function add (a, b){
+  return a + b;
+}
+
+function mult(a,b){
+  return a * b;
+}
+
+function doStuff(a, b, fun){
+  return fun(a,b);
+}
+```
+---
+Python:
+
+```Python
+def add(a, b):
+  return a + b
+
+def mult(a,b):
+  return a * b
+
+def doStuff(a, b, fun):
+  return fun(a, b)
+```
