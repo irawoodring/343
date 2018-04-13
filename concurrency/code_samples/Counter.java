@@ -1,41 +1,29 @@
-public class Counter implements Runnable{
-	private int c = 0;
+public class Counter implements Runnable {
 
-	public int getC(){
-		return c;
-	}
-
-	public void increment() {
-		Thread.sleep(100);
-		c++;
-	}
-
-	public void decrement() {
-		c--;
-	}
-
-	public int value() {
-		return c;
+	private int my_num;
+	
+	public Counter(int my_num){
+		this.my_num = my_num;
 	}
 
 	public void run(){
-		for(int i=0; i<1000; i++){
-			System.out.println("Incrementing.");
-			increment();
-		}
+		System.out.println("Hello from " + my_num + "!");
 	}
 
 	public static void main(String[] args){
-		Counter c = new Counter();
-		Thread one = new Thread(c);
-		Thread two = new Thread(c);
-		one.start();
-		two.start();
-		try{
-			one.join();
-			two.join();
-		} catch(Exception ex){}
-		System.out.println(c.getC());
+		Thread[] threads = new Thread[10];
+		for(int i=0; i<10; i++){
+			threads[i] = new Thread(new Counter(i));
+			threads[i].start();
+		}
+
+		for(int i=0; i<10; i++){
+			try{
+				threads[i].join();
+			} catch (Exception ex){
+
+			}
+		}
 	}
 
 }
