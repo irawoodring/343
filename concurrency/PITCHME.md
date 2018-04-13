@@ -212,3 +212,17 @@ public class Counter implements Runnable {
 ---
 Java provides a huge facility of additional Objects and Interfaces for threading and the sharing of data between threads.
 ---
+Sometimes we need more from our concurrency mechanisms than a language's built-in facilities or a library can provide.  In these instances, we may want an entire concurrency framework.
+---
+MPI, or the Message Passing Interface, provides an ability for programming concurrency within a machine and between many machines.  MPI creates a virtual topology of nodes (may be processors, computers, etc.) and manages communication and synchronization between them.
+---
+MPI creates Communicators that handle communication between nodes.  Users typically need to initialize the interface, create communicators and assign nodes, and then send data to and gather data from the nodes via the communicator.
+---
+A (very) simple MPI program might look something like this:
+
+```C
+
+```
+---
+There are language bindings for many programming languages, such as Java, C, C++, Python, R, MATLAB, and others.
+---
