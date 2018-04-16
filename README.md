@@ -40,7 +40,7 @@ Schedule
 | 11  | [Expressions and Assignments](https://gitpitch.com/irawoodring/343/master?p=expressions_and_assignments "Expressions and Assignments")| | | |
 | 11  | [Expressions and Assignments - Case study in C++](https://gitpitch.com/irawoodring/343/master?p=operator_overloading) | | | |
 | 11  | [Why Functional Programming Matters](https://youtu.be/XrNdvWqxBvA) | | | |
-| 12  | [Functional Programming](https://gitpitch.com/irawoodring/343/master?p=functional_languages) | | [ Extra Credit Functional Project](./assignments/functional_programming.mc) | |
+| 12  | [Functional Programming](https://gitpitch.com/irawoodring/343/master?p=functional_languages) | | [ Extra Credit Functional Project](./assignments/functional_programming.md) | |
 | 12  | [Functional Programming](https://gitpitch.com/irawoodring/343/master?p=functional_languages) | | | |
 | 12  | [Functional Programming](https://gitpitch.com/irawoodring/343/master?p=functional_languages) | | | |
 | 13  | [Subprograms](https://gitpitch.com/irawoodring/343/master?p=subprograms)| | | |
