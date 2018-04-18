@@ -178,5 +178,41 @@ Note: Internal variables are denoted with an underscore at their beginning.
 Prolog also allows us to have lists.  We can create one as follows:
 
 ```Prolog
-
+[ apple, grape, orange, watermelon, kiwi ]
+[ [mountain_dew, pepsi, diet_pepsi, dr_pepper ], [orange_juice, grape_juice, apple_juice], water ]
 ```
+
+Notice a list can be made of atoms and lists.
+---
+Lists in Prolog are much like lists in functional languages.  To the langauge, a list can be broken down into two parts - the head and the tail.
+
+Just like the functional counterparts the head is the first element in the list and the tail is everything else:
+---
+```Prolog
+[H|T] = [ apple, orange, grape, kiwi, lemon ].
+H = apple,
+T = [orange, grape, kiwi, lemon].
+```
+
+Notice the "|"?
+---
+The "|" character allows us to decompose a list.  For instance, in the above code we decomposed the list into a head (H) and tail (T).  But, we can do other decompositions as well:
+
+```Prolog
+?- [X,Y | W] = [ apple, banana, grape, kiwi ].
+X = apple,
+Y = banana,
+W = [grape, kiwi].
+```
+---
+In fact, we don't even need to use a name for a variable if we aren't going to use it.  Just like we saw in Python, we can use the "_" character for anything we don't care about:
+
+```Prolog
+?- [_, Y | _] = [ apple, banana, grape, kiwi ].
+Y = banana.
+```
+---
+All this is great of course - and useful.  But at some point we need a way to perform list iteration.
+
+Just like functional languages though, there is no such thing as an iterator.  Instead, we make use of our trusty friend, recursion!
+---

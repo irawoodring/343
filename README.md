@@ -46,10 +46,10 @@ Schedule
 | 13  | [Subprograms](https://gitpitch.com/irawoodring/343/master?p=subprograms)| | | |
 | 13  | Functional practice | | | |
 | 13  | [Haskell overview](https://www.tryhaskell.org/) | | | |
+| 14  |  [Subprograms](https://gitpitch.com/irawoodring/343/master?p=subprograms) | | | |
 | 14  | [Subprograms](https://gitpitch.com/irawoodring/343/master?p=subprograms) | | | |
-| 14  | | | | |
-| 14  | Logic Programming | | | |
-| 15  | Logic Programming | | | |
-| 15  | Language Presentations | | | |
+| 14  | [Logic Programming](https://gitpitch.com/irawoodring/343/master?p=logic_languages) | | | |
+| 15  | [Logic Programming](https://gitpitch.com/irawoodring/343/master?p=logic_languages) | | | |
+| 15  | [Logic Programming](https://gitpitch.com/irawoodring/343/master?p=logic_languages) | | | |
 | 15  | Language Presentations | | | |
 | 16  | Final Exam (not cumulative). | | | |
