@@ -17,7 +17,7 @@ int write_file( char* filename, char *buffer, int size);
 
 **DO NOT CHANGE THESE FUNCTION SIGNATURES IN ANY WAY!**
 
-You will need a ```file_utils.c``` file with you code implemented.
+You will need a ```file_utils.c``` file with your code implemented.
 
 You will need a ```reverse.c``` file with code that accepts command arguments, includes a main function, and calls the functions from the included files.
 
@@ -43,6 +43,24 @@ Look closely at the function signatures!  The way this project is written requir
   ```
 
   **NOTE!** You will need to ```#include <sys/stat.h>```.
+
+## How do I know if mine is working?
+
+I have included a file called test.o.  This is an object file with code that calls the functions in your ```file_utils.{c|h}``` files.  All you need to do is put this file in the same folder as those files and compile with the command
+
+```
+clang test.o file_utils.c -o reverse
+```
+
+This will create an executable called ```reverse``` that takes works as required IF your files are correct.  You can verify by doing the following:
+
+```
+./reverse someFile newFile
+./reverse newFile newFile2
+diff someFile newFile2
+```
+
+If the files are EXACTLY the same (byte for byte), then ```diff``` will not output anything.  Any other output and you've got a problem.  Read up on the ```hexdump``` command to help you see differences in files.
 
 ## Grading
 
