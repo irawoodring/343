@@ -216,3 +216,22 @@ All this is great of course - and useful.  But at some point we need a way to pe
 
 Just like functional languages though, there is no such thing as an iterator.  Instead, we make use of our trusty friend, recursion!
 ---
+Here is the classic example of the "member" function:
+
+```Prolog
+member(X,[X|_]).
+member(X,[_|T]) :- member(X,T).
+```
+
+"member" determines if an element is a member of a list.
+---
+Fortunately for us though, there are a lot of built-in functions we can make use of that perform simple tasks.  Such as:
+
+```Prolog
+?- include(>(3), [1,2,3,4,5,6,7], X).
+X = [1, 2].
+?- exclude(<(30), [1, 2, 3, 4, 60, 70, 80], X).
+X = [1, 2, 3, 4].
+```
+---
+You probably noticed that these seem to do the opposite of what the "look" like they should do.  They are actually filtering based on the condition, not accepting based on the conditional.

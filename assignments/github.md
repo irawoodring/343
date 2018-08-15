@@ -22,4 +22,4 @@ Have questions?  Ask them on Slack (and answer them!).  We are learning as a com
 
 ## Submission
 
-Github repositories all have a green "Clone or download" button.  Click this button, copy the clone URL and paste it in Blackboard by January 17 at 8:00 a.m.
+Github repositories all have a green "Clone or download" button.  Click this button, copy the clone URL and paste it in Blackboard by September 5 at 8:00 a.m.
