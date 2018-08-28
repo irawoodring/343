@@ -10,7 +10,7 @@ Github offers free hosting for student repositories.  Many employers may ask to 
 
 As mentioned I will not be teaching ```git``` directly in this class.  However, to ensure that everyone has at least enough exposure to clone code samples, assignment files, etc. I wish you to do the following:
 
-  - Complete the tutorial [https://try.github.io/](https://try.github.io "Github tutorial")
+  - Complete the tutorial [https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners](Git/Github Tutorial "Github tutorial")
   - Setup a Github account and create a repository called 343-HW1.
   - Put two files in this repository, a ```README.md``` that includes a few sentences about which commands ```git``` provides that you will commonly use, and an image (```.jpg```, ```.png```, etc.) that shows you completing the git tutorial.
 
