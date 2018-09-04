@@ -97,16 +97,16 @@ In this class we will use either the Clang compiler or the GCC compiler.  Both a
 
 A program written in C is some executable code (usually) linked to other libraries.
 
-These libraries are usually pieces of code written by a community of advanced programmers, and provide facilities such as I/O, memory management, etc.
+These libraries are often pieces of code written by a community of advanced programmers, and provide facilities such as I/O, memory management, etc.
 
-Usually these libraries have been in development for many years, are very robust, efficient, and secure code.  We should use them.
-
+Likely, these libraries have been in development for many years, are very robust, efficient, and secure code.  We should use them.
+---
 But, we can write libraries as well (and should!).
+
+C gives us facilities to separate out our code into interface and implementation files.
 ---
 **Compilation**
 ***
-
-C gives us facilities to separate out our code into interface and implementation files.
 
 Interface files describe data types, functions, etc. that may be used in a library.  The do not usually provide the implementation.  Interface files are \*.h files.
 
@@ -205,7 +205,7 @@ Same syntax applies to GCC.
 **Compilation**
 ***
 
-Notice that on the command-line we pass the names of ALL the \*.c files to the compiler.  We DO NOT pass the \*.h files!
+Notice that on the command-line we pass the names of ALL the \*.c files to the compiler.  We **DO NOT** pass the \*.h files!
 
 However, there is no need to pass the name of the system libraries.  The <> around their names indicate to the compiler to search through the system library path.
 
