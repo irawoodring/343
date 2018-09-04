@@ -81,6 +81,11 @@ C requires the use of a compiler to create the libraries and executables needed 
 
 The compiler translates higher-level C code into machine code that a processor can understand.
 ---
+Here are two sample instruction sets, should you be interested:
+
+[Intel Sample](https://github.com/irawoodring/343/tree/master/docs/intel.pdf "Sample instruction set for an Intel processor")
+[ARM Sample(https://github.com/irawoodring/343/tree/master/docs/arm.pdf "Sample instruction set for an ARM processor")
+---
 **Compilation**
 ***
 
