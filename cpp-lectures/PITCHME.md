@@ -321,6 +321,7 @@ They both need memory areas for their own grades.  This is what we call a **deep
 
 Since our object uses dynamic memory allocation we are going to have to rewrite (at least some of) The Big Five.  The default ones won't work for us because our object needs some custom behavior.
 
+---
 ```C++
 // Note the const reference!!!!
 
