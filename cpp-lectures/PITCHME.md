@@ -255,6 +255,37 @@ The memory that the reference points to does not exist after the function call r
 
 The big problem is that it will *sometimes* work.  It depends on whether the stack space was overwritten since the object was created or not.
 ---
+```C++
+       │ File: ReferenceFromFunction.cpp
+───────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ /*
+   2   │  * This may work sometimes, but not other times.
+   3   │  * You should NEVER do this.
+   4   │  */
+   5   │
+   6   │ #include <string>
+   7   │ #include <iostream>
+   8   │
+   9   │ class Student {
+  10   │        public:
+  11   │                static Student& getNew(){
+  12   │                        Student tmp;
+  13   │                        Student& two = tmp;
+  14   │                        return two;
+  15   │                }
+  16   │                std::string name;
+  17   │                int number;
+  18   │ };
+  19   │
+  20   │ int main(int argc, char** argv){
+  21   │        Student ira = Student::getNew();
+  22   │        ira.name = "Ira";
+  23   │        ira.number = 9;
+  24   │
+  25   │        std::cout << ira.name << std::endl;
+  26   │ }
+```
+---
 **The Big Five**
 ***
 
@@ -302,9 +333,11 @@ Student {
 };
 
 Student a;
+a.grades = new float[50];
+a.grades[0] = 100;
 Student b(a);
 Student c;
-a.grades = (float*) malloc(50*sizeof(float));    // What are the grades?
+a.grades = 
 ```
 
 We have a problem... During the copy we copied the pointer.  The pointer holds the memory location of a's grades.  Anytime we change a, it will change b's grades as well.  They will both be forced to have the same grades!
