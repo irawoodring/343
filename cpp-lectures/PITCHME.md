@@ -297,6 +297,8 @@ When an object is created in C++, it is given some functions.  These functions a
   - move operator=
   - destructor
 ---
+The move operator and move operator= are new as of C++11 so they aren't pertinent to older code.
+---
 **The Big Five**
 ***
 
@@ -326,20 +328,28 @@ Student b(a);
 ```
 ---
 ```C++
-Student {
-  int number;
-  float gpa;
-  float* grades;
-};
-
-Student a;
-a.grades = new float[50];
-a.grades[0] = 100;
-Student b(a);
-Student c;
-a.grades = 
+───────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: ShallowCopy.cpp
+───────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ #include <iostream>
+   2   │
+   3   │ class Student {
+   4   │        public:
+   5   │                int number;
+   6   │                float gpa;
+   7   │                float* grades;
+   8   │ };
+   9   │
+  10   │ int main(int argc, char** argv){
+  11   │        Student a;
+  12   │        a.grades = new float[50];
+  13   │        a.grades[0] = 100;
+  14   │        Student b(a);
+  15   │        b.grades[0] = 46;
+  16   │        std::cout << "Student a got a " << a.grades[0] << std::endl;
+  17   │ }
 ```
-
+---
 We have a problem... During the copy we copied the pointer.  The pointer holds the memory location of a's grades.  Anytime we change a, it will change b's grades as well.  They will both be forced to have the same grades!
 ---
 **The Big Five**
@@ -356,18 +366,47 @@ Since our object uses dynamic memory allocation we are going to have to rewrite 
 
 ---
 ```C++
-// Note the const reference!!!!
-
-Student(const Student &other){
-  this->gpa = other.gpa;
-  this->number = other.number;
-  // Let's get a new memory area for our grades.
-  this->grades = (float*) malloc(50 * sizeof(float));
-  // Now, since we are doing a copy, we must make
-  // copies of the grades too.
-  for(int i=0; i<50; i++){
-    this->grades[i] = other.grades[i];
-  }
-}
+       │ File: DeepCopy.cpp
+───────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ #include <iostream>
+   2   │
+   3   │ class Student {
+   4   │        public:
+   5   │
+   6   │                // Because we are overriding the constructor,
+   7   │                // we need to provide a new default one as well.
+   8   │                Student(){
+   9   │
+  10   │                }
+  11   │
+  12   │                Student(const Student& other){
+  13   │                        // The first two fields we copy by copy
+  14   │                        this->number = other.number;
+  15   │                        this->gpa = other.gpa;
+  16   │
+  17   │                        // This is a pointer though... if we
+  18   │                        // copy by copy we get the address.  We
+  19   │                        // need a new memory area for it.
+  20   │                        this->grades = new float[50];
+  21   │
+  22   │                        // Now copy the old values in.
+  23   │                        for(int i=0; i<50; i++){
+  24   │                                this->grades[i] = other.grades[i];
+  25   │                        }
+  26   │                }
+  27   │
+  28   │                int number;
+  29   │                float gpa;
+  30   │                float* grades;
+  31   │ };
+  32   │
+  33   │ int main(int argc, char** argv){
+  34   │        Student a;
+  35   │        a.grades = new float[50];
+  36   │        a.grades[0] = 100;
+  37   │        Student b(a);
+  38   │        b.grades[0] = 46;
+  39   │        std::cout << "Student a got a " << a.grades[0] << std::endl;
+  40   │ }
 ```
 ---
