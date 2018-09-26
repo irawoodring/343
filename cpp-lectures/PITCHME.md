@@ -291,8 +291,8 @@ The big problem is that it will *sometimes* work.  It depends on whether the sta
 
 When an object is created in C++, it is given some functions.  These functions are the:
 
-  - copy operator
-  - move operator
+  - copy constructor
+  - move constructor
   - copy operator=
   - move operator=
   - destructor
@@ -302,7 +302,9 @@ The move operator and move operator= are new as of C++11 so they aren't pertinen
 **The Big Five**
 ***
 
-The copy operator is called whenever we pass an object as the parameter to another object.
+The copy constructor is called whenever we pass an object as the parameter to the constructor of the same type.
+
+It allows us to create a new object that is a copy of a prior one.
 
 ```C++
 Student a;
@@ -378,7 +380,7 @@ Since our object uses dynamic memory allocation we are going to have to rewrite 
    8   │                Student(){
    9   │
   10   │                }
-  11   │
+  11   │		// Copy constructor
   12   │                Student(const Student& other){
   13   │                        // The first two fields we copy by copy
   14   │                        this->number = other.number;
@@ -410,3 +412,49 @@ Since our object uses dynamic memory allocation we are going to have to rewrite 
   40   │ }
 ```
 ---
+We use the copy constructor to create a new object that is a copy of a previous one.
+
+Sometimes, we wish to set an existing object equal to another existing object.  For this, we use the copy operator=.
+---
+There are multiple ways of writing a copy operator=.  The generally accepted "best" way is to use the Copy-and-Swap method.  This method works by passing a copy of the original object in as a parameter to the function, instead of passing a reference.
+
+Then, we steal the copy's data.
+---
+```C++
+  28   │                /*
+  29   │                 * Copy Operator=
+  30   │                 * Pass copy of object in (will call
+  31   │                 * the copy constructor!).  Then
+  32   │                 * steal its data.
+  33   │                 */
+  34   │                Student& operator=(Student other){
+  35   │                        // Swap our old data for the
+  36   │                        // good new data.
+  37   │                        std::swap(this->number, other.number);
+  38   │                        std::swap(this->gpa, other.gpa);
+  39   │                        std::swap(this->grades, other.grades);
+  40   │
+  41   │                        // Return ourself!
+  42   │                        return *this;
+  43   │                }
+```
+---
+Why in the world don't we just copy the same way we did for the copy constructor?
+---
+Code duplication is bad.
+
+This way, we leverage the copy code from the constructor.  If we ever need to change the copy code, we only change it in one place.
+---
+Additionally, here we are only swapping small data types (ints, etc.).  We could have just copied them.  But, if they were large data types (collections, etc.) swapping is much faster than copying.
+---
+C++ 2011 introduced Move Semantics.
+
+This is based on the idea that it is much quicker for the computer to move an object than to create a new one.
+---
+Makes a lot of sense; if we create a new object in a function, and then try to pass that object back as a return value, it gets copied (via its copy constructor).
+
+If it is a complicated object to create this is very, very slow.
+
+If we are already creating it in the function, then let's just move the one we created instead.
+---
+
