@@ -457,4 +457,27 @@ If it is a complicated object to create this is very, very slow.
 
 If we are already creating it in the function, then let's just move the one we created instead.
 ---
-
+```C++
+  50   │                /*
+  51   │                 * Move Constructor
+  52   │                 * Notice the &&.
+  53   │                 */
+  54   │                Student(Student&& other){
+  55   │                        std::cout << "Move Constructor called." << std::endl;
+  56   │                        if (this != &other){
+  57   │                                // Steal the other object's data
+  58   │                                this->number = std::move(other.number);
+  59   │                                this->gpa = std::move(other.gpa);
+  60   │
+  61   │                                // Steal the other object's grades
+  62   │                                this->grades = std::move(other.grades);
+  63   │
+  64   │                                // Set the other object's pointer to nullptr.
+  65   │                                // Otherwise, when it dies it will take
+  66   │                                // our stolen data with it.
+  67   │                                other.grades = nullptr;
+  68   │                        }
+  69   │                }
+```
+---
+We don't usually need the Move Operator=, since C++ can recognize whether a temporary (movable) object is being passed in as a parameter to the operator= we already have.  It will pick the correct constructor on its own.
