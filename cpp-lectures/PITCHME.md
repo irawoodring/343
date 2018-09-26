@@ -450,6 +450,8 @@ Additionally, here we are only swapping small data types (ints, etc.).  We could
 C++ 2011 introduced Move Semantics.
 
 This is based on the idea that it is much quicker for the computer to move an object than to create a new one.
+
+Moves are often used for temporary objects (such as a return from a function).
 ---
 Makes a lot of sense; if we create a new object in a function, and then try to pass that object back as a return value, it gets copied (via its copy constructor).
 
