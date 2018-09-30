@@ -364,7 +364,16 @@ The **lifetime** of a variable is the time during which it is bound to a particu
 > in that here we are assigning a value BEFORE runtime
 > and previously we were just creating the memory.
 > We'll call this file static.c
+---
+```C
+#include <stdio.h>
 
+int main(int argc, char** argv){
+        static int meaning = 42;
+        int runtimeStuff = 1701;
+        printf("The meaning is %d.\n\n", meaning);
+}
+```
 ---
 Viewing the file we can verify this binding:
 ```C
