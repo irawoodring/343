@@ -310,7 +310,8 @@ Consider this code:
 #include <stdio.h>
 
 int main(int argc, char** argv){
-        static int meaning = 42;
+        static int meaning;
+	meaning = 42;
         int runtimeStuff = 1701;
         printf("The meaning is %d.\n\n", meaning);
 }
