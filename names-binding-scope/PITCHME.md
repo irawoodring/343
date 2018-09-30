@@ -421,7 +421,7 @@ The disadvantage is run-time overhead, as allocating and deallocating variables 
 Why can't we have recursion without these variables?
 
 Consider this language that only has global storage:
-
+---
 ```C
 #include <stdio.h>
 #include <stdlib.h>
@@ -439,6 +439,10 @@ int main(int argc, char** argv){
   printf("Factorial of %d is %d.\n", n, factorial());
 }
 ```
+---
+This can't work; each iteration of the factorial function reduces ```n``` by 1.  The final value will always be 0.
+
+Consider ```n=3```.  The first function can't return until it calls itself, but calling itself reduces the value of ```n```.
 ---
 **Binding**
 ***
@@ -514,7 +518,7 @@ int main(int argc, char** argv){
 **Global variables** exist outside of function definitions, but are resolvable from within functions.
 
 In some languages we must be careful to not re-use a name of a global within some local scope.  For instance, in C we could do this:
-
+---
 ```C
 int num_threads;
 
@@ -523,6 +527,8 @@ int main(int argc, char** argv){
   float num_threads = 3.14;
 }
 ```
+
+When you make a variable un-resolvable in this way, we say you are shadowing the variable.
 ---
 **Scope**
 ***
@@ -619,7 +625,7 @@ Static scope does have issues:
   - Usually allows more access than needed.
   - Restricts program evolution - leading programmers to do things they shouldn't.
     - They may make more things global (Ugh!)
-    - May end up with an awkward designing
+    - May end up with an awkward design
 
 These issues are largely fixed by encapsulation.
 ---
