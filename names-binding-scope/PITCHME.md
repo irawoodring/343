@@ -311,7 +311,7 @@ Consider this code:
 
 int main(int argc, char** argv){
         static int meaning;
-	meaning = 42;
+		meaning = 42;
         int runtimeStuff = 1701;
         printf("The meaning is %d.\n\n", meaning);
 }
