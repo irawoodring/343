@@ -327,7 +327,7 @@ While the value ```42``` is not assigned statically, we can tell that the addres
 ... // Lots more output...
 ```
 ---
-In the midst of all the output we find the variable main.meaning is given a memory location, even before the program is run.  By contrast, notice that there is no address defined for runtimeStuff.  This will be determined when the program is run.
+In the midst of all the output we find the variable ```main.meaning``` is given a memory location, even before the program is run.  By contrast, notice that there is no address defined for runtimeStuff.  This will be determined when the program is run.
 ---
 **Binding**
 ***
