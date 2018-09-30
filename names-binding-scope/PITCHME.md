@@ -359,11 +359,11 @@ The **lifetime** of a variable is the time during which it is bound to a particu
 ***
 
 **Static variables** are bound to memory cells before programs are executed, and stay bound until the program ends.
-
->> Note that this is different from the last example,
->> in that here we are assigning a value BEFORE runtime
->> and previously we were just creating the memory.
->> We'll call this file static.c
+---
+> Note that this is different from the last example,
+> in that here we are assigning a value BEFORE runtime
+> and previously we were just creating the memory.
+> We'll call this file static.c
 
 ---
 Viewing the file we can verify this binding:
