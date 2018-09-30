@@ -300,9 +300,9 @@ Binding can occur at
 **Binding**
 ***
 
-A static binding occurs before runtime and does not change while the program is running.
+A **static** binding occurs *before runtime* and does not change while the program is running.
 
-A binding that occurs during runtime and can change while the program is running is dynamic.
+A binding that occurs during runtime and can change *while the program is running* is **dynamic**.
 ---
 Consider this code:
 
@@ -332,7 +332,7 @@ In the midst of all the output we find the variable main.meaning is given a memo
 **Binding**
 ***
 
-Type bindings may be implicit or explicit.  Explicit type bindings may harm writability but aid readability.
+Type bindings may be **implicit** or **explicit**.  Explicit type bindings may harm writability but aid readability.
 
 Implicit type bindings do the opposite.  In addition, they can harm reliability as they remove the ability of a compiler to detect errors before runtime.
 ---
@@ -341,7 +341,7 @@ Implicit type bindings do the opposite.  In addition, they can harm reliability 
 
 Please note that implicit/explicit bindings are a separate topic from static/dynamic bindings, though I've found that students' tend to confuse the two.  
 
-This is likely due to the fact that dynamic languages use implicit type systems (Python, etc.) though there are those that are static and implicit (Go).
+This is likely due to the fact that many dynamic languages use implicit type systems (Python, etc.) though there are those that are static and implicit (Go).
 ---
 **Binding**
 ***
