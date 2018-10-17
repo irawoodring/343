@@ -14,6 +14,12 @@ We've learned so far that lexing is the process of tokenizing a string.
 
 As we progress into parsing we will see what we do with these tokens, but for now we are just going to focus on the problem of tokenizing the string.
 ---
+I want to stop here and make clear what we are about to do, because students often get confused.  We are going to run a C program that is going to generate C code.
+---
+The C code that is generated is a library that can be used in our own code.  It is a lexing library that will be customized to the language we are creating.
+
+This will then be compiled from C into native code.
+---
 **Lexing (Scanning)**
 ***
 
