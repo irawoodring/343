@@ -114,9 +114,9 @@ A Sample Flex file has three sections:
 - **Definitions** - sources any symbols by including header files, or defining any macros.
 - **Rules** - The regular expressions and the code to run when they are encountered.
 - **Code** - C code that is copied directly into the generated file.  This may be a main function, or any other function the rules may need to call when encountered.
-
-The sections are separated with the ```%%``` characters.
 ---
+The sections are separated with the ```%%``` characters.
+
 ```C
 %{
     #include <stdio.h>
