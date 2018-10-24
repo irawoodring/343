@@ -494,6 +494,22 @@ You can *sort of* have private variables in Python by using Python's variable ma
 
 In general you should prefix "private" variables with these characters
 ---
+```Python
+class Blah:
+    def __init__(self):
+        self.__stuff = 42
+
+>>>b = Blah()
+>>>b.__stuff
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'Blah' object has no attribute '__stuff'
+
+>>> b._Blah__stuff
+42
+
+```
+---
 **Python**
 ***
 
@@ -575,6 +591,8 @@ Hi.
 Hi.
 Hi.
 ```
+---
+The following code is retained from previous semesters, but does not apply to this semester.
 ---
 **Python**
 ***
