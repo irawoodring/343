@@ -512,9 +512,7 @@ AttributeError: 'Blah' object has no attribute '__stuff'
 ---
 We can still modify this.  But we shouldn't.  I saw a Stack Overflow post once that put this perfectly:
 ---
->>Yes, a Jedi's strength flows from the Force. But beware of the dark side. Anger, fear, aggression - the dark side of the Force, are they. Easily they flow, quick to join you in a fight. If once you start down the dark path, forever will it dominate your destiny. Consume you, it will, as it did Obi-Wan's apprentice.
-
-- Master Yoda
+"Yes, a Jedi's strength flows from the Force. But beware of the dark side. Anger, fear, aggression - the dark side of the Force, are they. Easily they flow, quick to join you in a fight. If once you start down the dark path, forever will it dominate your destiny. Consume you, it will, as it did Obi-Wan's apprentice." - Master Yoda
 
 Don't start down that path.
 ---
