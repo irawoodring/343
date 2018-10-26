@@ -491,8 +491,10 @@ This means that Python doesn't *really* have private variables.  This fits with 
 ***
 
 You can *sort of* have private variables in Python by using Python's variable mangling abilities.  Variable mangling occurs when we prefix a variable we wish to be private with the ```__``` characters.  This causes Python to internally rename the variable (you can read up on how this happens but we will not discuss it in class).
+---
+This "mangling" of variables is a useful way to make data harder to access, but isn't perfect.  It complicates things.  Often, Python programmers use a single underscore to prefix a variable.  This tells other Python programmers it should be considered private.
 
-In general you should prefix "private" variables with these characters
+In general you should prefix "private" variables with one of those conventions.
 ---
 ```Python
 class Blah:
@@ -513,8 +515,8 @@ AttributeError: 'Blah' object has no attribute '__stuff'
 We can still modify this.  But we shouldn't.  I saw a Stack Overflow post once that put this perfectly:
 ---
 "Yes, a Jedi's strength flows from the Force. But beware of the dark side. Anger, fear, aggression - the dark side of the Force, are they. Easily they flow, quick to join you in a fight. If once you start down the dark path, forever will it dominate your destiny. Consume you, it will, as it did Obi-Wan's apprentice." - Master Yoda
-
-Don't start down that path.
+---
+As cool as it would be to be the Darth Vader of Python programming, don't start down that path.
 ---
 **Python**
 ***
@@ -598,6 +600,13 @@ Hi.
 Hi.
 ```
 ---
+The __all__ variable in the __init__.py file controls which submodules are loaded when we type
+
+```Python
+from my_lib import *
+```
+
+For instance, if we wanted 
 The following code is retained from previous semesters, but does not apply to this semester.
 ---
 **Python**
