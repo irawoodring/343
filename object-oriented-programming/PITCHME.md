@@ -363,7 +363,6 @@ C++ All in header example:
 
 ```C++
 #include <iostream>
-using namespace std;
 
 /**
  * A class for simulating an integer memory cell.
