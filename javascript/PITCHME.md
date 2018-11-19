@@ -125,7 +125,6 @@ undefined
 >
 ```
 ---
----
 Before we get into how to create objects in Javascript, let us discuss the difference between two keywords:
 
 ```let``` and ```var```
@@ -159,6 +158,7 @@ ReferenceError: i is not defined
 undefined
 > console.log(i)
 5
+```
 ---
 In Javascript objects are hash maps (key-value pairs).  The keys are strings and the values are objects (functions are objects too).
 
@@ -305,3 +305,8 @@ Connection: close
 Hello World!Connection closed by foreign host.
 ```
 ---
+Nice!
+
+We created a web server.  It doesn't do much - yet - but it will
+---
+Suppose we wanted to create a new route;
