@@ -309,4 +309,51 @@ Nice!
 
 We created a web server.  It doesn't do much - yet - but it will
 ---
-Suppose we wanted to create a new route;
+First, let's have the server hold some data - perhaps some people objects.
+
+In the "real-world" we usually have our data in databases, and our apps interact with those.  But we don't have to.
+
+Here we will just use an object in memory to hold our info:
+---
+```Javascript
+people = new Object()
+people['ira'] = { name: 'ira', lastName:'woodring', age:'42' }
+```
+---
+Suppose we wanted to create a new route, one that GETs all the people.  We could do something like this:
+
+```Javascript
+app.get('/all', (req, res) => res.json(people))
+```
+
+This merely sends the entire people object back as a JSON encoded response.
+---
+Now, let's add a route that asks for a specific user.  We can do that this way:
+
+```Javascript
+app.get('/:id', function(req,res){
+        res.send(people[req.params.id]);
+        });
+```
+---
+What if we wanted to have users add new people to our object?
+
+We could use a POST request!
+---
+```Javascript
+app.post('/new', function(req,res){
+        console.log(req.body);
+        people[req.body.name] = req.body
+        console.log(people)
+        res.sendStatus(200)
+```
+
+We've added a new route to /new that accepts a POST request.  This one needs a JSON body.  We can simulate this a variety of ways, but I usually just use the command-line (from a different terminal):
+---
+```C
+curl --header "Content-Type: application/json" --request POST --data '{ "name":anne", "lastName":"smithy", "age":"42"}' http://localhost:3000/new
+```
+
+Here we just sending a JSON body to our local web server via a POST request.  We could use other methods (such as Postman in a browser), but there is no need.  This one is simple enough to test this way.
+---
+
