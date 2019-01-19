@@ -168,8 +168,8 @@ Or:
 Lists are described in BNF recursively, i.e.:
 
 ```
-<identifier_list> -> identifier
-                  -> identifier, <identifier_list>
+<identifier_list> -> <identifier>
+                   | <identifier>, <identifier_list>
 ```
 ---
 ### Syntax
