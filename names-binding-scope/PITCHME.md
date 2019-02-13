@@ -432,7 +432,7 @@ int n;
 int factorial() {
   if (n == 0) return 1;           // Base case
   n = n - 1;
-  return (n * Factorial());
+  return (n * factorial());
 }
 
 int main(int argc, char** argv){
