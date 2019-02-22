@@ -6,7 +6,7 @@ Ira Woodring
 ***
 
 Language Spotlight - Python
-A Dynamically Typed Language
+A Strong, Dynamically Typed Language
 ---
 **Python**
 ***
@@ -35,6 +35,16 @@ The language is widely used - usually in the top 10 on the Tiobe index (\#5 as o
 Python allows programmers to program in multiple paradigms; imperative, procedural, and object-oriented paradigms are supported.  The language also provides some functional features.
 
 Types in Python are dynamic, meaning variables are not bound before runtime.  This makes writability much easier for programming in Python, but affects readability and reliability (due to a lack of compile time type checking).
+---
+Python is strongly typed (though people are often confused about this because we can change the type ourselves so easily).  The reason it is strongly typed is that variables are not automatically coerced into other types.  Consider:
+
+```python
+a = "42"
+b = 1 + a
+
+c = 42
+print("The answer is " + c)
+```
 ---
 van Rossum continues to oversee development of Python due to his status as BDFL, but the language is influenced by these general goals:
 
