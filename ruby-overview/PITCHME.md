@@ -344,6 +344,48 @@ ph.whoAmI?	»	"Phonograph (#537766170): West End Blues"
 et.whoAmI?	»	"EightTrack (#537765860): Surrealistic Pillow"
 ```
 ---
+Ruby allows different ways to import code.
+
+We can **require** code or **load** code.
+---
+**require** causes files to be read in and parsed once, the first time they are needed.
+
+**load** causes files to be read and parsed every time the load command is called.
+---
+We can also **include** or **extend** code.
+
+**include** adds a module methods as instance methods, whereas **extend** causes module methods to be class methods.
+---
+```Ruby
+module MyModule
+  def myMethod
+    "Howdy."
+  end
+end
+
+class MyClass
+  extend TestModule
+end
+
+MyClass.myMethod
+```
+---
+```Ruby
+module MyModule
+  def myMethod
+    "Howdy."
+  end
+end
+
+class MyClass
+  include TestModule
+end
+
+MyClass.myMethod
+mine = MyClass.new
+mine.method
+```
+---
 **Sources**
 ***
 
