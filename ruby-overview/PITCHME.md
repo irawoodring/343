@@ -6,7 +6,7 @@ Ira Woodring
 ***
 
 Language Spotlight - Ruby
-A Dynamically Typed Language
+A Dynamically Strongly Typed Interpreted Language
 ---
 **Overview**
 ***
@@ -14,6 +14,27 @@ A Dynamically Typed Language
 Ruby was created by Yukihiro "Matz" Matsumoto.  He goes by "Matz".
 
 He created the language in 1995 to combine features he loved from Perl, Smalltalk, Eiffel, Ada, and Lisp.
+---
+He claims he wanted it to be focused more on programmers than other languages.
+
+Matz says the name came from the birthstone of one of his colleagues.  We don't really know much more about the name...
+---
+It uses something we call "duck typing".  If it looks like a duck, walks like a duck, and quacks like a duck, it can be a duck.
+
+Meaning... we don't necessarily need the type of an object to be a specific type.  If the needed methods and properties are there, the object can act like whatever it needs to be.
+---
+In general Ruby doesn't care much for type.  Everything is an object.  If an object acts like what it needs to be, it can be.
+
+This does not mean that Ruby is weakly typed though...
+
+```Ruby
+TypeError: no implicit conversion of Fixnum into String
+	from (irb):1:in `+'
+	from (irb):1
+	from /usr/bin/irb:11:in `<main>'
+```
+---
+No coercion happened there.
 ---
 **Overview**
 ***
