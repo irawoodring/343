@@ -18,7 +18,7 @@ He created the language in 1995 to combine features he loved from Perl, Smalltal
 **Overview**
 ***
 
-As of the time of this writing (Fall 2017), it was \#10 on the Tiobe index, up from \#13 the year before.
+As of the time of this writing (Winter 2019), it was \#16 on the Tiobe index, down from \#10 the period before.
 
 [Tiobe Index](https://www.tiobe.com/tiobe-index/ "Tiobe Index")
 ---
@@ -46,7 +46,7 @@ This is obvious from the fact that we can run this code (from the Ruby About pag
 Just like Python, Ruby allows you to add a member to a class or object at any time.
 
 Unlike Python, Ruby also allows us to remove members at any time:
-
+---
 ```Ruby
 class Blah
   def say_hi(name)
@@ -102,7 +102,7 @@ We can iterate over the above collections as such:
 
 ```Ruby
 friends.each do |f|
-  puts i
+  puts f
 end
 
 calories.each do |key, value|
