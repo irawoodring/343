@@ -76,10 +76,10 @@ They may also use character classes:
 
 ```
 [:digit:] or \d   :    class for numbers 0-9.
-[:lower:]  	  :    lower case letters.
-[:upper:] 	  :    upper case letters.
-[:space:] or \s	  :    white space.
-[:alnum:] 	  :    alphanumeric characters.
+[:lower:]         :    lower case letters.
+[:upper:]         :    upper case letters.
+[:space:] or \s   :    white space.
+[:alnum:]         :    alphanumeric characters.
 
 Many more.
 ```
