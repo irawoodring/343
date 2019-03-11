@@ -60,11 +60,11 @@ regex{7,}     :   matches the regex 7 or more times.
 Special characters:
 
 ```
-^		: Matches the beginning of a line
-$		: Matches the end of a line
-.		: Matches any single character
+^               : Matches the beginning of a line
+$               : Matches the end of a line
+.               : Matches any single character
 ()		: Groupings
-\character	:   do not evaluate the character; match it literally.
+\character      :   do not evaluate the character; match it literally.
                   (useful if we want to match a character that is
                   also a regex character.).
 ```
