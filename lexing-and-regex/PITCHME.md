@@ -55,10 +55,18 @@ regex+        :   matches the regex preceeding the + 1 or more times.
 regex?        :   matches the regex preceeding the ? 0 or 1 times.
 regex{3,9}    :   matches the regex if it occurs 3-9 times.
 regex{7,}     :   matches the regex 7 or more times.
-\character    :   do not evaluate the character; match it literally.
+```
+---
+Special characters:
+
+```
+^		: Matches the beginning of a line
+$		: Matches the end of a line
+.		: Matches any single character
+()		: Groupings
+\character	:   do not evaluate the character; match it literally.
                   (useful if we want to match a character that is
                   also a regex character.).
-Many more.
 ```
 ---
 **Lexing (Scanning)**
@@ -67,11 +75,11 @@ Many more.
 They may also use character classes:
 
 ```
-[:digit:]    :    class for numbers 0-9.
-[:lower:]    :    lower case letters.
-[:upper:]    :    upper case letters.
-[:space:]    :    white space.
-[:alnum:]    :    alphanumeric characters.
+[:digit:] or \d   :    class for numbers 0-9.
+[:lower:]  	  :    lower case letters.
+[:upper:] 	  :    upper case letters.
+[:space:] or \s	  :    white space.
+[:alnum:] 	  :    alphanumeric characters.
 
 Many more.
 ```
