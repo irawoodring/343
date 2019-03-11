@@ -63,7 +63,7 @@ Special characters:
 ^               : Matches the beginning of a line
 $               : Matches the end of a line
 .               : Matches any single character
-()		: Groupings
+()              : Groupings
 \character      :   do not evaluate the character; match it literally.
                   (useful if we want to match a character that is
                   also a regex character.).
