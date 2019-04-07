@@ -265,7 +265,8 @@ sub(var1, var2){ ... }
 sub(p1, p1);  // Function call
 ```
 
-When the function returns one of the values, either var1 or var2 will be copied into p1.
+When the function returns var1 and var2 will be overwritten with p1.
+Or, function call worthless if p1 is read-only.
 ---
 Pass-by-value-result provides inout-mode passing.  It is a combination of pass-by-value and pass-by-result.  The actual parameters are used to initialize the formal parameters which are then local to the function.  At the return from the function that formal parameters are passed to the actual parameters.
 
