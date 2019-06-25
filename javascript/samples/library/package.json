@@ -1,0 +1,19 @@
+{
+  "name": "othello",
+  "version": "1.0.0",
+  "description": "An Othello game.",
+  "main": "main.js",
+  "dependencies": {
+    "prompt-sync": "^4.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Othello",
+    "game."
+  ],
+  "author": "",
+  "license": "ISC"
+}
