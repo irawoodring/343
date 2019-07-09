@@ -613,7 +613,7 @@ int my_int_array[100];
 student my_student_array[1000];
 ```
 
-However!  This is static creation of the array (compile-time).  These array cannot be reassigned later in the program's runtime, so their size is fixed until recompiled..
+However!  This is static creation of the array (compile-time).  These array cannot be reassigned later in the program's runtime, so their size is fixed until recompiled.
 ---
 **Memory Management**
 ***
