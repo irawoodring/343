@@ -620,19 +620,18 @@ However!  This is static creation of the array (compile-time).  These array cann
 
 Recall from our architecture lecture that there are two memory areas our programs make use of, the **stack** and the **heap**.
 
-When C code is compiled, the compiler determines the size amount of memory needed for each function call.  This memory includes space for local variables and code.
+When C code is compiled, the compiler determines the amount of memory needed for each function call.  This memory includes space for local variables and code.
+---
+Each time a function is called, the amount of memory needed for it to run (both code and variables) is allocated on the stack.  Each function call is placed on top of the last, only being removed when a function returns.
 
-But what if we need a data structure of changing size?
+Because of this, the size of variables is fixed.
+
+But what if we need a data structure of changing size?  Can't go on the stack...
 ---
 **Memory Management**
 ***
 
-Can't go on the stack...
----
-**Memory Management**
-***
-
-Therefore we have to declare the space on the heap.  We do that via the ```malloc``` or ```calloc``` (part of ```stdlib.h```).
+We have to declare the space on the heap.  We do that via the ```malloc``` or ```calloc``` (part of ```stdlib.h```).
 
 ```void *malloc(size_t size)```
 ```void *calloc(size_t nitems, size_t size)```
