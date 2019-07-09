@@ -18,6 +18,8 @@ https://www.bell-labs.com/usr/dmr/www/chist.html
 
 - Was written in the early 70's by Dennis Ritchie at Bell Labs.
 
+- While some people think Brian Kernighan helped write C, this is not the case.  He merely helped write the book on it (he has clearly stated this himself!).
+
 - Was written for Unix development (original Unix was written in Assembly)
 
 - Was based on BCPL, a language with no types, and B.  C added types and other features.
@@ -611,7 +613,7 @@ int my_int_array[100];
 student my_student_array[1000];
 ```
 
-However!  This is static creation of the array (compile-time).  This means that the array is on the stack and cannot grow during the program's run-time.
+However!  This is static creation of the array (compile-time).  These array cannot be reassigned later in the program's runtime, so their size is fixed until recompiled..
 ---
 **Memory Management**
 ***
