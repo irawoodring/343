@@ -620,7 +620,7 @@ However!  This is static creation of the array (compile-time).  These array cann
 
 Recall from our architecture lecture that there are two memory areas our programs make use of, the **stack** and the **heap**.
 
-When C is compiled, space is allocated for all static variables (variables whose sizes will not change) on the stack.  
+When C code is compiled, the compiler determines the size amount of memory needed for each function call.  This memory includes space for local variables and code.
 
 But what if we need a data structure of changing size?
 ---
