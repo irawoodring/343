@@ -681,7 +681,7 @@ typedef struct student_type {
 We could declare an array to hold 50 of these as such:
 
 ```C
-student* my_students = (student*) malloc(50 * sizeof(student));
+student* my_students = malloc(50 * sizeof(student));
 ```
 ---
 **Memory Management**
