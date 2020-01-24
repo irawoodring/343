@@ -629,9 +629,13 @@ But what if we need a data structure of changing size?  Can't go on the stack...
 
 We have to declare the space on the heap.  We do that via the ```malloc``` or ```calloc``` (part of ```stdlib.h```).
 
-```void *malloc(size_t size)```
+```
+void *malloc(size_t size)
+```
 
-```void *calloc(size_t nitems, size_t size)```
+```
+void *calloc(size_t nitems, size_t size)
+```
 
 Note that both of these functions return a pointer!
 ---
