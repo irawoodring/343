@@ -420,7 +420,9 @@ These can be separated into categories:
 
 When no type is or can be supplied, the type is
 
-```void```
+```
+void
+```
 
 ---
 **Data Types - Integer Types**
