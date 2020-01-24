@@ -623,7 +623,6 @@ Because of this, the size of variables is fixed.
 But what if we need a data structure of changing size?  Can't go on the stack...
 ---
 **Memory Management**
-***
 
 We have to declare the space on the heap.  We do that via the ```malloc``` or ```calloc``` (part of ```stdlib.h```).
 
@@ -634,7 +633,6 @@ We have to declare the space on the heap.  We do that via the ```malloc``` or ``
 Note that both of these functions return a pointer!
 ---
 **Memory Management**
-***
 
 We use malloc as follows:
 
@@ -645,7 +643,6 @@ int* my_memory = (int*)malloc(50 * sizeof(int));
 This line asks the system to reserve a segment of memory big enough to hold 50 integers.  Since ```malloc``` returns a ```void*``` we must perform an implicit cast to change the type to ```int*```.
 ---
 **Memory Management**
-***
 
 We can now use this segment of memory just as we would a normal array!
 
@@ -657,7 +654,6 @@ my_memory[42] = 100;
 This works because an array in C is really just a pointer to the first element in an array!
 ---
 **Memory Management**
-***
 
 Note that this doesn't just work for basic types.  Recall the ```struct student``` we had earlier?
 
@@ -676,21 +672,18 @@ student* my_students = (student*) malloc(50 * sizeof(student));
 ```
 ---
 **Memory Management**
-***
 
 The problem?  Because we aren't dealing with data on the stack we have to manage the memory ourselves.
 
 This means it is up to us to return this memory when we are finished with it!
 ---
 **Memory Management**
-***
 
 Traditionally not doing so resulted in memory leaks.  This can still happen on many operating systems, but most modern ones have protections against this.
 
 Still... it is good practice to clean up after yourself.  You may not always know on what type of system your code will run.
 ---
 **Memory Management**
-***
 
 We return the memory to the heap with the ```free()``` function.
 
