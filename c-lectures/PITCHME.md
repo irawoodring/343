@@ -644,10 +644,16 @@ Note that both of these functions return a pointer!
 We use malloc as follows:
 
 ```C
-int* my_memory = (int*)malloc(50 * sizeof(int));
+int* my_memory = malloc(50 * sizeof(int));
 ```
 
-This line asks the system to reserve a segment of memory big enough to hold 50 integers.  Since ```malloc``` returns a ```void*``` we must perform an implicit cast to change the type to ```int*```.
+This line asks the system to reserve a segment of memory big enough to hold 50 integers. 
+
+You will see people who cast the malloc (I did in the past).  You do not need to do this, and it is bad practice.  Read more here:
+
+https://stackoverflow.com/questions/605845/do-i-cast-the-result-of-malloc
+
+
 ---
 **Memory Management**
 
