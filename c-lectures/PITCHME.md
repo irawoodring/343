@@ -404,7 +404,6 @@ double calc_tax(float amount, float tax_rate);
 ```
 ---
 **Data Types**
-***
 
 C provides a few basic data types.
 
@@ -415,40 +414,35 @@ These can be separated into categories:
 **Integer Types**
 
 **Floating Point Types**
+
 ---
 **Data Types**
-***
 
 When no type is or can be supplied, the type is
 
 ```void```
 ---
 **Data Types - Integer Types**
-***
 
 ```char```, ```short```, ```int```, ```long``` types hold integer (non-floating point) values.  These types may also be ```unsigned```, which increases the maximum value they can hold, but removes the ability to store a negative value.
 
 Note that there are quite a few more types than listed here; types such as ```long long```, ```long long int```, ```signed``` and ```unsigned``` ```long long int```s, etc.  
 ---
 **Data Types - Integer Types**
-***
 
 Wikipedia has a nicely tabled list, including format specifiers for how to print these values:
 
 https://en.wikipedia.org/wiki/C_data_types
 ---
 **Data Types - Integer Types**
-***
 
 The C standard does not dictate how many bytes each data type must occupy; it DOES however provide minimum numbers of bytes and relationships between types.
 ---
 **Data Types - Floating Point Types**
-***
 
 C provides for ```float```, ```double```, and ```long double``` data types.  These data types are stored via the IEEE 754 standard (we will talk about this later; hardware class will study it in depth.)
 ---
 **Data Types - Record Types**
-***
 
 C provides two mechanisms for storing record types, the ```struct``` and the ```union```.
 
