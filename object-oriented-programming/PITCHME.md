@@ -253,9 +253,10 @@ end Stack_Pack;
 
 You may have noticed the keywords ```with``` and ```use``` in the packages.
 
-```with``` makes names defined in external packages visible (includes or imports them).
+- ```with``` makes names defined in external packages visible (includes or imports them).
 
-```use``` makes it so we don't need to qualify the symbols explicitly (just like the ```using``` keyword in C++).
+- ```use``` makes it so we don't need to qualify the symbols explicitly (just like the ```using``` keyword in C++).
+
 ---
 **Abstract Data Types (ADTs)**
 ***
