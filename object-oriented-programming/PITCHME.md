@@ -44,7 +44,7 @@ We use ADTs as a means of making programs less complex.  It allows us to separat
 **Abstract Data Types (ADTs)**
 ***
 
-An important note:  **all** data types are ADTs.  We tend to forget this when we think of built-in types, but even built-in types are ADTs.
+An important note:  **all** data types can be ADTs.  We tend to forget this when we think of built-in types, but even built-in types are ADTs.
 
 Consider a floating point number.  We don't have to understand how it is stored; in fact there have been multiple different ways to store a floating point number that systems have used in the past.  All we really care about is how to use one.
 ---
