@@ -303,7 +303,6 @@ While looping through dictionaries, it is often useful to have access to both th
 ```
 ---
 **Python**
-***
 
 The *Text Sequence* type is how Python provides functionality for strings.  These sequences are ```str``` objects comprised of Unicode values.
 
