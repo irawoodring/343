@@ -413,7 +413,6 @@ def my_func():
 ```
 ---
 **Python**
-***
 
 Python allows multiple methods of passing parameters.
 
@@ -421,7 +420,6 @@ This includes the "normal" ways we are used to in Java, but also keyword paramet
 
 ---
 **Python**
-***
 
 In our projects for this class we are going to focus on Object Oriented Python.  The syntactic unit for defining an object in Python is the class.
 
@@ -442,14 +440,16 @@ class Starship:
 ```
 ---
 **Python**
-***
 
 In the previous example ```num_ships``` is a class (static) variable.  It is therefore shared amongst all instances of the class.
 
-Unlike in Java and C++, in Python we are able to declare our instance variables at any point in the runtime.  A good place to put our instance variables is in our ```__init__``` function; this enhances readability and reliability, as the general consensus in Python programming is to both put our instance variables here and to initialize them to a default state.
 ---
 **Python**
-***
+
+Unlike in Java and C++, in Python we are able to declare our instance variables at any point in the runtime.  A good place to put our instance variables is in our ```__init__``` function; this enhances readability and reliability, as the general consensus in Python programming is to both put our instance variables here and to initialize them to a default state.
+
+---
+**Python**
 
 You may have noticed the strings ```"""A class to store Starship information."""```, ```"""Class initializer code."""```, and ```"""Sets the ship's name."""```.  These are \_\_doc\_\_ strings.  Think of them like Javadocs.  You can examine the docstring for any class or module that provides them as such:
 
