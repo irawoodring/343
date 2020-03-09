@@ -69,22 +69,18 @@ Many of those design decisions can be seen by the syntax that Python chooses to 
 Additionally, due to these design decisions Python is more orthogonal than many other languages like C.
 ---
 **Python**
-***
 
 Python is an interpreted language, meaning programs do not need to be compiled before run.  This provides the added benefit of being able to interactively use Python (demo).
 ---
 **Python**
-***
 
 Python has several built in variable types: Numeric, Iterator, Sequence, Text Sequence, Binary Sequence, Set, Mapping, Class, and a few other types.
 ---
 **Python**
-***
 
 Variables are given a type implicitly and dynamically; this means that variables are not declared with a type modifier as in some languages, and that memory for the variable is not reserved until run-time.
 ---
 **Python**
-***
 
 Numeric types may be
 
