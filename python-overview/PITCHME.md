@@ -451,7 +451,16 @@ Unlike in Java and C++, in Python we are able to declare our instance variables 
 ---
 **Python**
 
-You may have noticed the strings ```"""A class to store Starship information."""```, ```"""Class initializer code."""```, and ```"""Sets the ship's name."""```.  These are \_\_doc\_\_ strings.  Think of them like Javadocs.  You can examine the docstring for any class or module that provides them as such:
+You may have noticed the strings
+
+```Python
+"""A class to store Starship information."""
+"""Class initializer code."""
+"""Sets the ship's name."""
+```
+
+These are \_\_doc\_\_ strings.  Think of them like Javadocs.  You can examine the docstring for any class or module that provides them as such:
+
 
 ```Python
 Starship.__doc__
@@ -468,7 +477,6 @@ You may be wondering how to have an overloaded constructor in Python; unlike man
 We aren't going to go over those here, but there are many articles online concerning the issue.
 ---
 **Python**
-***
 
 It is important to reinforce that any object in Python can have a member added at any time:
 
