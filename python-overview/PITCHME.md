@@ -320,9 +320,8 @@ TypeError: 'str' object does not support item assignment
 ```
 ---
 **Python**
-***
 
-```str```s can be created with single, double, or triple quotes:
+They can be created with single, double, or triple quotes:
 
 ```Python
 name = 'ira'
