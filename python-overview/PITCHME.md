@@ -416,6 +416,9 @@ def my_func():
 ***
 
 Python allows multiple methods of passing parameters.
+
+This includes the "normal" ways we are used to in Java, but also keyword parameters and variable number of parameters.
+
 ---
 **Python**
 ***
