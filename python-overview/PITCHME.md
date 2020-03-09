@@ -333,9 +333,8 @@ name = """ira"""
 Triple quotes allows us to span multiple lines; all text (including whitespace) will be included in the ```str``` object.
 ---
 **Python**
-***
 
-```str```s are immutable, but Python provides easy operators to construct new objects:
+Thought they are immutable, but Python provides easy operators to construct new objects:
 
 ```Python
 name = "ira"
