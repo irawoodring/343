@@ -306,7 +306,7 @@ While looping through dictionaries, it is often useful to have access to both th
 
 The *Text Sequence* type is how Python provides functionality for strings.  These sequences are ```str``` objects comprised of Unicode values.
 
-```str```s are immutable!
+str objects are immutable!
 
 ```Python
 >>> name="ira"
