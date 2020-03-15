@@ -86,6 +86,7 @@ etc...
 
 
 As all of those permutations *could* be valid, it is both harder to tell what the original programmer's intent was (readability), and harder to keep track of all the possible functions we may wish to call (writability).
+
 ---
 **Names**
 
@@ -93,6 +94,7 @@ As all of those permutations *could* be valid, it is both harder to tell what th
 Many languages reserve certain words and do not allow us to use them as variable names.  These are called **reserved words**.
 
 Other languages may have **keywords**.  These may be context sensitive.  For instance, in Fortran the word **Integer** is a keyword.  It can be used to denote a variable type, or it can be used as a variable:
+
 ---
 ```Fortran
 Integer Num_cars
@@ -112,6 +114,7 @@ Variables can be seen as a collection of six attributes:
 - type
 - lifetime
 - scope
+
 ---
 **Address**
 
@@ -119,6 +122,7 @@ Variables can be seen as a collection of six attributes:
 We already discussed names so we'll next examine address.
 
 As you can probably guess, the address is the machine address where the variable's value is stored.
+
 ---
 **Address**
 
@@ -126,7 +130,9 @@ As you can probably guess, the address is the machine address where the variable
 We call the address of a variable its **l-value**.  This is due to the fact that in most languages assignment statements put name on the left side.
 
 A single address may be referred to by multiple variables.  When this happens we say that a variable has an **alias**.
+
 ---
+
 ```C++
 // An alias in C++ created by using
 // a reference.
@@ -143,6 +149,7 @@ std::cout << x << std::endl;
 42
 1701
 ```
+
 ---
 **Address**
 
@@ -150,6 +157,7 @@ std::cout << x << std::endl;
 Notice that changing y changed x as well.
 
 Aliases are a huge hit on readability, as they make programs much harder for a reader to understand.  They also make it vastly harder to debug a program, meaning they hurt writability as well.
+
 ---
 **Type**
 
@@ -159,10 +167,12 @@ Types determine both the range of values a variable can hold, and the operations
 We must be careful to fully understand the compiler(s) and machine(s) we are using when writing a program when it comes to type.  For instance:
 
 ---
+
 **Type**
 
 
 ```C
+
 #include <stdio.h>
 #include <limits.h>
 #include <float.h>
@@ -231,12 +241,15 @@ long double               8           -1.797693e+308        1.797693e+308
 A few differences exist for the two.  Many people will notice that the long double doesn't hold as high a value.  In fact, a long double on the second system is the same as a double on the first.
 
 What you may have missed though is the fact that on the ARM system a char and unsigned char produced the same values.
+
 ---
 **Types**
 
 
 It turns out that on ARM based systems chars default to unsigned.  This could have some fairly significant effects on our code.  For instance, it is not uncommon that programmers return -1 from a function when it is unable to complete a task.  Consider:
+
 ---
+
 ```C
 #include <stdio.h>
 
@@ -254,6 +267,7 @@ int main(int argc, char** argv){
         printf("%d\n", result);
 }
 ```
+
 ---
 **Types**
 
@@ -274,21 +288,25 @@ On the Intel system And
 
 On the ARM.
 ---
+
 **Value**
 
 
 What we store in the memory locations the variable is comprised of is the value.
 
 We call the value the **r-value** as it is usually on the right side of an assignment statement.
+
 ---
 **Value**
 
 
 Although it seems fairly straightforward, determining the value for an r-value can be complicated due to scoping rules.
+
 ---
 An understanding of scope and lifetime requires us to first talk about binding.
 
 As the book does, we will pause talking about variable attributes here and focus on binding.
+
 ---
 **Binding**
 
@@ -306,6 +324,7 @@ Binding can occur at
 - **load time** (an address is given to a variable when the program is loaded into memory)
 - **link time** (associating a function with an address in library)
 - **run time** (giving a variable a value)
+
 ---
 **Binding**
 
@@ -313,6 +332,7 @@ Binding can occur at
 A **static** binding occurs *before runtime* and does not change while the program is running.
 
 A binding that occurs during runtime and can change *while the program is running* is **dynamic**.
+
 ---
 Consider this code:
 
@@ -326,9 +346,12 @@ int main(int argc, char** argv){
         printf("The meaning is %d.\n\n", meaning);
 }
 ```
+
 ---
 While the value ```42``` is not assigned statically, we can tell that the address itself is being bound at compile time by running ```objdump -t``` on the executable:
+
 ---
+
 ```C
 ... // Lots of output...
 
@@ -336,8 +359,10 @@ While the value ```42``` is not assigned statically, we can tell that the addres
 
 ... // Lots more output...
 ```
+
 ---
 In the midst of all the output we find the variable ```main.meaning``` is given a memory location, even before the program is run.  By contrast, notice that there is no address defined for runtimeStuff.  This will be determined when the program is run.
+
 ---
 **Binding**
 
@@ -345,6 +370,7 @@ In the midst of all the output we find the variable ```main.meaning``` is given 
 Type bindings may be **implicit** or **explicit**.  Explicit type bindings may harm writability but aid readability.
 
 Implicit type bindings do the opposite.  In addition, they can harm reliability as they remove the ability of a compiler to detect errors before runtime.
+
 ---
 **Binding**
 
@@ -352,6 +378,7 @@ Implicit type bindings do the opposite.  In addition, they can harm reliability 
 Please note that implicit/explicit bindings are a separate topic from static/dynamic bindings, though I've found that students' tend to confuse the two.  
 
 This is likely due to the fact that many dynamic languages use implicit type systems (Python, etc.) though there are those that are static and implicit (Go).
+
 ---
 **Binding**
 
@@ -359,22 +386,27 @@ This is likely due to the fact that many dynamic languages use implicit type sys
 For a binding to occur, we first need to go through the process of **Allocation**, which refers to assigning a variable an address from a pool of memory.
 
 **Deallocation** is the returning of the memory to the pool.
+
 ---
 **Binding**
 
 
 The **lifetime** of a variable is the time during which it is bound to a particular memory location.
+
 ---
 **Binding**
 
 
 **Static variables** are bound to memory cells before programs are executed, and stay bound until the program ends.
+
 ---
 > Note that this is different from the last example,
 > in that here we are assigning a value BEFORE runtime
 > and previously we were just creating the memory.
 > We'll call this file static.c
+
 ---
+
 ```C
 #include <stdio.h>
 
@@ -385,8 +417,10 @@ int main(int argc, char** argv){
         printf("The meaning is %d.\n\n", meaning);
 }
 ```
+
 ---
 Viewing the file we can verify this binding:
+
 ```C
 gcc static.c
 objdump -t a.out
@@ -404,6 +438,7 @@ Contents of section .data:
 ```
 
 For those of you wondering, ```2a``` in hex is ```42``` in decimal.  
+
 ---
 **Binding**
 
@@ -411,28 +446,35 @@ For those of you wondering, ```2a``` in hex is ```42``` in decimal.
 Static variables are very fast, as compilers typically substitute the address for the variable, allowing for direct access (no lookup).
 
 Additionally, there is no overhead for allocating a static variable; it is given a memory location at compile time.
+
 ---
 **Binding**
 
 
 **Elaboration** is the process that happens at run-time of allocating and binding a variable.  There are a few different elaboration methods we will be talking about.
+
 ---
 **Binding**
 
 
 
 **Stack-dynamic** variables are variables that are statically bound but created when they are elaborated.
+
 ---
 An example of these is local variables in C.  Each function will have local variables; the space for them is not created until the function's memory is created.  When the program executes (elaborates) the code for the variable, it is created.
+
 ---
 They are useful because they allow recursion (a subprogram must have dynamic local storage for recursion).
 
 The disadvantage is run-time overhead, as allocating and deallocating variables can be high, and they are not history sensitive (meaning when you call another instance of a function the variable does not keep the value of the variable from the first call).
+
 ---
 Why can't we have recursion without these variables?
 
 Consider this language that only has global storage:
+
 ---
+
 ```C
 #include <stdio.h>
 #include <stdlib.h>
@@ -450,10 +492,12 @@ int main(int argc, char** argv){
   printf("Factorial of %d is %d.\n", n, factorial());
 }
 ```
+
 ---
 This can't work; each iteration of the factorial function reduces ```n``` by 1.  The final value will always be 0.
 
 Consider ```n=3```.  The first function can't return until it calls itself, but calling itself reduces the value of ```n```.
+
 ---
 **Binding**
 
@@ -461,7 +505,9 @@ Consider ```n=3```.  The first function can't return until it calls itself, but 
 **Explicit Heap-Dynamic Variables** are allocated and deallocated at run-time by the programmer.
 
 They are useful because they can be used for dynamically sized structures, but they are difficult for programmers to use correctly.
+
 ---
+
 ```C
 int* nums;
 nums = (int*) malloc(50 * sizeof(int));
@@ -471,6 +517,7 @@ nums = (int*) malloc(50 * sizeof(int));
 // Must give memory back at some point.
 free(nums);
 ```
+
 ---
 **Binding**
 
@@ -491,6 +538,7 @@ highs = [74, 84, 86, 90, 71];
 **Scope** is the range of statements for which a variable is visible (visible meaning it can be referenced).
 
 A variable is **local** to the scope in which it was declared.
+
 ---
 **Scope**
 
@@ -498,6 +546,7 @@ A variable is **local** to the scope in which it was declared.
 **Static scope** means that the variable's scope can be determined before execution of the program.
 
 Helps readability.
+
 ---
 **Scope**
 
@@ -505,6 +554,7 @@ Helps readability.
 When resolving variables the system starts with the declarations in the current subprogram.  If it is not found there, it continues out to the **static parent** (the outer enclosing unit).  
 
 This continues up through other **static ancestors** until the variable can be resolved (or we run out of places to look).
+
 ---
 **Scope**
 
@@ -512,7 +562,9 @@ This continues up through other **static ancestors** until the variable can be r
 ALGOL 60 brought the oft copied idea of **blocks**, or **block structured languages**.
 
 These languages allow new scopes to be defined within executable code.  For instance:
+
 ---
+
 ```C
 int main(int argc, char** argv){
   int i=0;
@@ -522,6 +574,7 @@ int main(int argc, char** argv){
   }
 }
 ```
+
 ---
 **Scope**
 
@@ -529,7 +582,9 @@ int main(int argc, char** argv){
 **Global variables** exist outside of function definitions, but are resolvable from within functions.
 
 In some languages we must be careful to not re-use a name of a global within some local scope.  For instance, in C we could do this:
+
 ---
+
 ```C
 int num_threads;
 
@@ -540,6 +595,7 @@ int main(int argc, char** argv){
 ```
 
 When you make a variable un-resolvable in this way, we say you are shadowing the variable.
+
 ---
 **Scope**
 
