@@ -101,6 +101,7 @@ Integer = 42
 ```
 
 Note that context matters here; the first example was the keyword before a variable name; it is then a type specifier.  In the second example the keyword is followed by an assignment operator meaning it is to be interpreted as a variable.
+
 ---
 **Variables**
 
@@ -200,6 +201,7 @@ int main(int argc, char** argv){
 On a 64-bit Intel system I get the following output:
 
 ```C
+
 Type                     Bytes       Min Value                Max Value
 ---------------------------------------------------------------------------
 unsigned char             1             0                   255
