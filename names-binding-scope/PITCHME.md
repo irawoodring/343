@@ -3,13 +3,13 @@ CIS 343 - Structure of Programming Languages
 
 Ira Woodring
 
-***
+
 
 Names, Binding, and scope
 (Follows the Sebesta Text Chapter 5)
 ---
 **Overview**
-***
+
 
 At their heart, imperative languages are abstractions of the hardware.
 
@@ -18,21 +18,21 @@ Variables, for instance, are merely representations of memory locations.
 Sometimes the representations are very similar to what is in the hardware; other times software provides some translation.
 ---
 **Overview**
-***
+
 
 Programming languages assign names to variables and functions.
 
 As simple as it may seem to us, when designing a language there are complex issues involved with choosing a naming scheme.
 ---
 **Names**
-***
+
 
 A name is not required for a member; they really just exist for our benefit.  Computers are perfectly happy just using addresses.
 
 Some issues with names are the characters allowed to be used for the name, case sensitivity, the number of characters the name is made up of, are reserved words usable and if any "decorators" are used.
 ---
 **Names**
-***
+
 
 There are vastly different rules for naming depending on the language.  For instance:
 
@@ -42,7 +42,7 @@ There are vastly different rules for naming depending on the language.  For inst
 - C++ provides no limit, though certain implementations do.
 ---
 **Names**
-***
+
 
 So we need to be very careful when using a language; this could create a problem then:
 
@@ -61,7 +61,7 @@ int main(int argc, char** argv){
 Though most (newer) implementations seem to handle this just fine.
 ---
 **Names**
-***
+
 
 Some of these issues may seem trivial, but we need to remember that these rules are going to either help or hinder areas such as readability and writability.
 
@@ -77,12 +77,12 @@ etc...
 ```
 ---
 **Names**
-***
+
 
 As all of those permutations *could* be valid, it is both harder to tell what the original programmer's intent was (readability), and harder to keep track of all the possible functions we may wish to call (writability).
 ---
 **Names**
-***
+
 
 Many languages reserve certain words and do not allow us to use them as variable names.  These are called **reserved words**.
 
@@ -96,7 +96,7 @@ Integer = 42
 Note that context matters here; the first example was the keyword before a variable name; it is then a type specifier.  In the second example the keyword is followed by an assignment operator meaning it is to be interpreted as a variable.
 ---
 **Variables**
-***
+
 
 Variables can be seen as a collection of six attributes:
 
@@ -108,14 +108,14 @@ Variables can be seen as a collection of six attributes:
 - scope
 ---
 **Address**
-***
+
 
 We already discussed names so we'll next examine address.
 
 As you can probably guess, the address is the machine address where the variable's value is stored.
 ---
 **Address**
-***
+
 
 We call the address of a variable its **l-value**.  This is due to the fact that in most languages assignment statements put name on the left side.
 
@@ -139,21 +139,21 @@ std::cout << x << std::endl;
 ```
 ---
 **Address**
-***
+
 
 Notice that changing y changed x as well.
 
 Aliases are a huge hit on readability, as they make programs much harder for a reader to understand.  They also make it vastly harder to debug a program, meaning they hurt writability as well.
 ---
 **Type**
-***
+
 
 Types determine both the range of values a variable can hold, and the operations that may be performed.
 
 We must be careful to fully understand the compiler(s) and machine(s) we are using when writing a program when it comes to type.  For instance:
 ---
 **Type**
-***
+
 
 ```C
 #include <stdio.h>
@@ -178,11 +178,11 @@ int main(int argc, char** argv){
 ```
 ---
 **Type**
-***
+
 
 On a 64-bit Intel system I get the following output:
 
-```
+```C
 Type                     Bytes       Min Value                Max Value
 ---------------------------------------------------------------------------
 unsigned char             1             0                   255
@@ -197,10 +197,11 @@ float                     4            -3.402823e+38        3.402823e+38
 double                    8            -1.797693e+308       1.797693e+308
 long double              16            -1.189731e+4932      1.189731e+4932
 ```
+
 ---
 Yet, on a 32-bit ARM I get this:
 
-```
+```C
 Type                     Bytes         Min Value                  Max Value
 ---------------------------------------------------------------------------
 unsigned char             1           0                     255
@@ -215,16 +216,16 @@ float                     4           -3.402823e+38         3.402823e+38
 double                    8           -1.797693e+308        1.797693e+308
 long double               8           -1.797693e+308        1.797693e+308
 ```
+
 ---
 **Types**
-***
 
 A few differences exist for the two.  Many people will notice that the long double doesn't hold as high a value.  In fact, a long double on the second system is the same as a double on the first.
 
 What you may have missed though is the fact that on the ARM system a char and unsigned char produced the same values.
 ---
 **Types**
-***
+
 
 It turns out that on ARM based systems chars default to unsigned.  This could have some fairly significant effects on our code.  For instance, it is not uncommon that programmers return -1 from a function when it is unable to complete a task.  Consider:
 ---
@@ -247,7 +248,7 @@ int main(int argc, char** argv){
 ```
 ---
 **Types**
-***
+
 
 Running this on the two systems we get the output
 
@@ -266,14 +267,14 @@ On the Intel system And
 On the ARM.
 ---
 **Value**
-***
+
 
 What we store in the memory locations the variable is comprised of is the value.
 
 We call the value the **r-value** as it is usually on the right side of an assignment statement.
 ---
 **Value**
-***
+
 
 Although it seems fairly straightforward, determining the value for an r-value can be complicated due to scoping rules.
 ---
@@ -282,7 +283,7 @@ An understanding of scope and lifetime requires us to first talk about binding.
 As the book does, we will pause talking about variable attributes here and focus on binding.
 ---
 **Binding**
-***
+
 
 A binding occurs when we associate an attribute and an entity.
 
@@ -298,7 +299,7 @@ Binding can occur at
 - **run time** (giving a variable a value)
 ---
 **Binding**
-***
+
 
 A **static** binding occurs *before runtime* and does not change while the program is running.
 
@@ -330,33 +331,33 @@ While the value ```42``` is not assigned statically, we can tell that the addres
 In the midst of all the output we find the variable ```main.meaning``` is given a memory location, even before the program is run.  By contrast, notice that there is no address defined for runtimeStuff.  This will be determined when the program is run.
 ---
 **Binding**
-***
+
 
 Type bindings may be **implicit** or **explicit**.  Explicit type bindings may harm writability but aid readability.
 
 Implicit type bindings do the opposite.  In addition, they can harm reliability as they remove the ability of a compiler to detect errors before runtime.
 ---
 **Binding**
-***
+
 
 Please note that implicit/explicit bindings are a separate topic from static/dynamic bindings, though I've found that students' tend to confuse the two.  
 
 This is likely due to the fact that many dynamic languages use implicit type systems (Python, etc.) though there are those that are static and implicit (Go).
 ---
 **Binding**
-***
+
 
 For a binding to occur, we first need to go through the process of **Allocation**, which refers to assigning a variable an address from a pool of memory.
 
 **Deallocation** is the returning of the memory to the pool.
 ---
 **Binding**
-***
+
 
 The **lifetime** of a variable is the time during which it is bound to a particular memory location.
 ---
 **Binding**
-***
+
 
 **Static variables** are bound to memory cells before programs are executed, and stay bound until the program ends.
 ---
@@ -396,19 +397,19 @@ Contents of section .data:
 For those of you wondering, ```2a``` in hex is ```42``` in decimal.  
 ---
 **Binding**
-***
+
 
 Static variables are very fast, as compilers typically substitute the address for the variable, allowing for direct access (no lookup).
 
 Additionally, there is no overhead for allocating a static variable; it is given a memory location at compile time.
 ---
 **Binding**
-***
+
 
 **Elaboration** is the process that happens at run-time of allocating and binding a variable.  There are a few different elaboration methods we will be talking about.
 ---
 **Binding**
-***
+
 
 
 **Stack-dynamic** variables are variables that are statically bound but created when they are elaborated.
@@ -446,7 +447,7 @@ This can't work; each iteration of the factorial function reduces ```n``` by 1. 
 Consider ```n=3```.  The first function can't return until it calls itself, but calling itself reduces the value of ```n```.
 ---
 **Binding**
-***
+
 
 **Explicit Heap-Dynamic Variables** are allocated and deallocated at run-time by the programmer.
 
@@ -463,7 +464,7 @@ free(nums);
 ```
 ---
 **Binding**
-***
+
 
 **Implicit Heap-Dynamic Variables** are bound to heap storage only when they are assigned a value.
 
@@ -476,28 +477,28 @@ highs = [74, 84, 86, 90, 71];
 ```
 ---
 **Scope**
-***
+
 
 **Scope** is the range of statements for which a variable is visible (visible meaning it can be referenced).
 
 A variable is **local** to the scope in which it was declared.
 ---
 **Scope**
-***
+
 
 **Static scope** means that the variable's scope can be determined before execution of the program.
 
 Helps readability.
 ---
 **Scope**
-***
+
 
 When resolving variables the system starts with the declarations in the current subprogram.  If it is not found there, it continues out to the **static parent** (the outer enclosing unit).  
 
 This continues up through other **static ancestors** until the variable can be resolved (or we run out of places to look).
 ---
 **Scope**
-***
+
 
 ALGOL 60 brought the oft copied idea of **blocks**, or **block structured languages**.
 
@@ -514,7 +515,7 @@ int main(int argc, char** argv){
 ```
 ---
 **Scope**
-***
+
 
 **Global variables** exist outside of function definitions, but are resolvable from within functions.
 
@@ -532,7 +533,7 @@ int main(int argc, char** argv){
 When you make a variable un-resolvable in this way, we say you are shadowing the variable.
 ---
 **Scope**
-***
+
 
 Languages with robust namespace capabilities may allow us to access the globals anyway.  For instance, C++ allows us to do this:
 
@@ -549,7 +550,7 @@ int main(int argc, char** argv){
 ```
 ---
 **Scope**
-***
+
 
 There are other methods as well.  PHP uses a $GLOBALS array.  We can access those globals in two ways:
 
@@ -574,7 +575,7 @@ function get_threads() {
 ```
 ---
 **Scope**
-***
+
 
 Python (as is often the case...) has its own rules.  In Python a global can be referenced but not assigned to in a function, unless it is declared global at the beginning.  Thus, this will not work (from the book):
 
@@ -590,7 +591,7 @@ tester()
 ```
 ---
 **Scope**
-***
+
 
 However, this will (we can access):
 
@@ -602,7 +603,7 @@ tester()
 ```
 ---
 **Scope**
-***
+
 
 And this will (we declare the variable global first [now we can modify!]):
 
@@ -619,7 +620,7 @@ tester()
 ```
 ---
 **Scope**
-***
+
 
 Static scope does have issues:
 
@@ -631,7 +632,7 @@ Static scope does have issues:
 These issues are largely fixed by encapsulation.
 ---
 **Scope**
-***
+
 
 **Dynamic Scope** resolves variables not by the blocks they are in, but by the calling sequence of the program.
 
@@ -660,14 +661,14 @@ function big()
 Imagine that this is written in a language that resolves scope dynamically.  If later in the program we call big.sub1(), then big.sub2(), the value of y in sub2() will be 7.  If though, we merely called big.sub2(), the value for y would be 3.
 ---
 **Scope**
-***
+
 
 Dynamic scope destroys readability completely.  We cannot look at a program and tell what the value of all variables are at any given time (we don't know what the calling sequence would be; any input could change the calling sequence).
 
 Because dynamically scoped languages cannot resolve variable information statically debugging becomes a nightmare.
 ---
 **Lifetime**
-***
+
 
 Don't confuse scope and **lifetime**.  They may appear related but aren't; scope is more of a textual relationship (or spatial), whereas lifetime deals with time.
 
@@ -697,7 +698,7 @@ Compile it, and run ```objdump -t a.out```
 This shows that the variable is statically bound, but local in scope!  It will exist until the program ends, but is only accessible inside the ```do_stuff()``` function.
 ---
 **Scope**
-***
+
 
 **Named Constants** are variables that are named only once.  They enhance readability.
 
