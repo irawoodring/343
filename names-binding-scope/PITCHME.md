@@ -7,15 +7,16 @@ Ira Woodring
 
 Names, Binding, and scope
 (Follows the Sebesta Text Chapter 5)
+
 ---
 **Overview**
-
 
 At their heart, imperative languages are abstractions of the hardware.
 
 Variables, for instance, are merely representations of memory locations.
 
 Sometimes the representations are very similar to what is in the hardware; other times software provides some translation.
+
 ---
 **Overview**
 
@@ -23,6 +24,7 @@ Sometimes the representations are very similar to what is in the hardware; other
 Programming languages assign names to variables and functions.
 
 As simple as it may seem to us, when designing a language there are complex issues involved with choosing a naming scheme.
+
 ---
 **Names**
 
@@ -30,6 +32,7 @@ As simple as it may seem to us, when designing a language there are complex issu
 A name is not required for a member; they really just exist for our benefit.  Computers are perfectly happy just using addresses.
 
 Some issues with names are the characters allowed to be used for the name, case sensitivity, the number of characters the name is made up of, are reserved words usable and if any "decorators" are used.
+
 ---
 **Names**
 
@@ -40,6 +43,7 @@ There are vastly different rules for naming depending on the language.  For inst
 - C has no limit, but only the first 63 are significant (most compilers ignore this and have no limit these days).
 - Java, C#, and Ada have no limit and all are significant
 - C++ provides no limit, though certain implementations do.
+
 ---
 **Names**
 
@@ -59,6 +63,7 @@ int main(int argc, char** argv){
 ```
 
 Though most (newer) implementations seem to handle this just fine.
+
 ---
 **Names**
 
@@ -290,6 +295,7 @@ As the book does, we will pause talking about variable attributes here and focus
 A binding occurs when we associate an attribute and an entity.
 
 This does not refer strictly to a variable; we can associate a function with an attribute as well.
+
 ---
 Binding can occur at
 
