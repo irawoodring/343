@@ -176,6 +176,7 @@ int main(int argc, char** argv){
         printf("long double\t\t%lu\t\t%Le\t\t%Le\n", sizeof(long double), -LDBL_MAX, LDBL_MAX);
 }
 ```
+
 ---
 **Type**
 
