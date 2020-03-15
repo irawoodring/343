@@ -47,7 +47,6 @@ There are vastly different rules for naming depending on the language.  For inst
 ---
 **Names**
 
-
 So we need to be very careful when using a language; this could create a problem then:
 
 ```C
@@ -195,6 +194,7 @@ int main(int argc, char** argv){
 ```
 
 ---
+
 **Type**
 
 On a 64-bit Intel system I get the following output:
@@ -627,6 +627,7 @@ function get_threads() {
   print "Num threads = $num_threads.";
 }
 ```
+
 ---
 Or:
 
@@ -638,6 +639,7 @@ function get_threads() {
   print "Num threads = $nt.";
 }
 ```
+
 ---
 **Scope**
 
@@ -654,6 +656,7 @@ def tester():
 
 tester()
 ```
+
 ---
 **Scope**
 
@@ -666,6 +669,7 @@ def tester():
   print "The global day is:", day
 tester()
 ```
+
 ---
 **Scope**
 
@@ -683,6 +687,7 @@ def tester():
 
 tester()
 ```
+
 ---
 **Scope**
 
@@ -695,6 +700,7 @@ Static scope does have issues:
     - May end up with an awkward design
 
 These issues are largely fixed by encapsulation.
+
 ---
 **Scope**
 
@@ -706,8 +712,10 @@ It is largely unseen in newer languages (but still available in some cases).
 Dynamic Scope destroys readability.
 
 Consider:
+
 ---
-```
+
+```C
 function big()
 {
   function sub1() {
@@ -724,6 +732,7 @@ function big()
 ```
 
 Imagine that this is written in a language that resolves scope dynamically.  If later in the program we call big.sub1(), then big.sub2(), the value of y in sub2() will be 7.  If though, we merely called big.sub2(), the value for y would be 3.
+
 ---
 **Scope**
 
@@ -731,6 +740,7 @@ Imagine that this is written in a language that resolves scope dynamically.  If 
 Dynamic scope destroys readability completely.  We cannot look at a program and tell what the value of all variables are at any given time (we don't know what the calling sequence would be; any input could change the calling sequence).
 
 Because dynamically scoped languages cannot resolve variable information statically debugging becomes a nightmare.
+
 ---
 **Lifetime**
 
@@ -739,6 +749,7 @@ Don't confuse scope and **lifetime**.  They may appear related but aren't; scope
 
 Consider:
 ---
+
 ```C
 void do_stuff(){
         static int meaning = 42;
@@ -750,18 +761,27 @@ int main(int argc, char** argv){
 ```
 
 The variable ```meaning``` is local in scope, but because it is static exists throughout the life of the program.  Want proof?
+
 ---
 
 Compile it, and run ```objdump -t a.out```
 
-```
+```C
 ...
 000000000060102c l     O .data  0000000000000004              do_stuff.meaning
 ...
 ```
 
-This shows that the variable is statically bound, but local in scope!  It will exist until the program ends, but is only accessible inside the ```do_stuff()``` function.
+This shows that the variable is statically bound, but local in scope!  It will exist until the program ends, but is only accessible inside the
+
+```C
+do_stuff()
+```
+
+function.
+
 ---
+
 **Scope**
 
 
@@ -782,6 +802,7 @@ st.c:3:10: error: read-only variable is not assignable
         ~~~~~~~ ^
 1 error generated.
 ```
+
 ---
 Additionally, if we didn't try to reassign to the constant, we can view the objdump:
 
