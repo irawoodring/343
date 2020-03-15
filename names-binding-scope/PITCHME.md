@@ -222,19 +222,20 @@ On a 64-bit Intel system I get the following output:
 Yet, on a 32-bit ARM I get this:
 
 ```C
-Type                     Bytes         Min Value                  Max Value
----------------------------------------------------------------------------
-unsigned char             1           0                     255
-char                      1           0                     255
-unsigned int              4           0                     4294967295
-int                       4           -2147483648           2147483647
-unsigned long             4           0                     4294967295
-long                      4           -2147483648           2147483647
-unsigned long long        8           0                     18446744073709551615
-long long                 8           -9223372036854775808  9223372036854775807
-float                     4           -3.402823e+38         3.402823e+38
-double                    8           -1.797693e+308        1.797693e+308
-long double               8           -1.797693e+308        1.797693e+308
+
+//Type                     Bytes         Min Value                  Max Value
+//---------------------------------------------------------------------------
+//unsigned char             1           0                     255
+//char                      1           0                     255
+//unsigned int              4           0                     4294967295
+//int                       4           -2147483648           2147483647
+//unsigned long             4           0                     4294967295
+//long                      4           -2147483648           2147483647
+//unsigned long long        8           0                     18446744073709551615
+//long long                 8           -9223372036854775808  9223372036854775807
+//float                     4           -3.402823e+38         3.402823e+38
+//double                    8           -1.797693e+308        1.797693e+308
+//long double               8           -1.797693e+308        1.797693e+308
 ```
 
 ---
