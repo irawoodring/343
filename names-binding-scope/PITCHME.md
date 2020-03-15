@@ -151,6 +151,7 @@ Aliases are a huge hit on readability, as they make programs much harder for a r
 Types determine both the range of values a variable can hold, and the operations that may be performed.
 
 We must be careful to fully understand the compiler(s) and machine(s) we are using when writing a program when it comes to type.  For instance:
+
 ---
 **Type**
 
@@ -180,7 +181,6 @@ int main(int argc, char** argv){
 ---
 **Type**
 
-
 On a 64-bit Intel system I get the following output:
 
 ```C
@@ -200,6 +200,7 @@ long double              16            -1.189731e+4932      1.189731e+4932
 ```
 
 ---
+
 Yet, on a 32-bit ARM I get this:
 
 ```C
