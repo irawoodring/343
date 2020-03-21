@@ -413,7 +413,7 @@ The **lifetime** of a variable is the time during which it is bound to a particu
 ```C
 #include <stdio.h>
 
-static int meaning = 42;
+static const int meaning = 42;
 
 int main(int argc, char** argv){
         int runtimeStuff = 1701;
