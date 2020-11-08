@@ -3,6 +3,10 @@ CIS 343 Notes and code samples.
 
 Most content from the Sebesta Programming Languages book, used in class.
 
+Article:  https://getpocket.com/explore/item/38-wonderful-words-with-no-english-equivalent?utm_source=pocket-newtab
+
+
+
 Schedule
 
 | Week/Date | Topic | Reading | Assignment | Notes |
